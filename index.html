@@ -538,198 +538,68 @@ footer{
 }
 .section-sub{font-size:1.1rem;color:var(--cream-a60);margin-bottom:3rem;font-weight:400}
 
-/* ═══════════════════════════════════════════════════════════════════
-   SPLASH SCREEN
-═══════════════════════════════════════════════════════════════════ */
-#splash{
-  position:fixed;inset:0;z-index:9999;
-  background:var(--ink);
-  display:flex;align-items:center;justify-content:center;
-  transition:opacity .7s ease;
-}
-#splash.out{opacity:0;pointer-events:none}
-
-/* ── static rings (bullseye / 靶) ── */
-.sr{
-  position:absolute;border-radius:50%;
-  border:1.5px solid var(--fire);
-  transform:scale(0);opacity:0;
-  animation:srIn .55s cubic-bezier(.34,1.46,.64,1) forwards;
-}
-@keyframes srIn{to{transform:scale(1);opacity:var(--o,1)}}
-
-/* ── pulse rings (expand + fade outward) ── */
-.sp{
-  position:absolute;border-radius:50%;
-  border:1px solid var(--fire);
-  opacity:0;
-  animation:spPulse 2s ease-out infinite;
-}
-@keyframes spPulse{
-  0%{transform:scale(.25);opacity:.65}
-  100%{transform:scale(2.2);opacity:0}
-}
-
-/* ── gold center dot ── */
-.s-dot{
-  position:absolute;width:10px;height:10px;border-radius:50%;
-  background:var(--gold);z-index:3;
-  transform:scale(0);
-  animation:sDot .4s .1s cubic-bezier(.34,1.56,.64,1) forwards;
-}
-@keyframes sDot{to{transform:scale(1)}}
-
-/* ── B letterform ── */
-.s-b{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(5rem,20vw,8rem);
-  color:var(--fire);line-height:1;
-  position:absolute;z-index:4;
-  opacity:0;transform:scale(.3) rotate(-8deg);
-  animation:sBIn .5s .75s cubic-bezier(.34,1.46,.64,1) forwards;
-}
-@keyframes sBIn{to{opacity:1;transform:scale(1) rotate(0deg)}}
-
-/* ── BUILT Young wordmark beneath B ── */
-.s-word{
-  position:absolute;
-  display:flex;align-items:baseline;gap:.2rem;
-  bottom:calc(50% - clamp(5rem,20vw,8rem) * 1.1);
-  z-index:4;
-  opacity:0;
-  animation:sWordIn .45s 1.2s ease forwards;
-}
-@keyframes sWordIn{to{opacity:1}}
-.s-word .sb{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:rgba(249,244,238,.45);letter-spacing:.15em}
-.s-word .sy{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:700;font-size:.9rem;color:var(--gold)}
-
-/* ── tagline ── */
-.s-tag{
-  position:absolute;
-  font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--fire);opacity:0;
-  top:calc(50% + clamp(3.5rem,14vw,5.5rem));
-  animation:sTagIn .4s 1.4s ease forwards;
-  white-space:nowrap;
-}
-@keyframes sTagIn{to{opacity:.7}}
 
 /* ═══════════════════════════════════════════════════════════════════
-   MOBILE RESPONSIVE — strictly scoped, never touches desktop
+   MOBILE — all rules strictly inside @media, desktop untouched
 ═══════════════════════════════════════════════════════════════════ */
 
-/* ── 768px ── tablet / large phone ─────────────────────────── */
+/* ── 768px: tablets + large phones ─────────────────────────── */
 @media(max-width:768px){
-  /* iOS touch highlight — invisible on desktop anyway */
   *{-webkit-tap-highlight-color:transparent}
-
-  /* iOS Safari: fix address bar eating hero + prevent input zoom */
   #hero{height:100svh}
   .fg input,.fg select,.fg textarea{font-size:16px!important}
-  /* Sections */
   .section{padding:4rem 1.5rem}
-
-  /* Navbar */
   #nav{padding:1rem 1.5rem}
-
-  /* Hero eyebrow — key overflow fix */
   .hero-eyebrow{font-size:.7rem;letter-spacing:.15em;margin-bottom:1rem}
   .hero-sub{font-size:1.05rem;margin-bottom:2rem}
   .hero-ctas{margin-bottom:2rem}
   .stat-col{padding:.6rem 1.2rem}
   .stat-num{font-size:1.75rem}
   .stat-lbl{font-size:.68rem;letter-spacing:.1em}
-
-  /* About */
   .manifesto-text{font-size:clamp(2rem,5.5vw,2.9rem)}
-
-  /* Podcast — always show Watch/Listen on touch devices */
-  .ep-actions{
-    opacity:1!important;
-    transform:none!important;
-    border-top:1px solid rgba(249,244,238,.1);
-  }
-
-  /* Community cards — flexible height */
+  .ep-actions{opacity:1!important;transform:none!important;border-top:1px solid rgba(249,244,238,.1)}
   .mcard{height:auto;min-height:290px}
-
-  /* VC form */
   .form-card{padding:1.75rem}
-
-  /* Builder form */
   .builder-form-wrap{padding:2rem 1.5rem}
-
-  /* Workshops */
-  .ws-tag{font-size:.68rem;letter-spacing:.12em}
-
-  /* Footer */
   footer{padding:3.5rem 1.5rem 2rem}
   .footer-grid{gap:2rem}
 }
 
-/* ── 480px ── standard smartphone ──────────────────────────── */
+/* ── 480px: standard smartphones ───────────────────────────── */
 @media(max-width:480px){
-  /* Sections */
   .section{padding:3rem 1.15rem}
-
-  /* Hero */
   .hero-eyebrow{font-size:.65rem;letter-spacing:.1em}
   .hero-content{padding:0 .75rem}
-
-  /* Stack CTA buttons */
   .hero-ctas{flex-direction:column;align-items:center;gap:.75rem;margin-bottom:1.75rem}
   .hero-ctas .btn{width:100%;max-width:300px;justify-content:center}
-
-  /* Stack stat numbers vertically */
   .hero-stats{flex-direction:column;align-items:center}
-  .stat-col{
-    border-right:none!important;
-    border-bottom:1px solid var(--cream-a15);
-    width:100%;max-width:240px;
-    padding:.55rem 0;
-  }
+  .stat-col{border-right:none!important;border-bottom:1px solid var(--cream-a15);width:100%;max-width:240px;padding:.55rem 0}
   .stat-col:last-child{border-bottom:none}
-
-  /* About */
   .manifesto-text{font-size:1.85rem}
   .about-bio p{font-size:1rem}
   .badges{gap:.5rem}
   .badge{font-size:.82rem;padding:.45rem .9rem}
-
-  /* Podcast */
   .ep-body{padding:1rem}
   .ep-guest{font-size:1.65rem}
   .ep-actions a{padding:.6rem .4rem;font-size:.75rem}
-
-  /* Community */
   .mcard{min-height:270px}
   .m-name{font-size:1.6rem}
   .m-desc{font-size:.82rem}
-
-  /* VC section */
   .vc-h2{font-size:clamp(1.8rem,7vw,3.1rem)}
   .form-card{padding:1.25rem}
-
-  /* Young builders */
   .builder-form-wrap{padding:1.5rem 1rem}
   .elig-card{padding:1.5rem}
   .elig-card h3{font-size:1.7rem}
-
-  /* Section headings */
   .section-h{font-size:2.1rem}
   .section-sub{font-size:1rem;margin-bottom:2rem}
-
-  /* Workshops */
   .ws-card{padding:1.25rem}
   .ws-title{font-size:1.25rem}
   .btn{padding:.72rem 1.4rem;font-size:.88rem}
-
-  /* Footer */
   footer{padding:2.5rem 1.15rem 1.5rem}
-  .foot-copy{font-size:.75rem;padding:0 .5rem}
+  .foot-copy{font-size:.75rem}
 }
 
-/* ── 375px ── small phones (iPhone SE, etc.) ────────────────── */
+/* ── 375px: iPhone SE / small phones ───────────────────────── */
 @media(max-width:375px){
   .section{padding:2.5rem 1rem}
   .hero-eyebrow{font-size:.6rem;letter-spacing:.08em}
@@ -740,21 +610,9 @@ footer{
   .builder-form-wrap{padding:1.25rem .875rem}
   .vc-h2{font-size:1.75rem}
 }
-</style>
-</head>
-<body>
 
-<!-- ═══ SPLASH ════════════════════════════════════════════════════════ -->
-<div id="splash">
-  <div id="splash-rings"></div>
-  <div class="s-dot"></div>
-  <span class="s-b">B</span>
-  <div class="s-word">
-    <span class="sb">UILT</span>
-    <span class="sy">Young</span>
-  </div>
-  <span class="s-tag">Under 30 &nbsp;·&nbsp; Over $1M</span>
-</div>
+</style>
+<body>
 
 <!-- ═══ NAVBAR ═══════════════════════════════════════════════════════ -->
 <nav id="nav">
@@ -1346,51 +1204,6 @@ footer{
 </footer>
 
 <script>
-/* ─── SPLASH SCREEN ──────────────────────────────────────────────── */
-(function(){
-  const splash = document.getElementById('splash');
-  const rings  = document.getElementById('splash-rings');
-
-  // ── Static rings (bullseye / 靶) ──
-  // sizes: [diameter, opacity, delay]
-  const staticRings = [
-    [44,  1.0, 0.05],
-    [100, 0.75, 0.15],
-    [170, 0.55, 0.25],
-    [250, 0.38, 0.35],
-    [340, 0.22, 0.45],
-  ];
-  staticRings.forEach(([s, o, d]) => {
-    const el = document.createElement('div');
-    el.className = 'sr';
-    el.style.cssText = `width:${s}px;height:${s}px;--o:${o};animation-delay:${d}s`;
-    rings.appendChild(el);
-  });
-
-  // ── Pulse rings (outward ripple) ──
-  const pulseRings = [
-    [260, 0],
-    [260, 0.55],
-    [260, 1.1],
-  ];
-  pulseRings.forEach(([s, d]) => {
-    const el = document.createElement('div');
-    el.className = 'sp';
-    el.style.cssText = `width:${s}px;height:${s}px;animation-delay:${d}s`;
-    rings.appendChild(el);
-  });
-
-  // ── Dismiss after animation completes ──
-  const dismiss = () => {
-    splash.classList.add('out');
-    setTimeout(() => { if(splash.parentNode) splash.remove(); }, 750);
-  };
-  setTimeout(dismiss, 2400);
-
-  // ── Also allow tap to skip ──
-  splash.addEventListener('click', dismiss);
-})();
-
 /* ─── NAV SCROLL ──────────────────────────────────────────────────── */
 const nav = document.getElementById('nav');
 const ham = document.getElementById('ham');
@@ -1424,9 +1237,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   const c = document.getElementById('hero-canvas');
   const ctx = c.getContext('2d');
   let W, H, pts = [];
-  const isMobile = () => window.innerWidth <= 768;
-  const N = isMobile() ? 35 : 75;
-  const DIST = isMobile() ? 100 : 145;
+  const N = 75, DIST = 145;
 
   function init(){
     W = c.width = window.innerWidth;
@@ -1555,13 +1366,12 @@ document.querySelectorAll('.ws-card').forEach(c => progIo.observe(c));
 
 /* ─── PARALLAX (ABOUT MANIFESTO — desktop only) ──────────────────── */
 const parEl = document.getElementById('par-left');
-if(parEl && window.innerWidth > 768){
-  window.addEventListener('scroll', () => {
-    const rect = parEl.closest('section').getBoundingClientRect();
-    const p = -rect.top / window.innerHeight;
-    if(p > -.6 && p < 1.6) parEl.style.transform = `translateY(${p*28}px)`;
-  }, {passive:true});
-}
+window.addEventListener('scroll', () => {
+  if(!parEl) return;
+  const rect = parEl.closest('section').getBoundingClientRect();
+  const p = -rect.top / window.innerHeight;
+  if(p > -.6 && p < 1.6) parEl.style.transform = `translateY(${p*28}px)`;
+}, {passive:true});
 
 /* ─── FORM SUBMIT ────────────────────────────────────────────────── */
 function hookForm(formId, successId){
