@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Built Young Podcast — Under 30. Over $1M. No permission needed.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+/* ─── RESET & VARIABLES ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --fire:#E04E12;
+  --gold:#F5B829;
+  --cream:#F9F4EE;
+  --ink:#131010;
+  --ink2:#1c1919;
+  --ink3:#221e1e;
+  --fire-a15:rgba(224,78,18,.15);
+  --fire-a30:rgba(224,78,18,.30);
+  --gold-a15:rgba(245,184,41,.15);
+  --cream-a60:rgba(249,244,238,.6);
+  --cream-a40:rgba(249,244,238,.4);
+  --cream-a15:rgba(249,244,238,.15);
+  --cream-a08:rgba(249,244,238,.08);
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Barlow Condensed',sans-serif;
+  background:var(--ink);
+  color:var(--cream);
+  overflow-x:hidden;
+  line-height:1.5;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--fire)}
+
+/* ─── TYPOGRAPHY ────────────────────────────────────────────────── */
+.h-bebas{font-family:'Bebas Neue',sans-serif;letter-spacing:.03em;line-height:1}
+.label{
+  display:inline-block;
+  font-size:.78rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--fire);
+}
+
+/* ─── BUTTONS ───────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.4rem;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;
+  letter-spacing:.13em;text-transform:uppercase;
+  padding:.8rem 1.9rem;border:none;
+  clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+  cursor:pointer;
+}
+.btn:hover{transform:scale(1.04)}
+.btn-fire{background:var(--fire);color:#fff}
+.btn-fire:hover{box-shadow:0 6px 28px rgba(224,78,18,.55)}
+.btn-ghost{background:transparent;color:var(--fire);box-shadow:inset 0 0 0 2px var(--fire)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--fire),0 0 22px var(--fire-a30)}
+.btn-ghost-cream{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 2px rgba(249,244,238,.35)}
+.btn-ghost-cream:hover{box-shadow:inset 0 0 0 2px var(--cream),0 0 16px rgba(249,244,238,.2)}
+.btn-ghost-gold{background:transparent;color:var(--gold);box-shadow:inset 0 0 0 2px var(--gold)}
+.btn-ghost-gold:hover{box-shadow:inset 0 0 0 2px var(--gold),0 0 22px rgba(245,184,41,.45)}
+.btn-ink{background:var(--ink);color:var(--cream);box-shadow:inset 0 0 0 2px rgba(249,244,238,.2)}
+.btn-ink:hover{background:var(--fire);box-shadow:0 6px 28px rgba(224,78,18,.45)}
+
+/* ─── SECTION BASE ──────────────────────────────────────────────── */
+.section{
+  padding:6rem 2rem;
+  opacity:0;transform:translateY(44px);
+  transition:opacity .72s ease,transform .72s ease;
+}
+.section.visible{opacity:1;transform:translateY(0)}
+.wrap{max-width:1200px;margin:0 auto}
+
+/* ─── GRAIN OVERLAY ─────────────────────────────────────────────── */
+.grain{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:300px 300px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════════════════════ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 2.5rem;
+  transition:background .3s,backdrop-filter .3s,box-shadow .3s;
+}
+#nav.scrolled{
+  background:rgba(19,16,16,.88);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 2px 24px rgba(0,0,0,.55);
+}
+.nav-logo{display:flex;align-items:baseline;gap:.22rem}
+.nav-logo .nb{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;color:#fff;letter-spacing:.05em}
+.nav-logo .ny{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:700;font-size:1.45rem;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{
+  font-size:.88rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--cream-a60);transition:color .2s;
+}
+.nav-links a:hover{color:var(--cream)}
+.nav-cta{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--fire);color:#fff;border:none;
+  padding:.5rem 1.35rem;
+  clip-path:polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));
+  transition:transform .18s,box-shadow .18s;
+}
+.nav-cta:hover{transform:scale(1.04);box-shadow:0 4px 20px rgba(224,78,18,.5)}
+/* hamburger */
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
+.ham span{display:block;width:24px;height:2px;background:var(--cream);transition:all .3s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:860px){
+  .nav-links{
+    display:none;position:fixed;inset:0;background:var(--ink);
+    flex-direction:column;justify-content:center;align-items:center;
+    gap:2.5rem;z-index:800;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.5rem}
+  .nav-links .nav-cta{font-size:1.1rem;padding:.8rem 2.2rem}
+  .ham{display:flex;z-index:1000}
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════════════ */
+#hero{
+  position:relative;height:100vh;min-height:620px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--ink);overflow:hidden;
+  opacity:1!important;transform:none!important;
+}
+#hero-canvas{position:absolute;inset:0;z-index:1}
+.hero-content{position:relative;z-index:3;max-width:920px;padding:0 1.5rem}
+.hero-eyebrow{
+  display:block;font-size:.85rem;font-weight:700;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--fire);margin-bottom:1.6rem;
+}
+.hero-h1{line-height:.92;margin-bottom:1.6rem}
+.hero-line{
+  display:block;font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(5rem,16vw,11.5rem);letter-spacing:.04em;
+}
+.hero-line.white{color:#fff}
+.hero-line.gold{color:var(--gold)}
+.hero-char{
+  display:inline-block;
+  opacity:0;transform:translateY(36px) rotate(6deg);
+  transition:opacity .38s ease,transform .38s ease;
+}
+.hero-char.in{opacity:1;transform:none}
+.hero-sub{
+  font-size:clamp(1rem,2.6vw,1.42rem);font-weight:400;
+  color:var(--cream);letter-spacing:.05em;margin-bottom:2.6rem;
+}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.hero-stats{display:flex;justify-content:center;flex-wrap:wrap}
+.stat-col{
+  padding:.7rem 2rem;
+  border-right:1px solid var(--cream-a15);
+  text-align:center;
+}
+.stat-col:last-child{border-right:none}
+.stat-num{
+  display:block;font-family:'Bebas Neue',sans-serif;
+  font-size:2.1rem;color:var(--gold);line-height:1;
+}
+.stat-lbl{
+  display:block;font-size:.75rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream-a40);margin-top:.2rem;
+}
+.scroll-ind{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  z-index:3;display:flex;flex-direction:column;align-items:center;gap:.45rem;
+}
+.scroll-ind span{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream-a40)}
+.chevron{
+  width:18px;height:18px;
+  border-right:2px solid var(--cream-a40);
+  border-bottom:2px solid var(--cream-a40);
+  transform:rotate(45deg);
+  animation:chev 1.6s ease-in-out infinite;
+}
+@keyframes chev{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(4px,4px)}}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════════════════════════════ */
+#about{background:var(--ink2)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;
+}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:3rem}}
+.manifesto-wrap{position:relative;padding-left:2rem}
+.manifesto-wrap::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--fire);
+}
+.manifesto-text{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.18;
+  color:var(--cream);letter-spacing:.03em;
+}
+.host-name{
+  font-family:'Bebas Neue',sans-serif;font-size:2.6rem;
+  color:var(--gold);margin-bottom:.15rem;
+}
+.host-role{
+  font-size:.82rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fire);display:block;margin-bottom:1.3rem;
+}
+.about-bio p{font-size:1.08rem;color:var(--cream-a60);line-height:1.75;margin-bottom:2rem}
+.badges{display:flex;flex-wrap:wrap;gap:.75rem}
+.badge{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.55rem 1.1rem;
+  border:1px solid var(--cream-a15);
+  font-size:.88rem;font-weight:600;letter-spacing:.07em;
+  color:var(--cream);transition:border-color .2s,background .2s;
+}
+.badge:hover{border-color:var(--fire);background:var(--fire-a15)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PODCAST
+═══════════════════════════════════════════════════════════════════ */
+#podcast{background:var(--ink)}
+/* marquee */
+.marquee-outer{overflow:hidden;margin-bottom:3.5rem;border-top:1px solid rgba(224,78,18,.2);border-bottom:1px solid rgba(224,78,18,.2)}
+.marquee-track{display:flex;white-space:nowrap;animation:marq 28s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.marquee-seg{display:flex;flex-shrink:0}
+.mitem{
+  font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:.16em;
+  color:var(--fire);padding:.72rem 2rem;
+  border-right:1px solid rgba(224,78,18,.18);
+}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* episode grid */
+.ep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+@media(max-width:1050px){.ep-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.ep-grid{grid-template-columns:1fr}}
+.ep-card{
+  background:var(--ink3);border-left:4px solid var(--fire);
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:box-shadow .28s;
+}
+.ep-card:hover{box-shadow:0 8px 40px rgba(224,78,18,.28)}
+.ep-cover{
+  position:relative;aspect-ratio:16/9;
+  background:linear-gradient(140deg,#1c1919 0%,#0e0c0c 100%);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.ep-rings{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.12}
+.ep-ring{
+  position:absolute;border-radius:50%;
+  border:1px solid var(--fire);
+}
+.ep-logomark{
+  position:relative;z-index:1;text-align:center;
+  font-family:'Bebas Neue',sans-serif;font-size:1.55rem;
+  color:rgba(249,244,238,.22);letter-spacing:.1em;line-height:1.1;
+}
+.ep-body{padding:1.4rem;flex:1}
+.ep-num{
+  font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.4rem;
+}
+.ep-guest{font-family:'Bebas Neue',sans-serif;font-size:1.95rem;color:var(--cream);letter-spacing:.02em;margin-bottom:.2rem}
+.ep-company{font-size:.92rem;color:var(--cream-a60);margin-bottom:.8rem}
+.ep-tags{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.tag-industry{
+  font-size:.73rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--cream-a15);color:var(--cream-a60);padding:.18rem .55rem;
+}
+.tag-rev{
+  font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--fire);color:#fff;padding:.22rem .65rem;
+}
+.ep-actions{
+  display:flex;gap:0;
+  opacity:0;transform:translateY(6px);
+  transition:opacity .22s,transform .22s;
+  border-top:1px solid rgba(249,244,238,.07);
+}
+.ep-card:hover .ep-actions{opacity:1;transform:none}
+.ep-actions a{
+  flex:1;text-align:center;padding:.65rem;
+  font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  transition:background .18s,color .18s;color:var(--cream);
+}
+.ep-watch{background:var(--fire);color:#fff}
+.ep-watch:hover{background:#c44310}
+.ep-listen{background:var(--ink);border-left:1px solid rgba(249,244,238,.1)}
+.ep-listen:hover{background:var(--ink3);color:var(--gold)}
+.platform-btns{display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap}
+
+/* ═══════════════════════════════════════════════════════════════════
+   COMMUNITY
+═══════════════════════════════════════════════════════════════════ */
+#community{background:var(--ink2)}
+.member-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+@media(max-width:900px){.member-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.member-grid{grid-template-columns:1fr}}
+.mcard{height:290px;perspective:1000px;cursor:pointer}
+.mcard-inner{
+  position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;
+  transition:transform .62s cubic-bezier(.23,1,.32,1);
+}
+.mcard:hover .mcard-inner,.mcard.flipped .mcard-inner{transform:rotateY(180deg)}
+.mcard-front,.mcard-back{
+  position:absolute;inset:0;padding:1.4rem;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  display:flex;flex-direction:column;
+}
+.mcard-front{background:var(--ink3);border-left:4px solid var(--fire)}
+.mcard-back{
+  background:#211d1d;border-left:4px solid var(--gold);
+  transform:rotateY(180deg);gap:.65rem;
+}
+.m-namerow{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.25rem}
+.m-name{font-family:'Bebas Neue',sans-serif;font-size:1.85rem;color:var(--cream)}
+.m-age{
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  background:var(--fire);color:#fff;padding:.18rem .45rem;
+}
+.m-company{font-size:.98rem;font-weight:600;color:var(--cream-a60);margin-bottom:.45rem}
+.m-itag{
+  font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid var(--gold);color:var(--gold);padding:.15rem .45rem;display:inline-block;
+}
+.m-rev{
+  font-size:.76rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  background:var(--fire);color:#fff;padding:.2rem .55rem;display:inline-block;margin-top:.5rem;
+}
+.m-city{font-size:.82rem;color:var(--cream-a40);margin-top:auto}
+/* back */
+.needs-lbl{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.needs-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.need{
+  font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  background:var(--fire-a15);border:1px solid rgba(224,78,18,.4);color:var(--fire);
+  padding:.18rem .45rem;
+}
+.m-desc{font-size:.88rem;color:var(--cream-a60);line-height:1.55;flex:1}
+.m-connect{
+  font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:transparent;color:var(--gold);
+  box-shadow:inset 0 0 0 1px var(--gold);
+  padding:.4rem .9rem;align-self:flex-start;border:none;cursor:pointer;
+  clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px));
+  transition:background .18s,color .18s;
+}
+.m-connect:hover{background:var(--gold);color:var(--ink)}
+/* ticker */
+.comm-ticker{
+  text-align:center;padding:2rem 1rem;
+  border:1px solid var(--cream-a08);background:var(--ink);
+}
+.ticker-lbl{
+  display:block;font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--cream-a40);margin-bottom:.5rem;
+}
+.ticker-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5vw,4rem);color:var(--gold)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   VC ACCESS
+═══════════════════════════════════════════════════════════════════ */
+#vc-access{background:var(--ink)}
+.vc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:760px){.vc-grid{grid-template-columns:1fr;gap:3rem}}
+.vc-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2rem,4vw,3.1rem);color:var(--cream);
+  margin-bottom:1.2rem;line-height:1.1;
+}
+.vc-intro{font-size:1.08rem;color:var(--cream-a60);line-height:1.75;margin-bottom:2.4rem}
+.vc-rows{display:flex;flex-direction:column;gap:1rem}
+.vc-row{
+  display:flex;align-items:flex-start;gap:1.2rem;
+  padding:.9rem 1.2rem;border-left:4px solid var(--fire);
+  background:rgba(224,78,18,.04);
+}
+.vc-n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--fire);line-height:1;flex-shrink:0}
+.vc-t{font-size:1rem;color:var(--cream);line-height:1.5;padding-top:.2rem}
+/* form card */
+.form-card{background:var(--ink2);padding:2.4rem;border:1px solid var(--cream-a08)}
+.form-title{font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.05em;color:var(--cream);margin-bottom:1.4rem}
+.fg{margin-bottom:.9rem}
+.fg label{
+  display:block;font-size:.73rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--cream-a40);margin-bottom:.35rem;
+}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:var(--cream-a08);border:1px solid var(--cream-a15);
+  color:var(--cream);font-family:'Barlow Condensed',sans-serif;font-size:1rem;
+  padding:.7rem .95rem;outline:none;transition:border-color .2s;
+  appearance:none;-webkit-appearance:none;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--cream-a40)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--fire)}
+.fg select option{background:var(--ink2);color:var(--cream)}
+.fg textarea{resize:vertical;min-height:76px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:500px){.frow{grid-template-columns:1fr}}
+/* success */
+.form-success{display:none;text-align:center;padding:2.5rem 1rem;flex-direction:column;align-items:center;gap:.9rem}
+.form-success.show{display:flex}
+.spark{font-size:3rem;animation:sparkIn .55s ease}
+@keyframes sparkIn{0%{transform:scale(0) rotate(-20deg);opacity:0}60%{transform:scale(1.25) rotate(5deg)}100%{transform:scale(1) rotate(0);opacity:1}}
+.fs-head{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--fire);letter-spacing:.05em}
+.fs-sub{font-size:1rem;color:var(--cream-a60)}
+
+/* ═══════════════════════════════════════════════════════════════════
+   YOUNG BUILDERS
+═══════════════════════════════════════════════════════════════════ */
+#young-builders{background:var(--cream);color:var(--ink)}
+#young-builders .label{color:var(--fire)}
+#young-builders .section-h{color:var(--ink)}
+.elig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem}
+@media(max-width:760px){.elig-grid{grid-template-columns:1fr}}
+.elig-card{
+  background:#fff;border-top:4px solid var(--fire);
+  padding:2rem;text-align:center;
+  transition:transform .22s,box-shadow .22s;
+}
+.elig-card:hover{transform:translateY(-5px);box-shadow:0 14px 42px rgba(19,16,16,.13)}
+.elig-icon{font-size:2.4rem;display:block;margin-bottom:.7rem}
+.elig-card h3{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;
+  color:var(--ink);margin-bottom:.5rem;
+}
+.elig-card p{font-size:.95rem;color:rgba(19,16,16,.62)}
+.builder-form-wrap{
+  max-width:720px;margin:0 auto;
+  background:var(--ink);padding:2.5rem;
+}
+.builder-form-wrap .form-title{color:var(--cream)}
+.elig-note{
+  font-size:.88rem;color:var(--cream-a40);text-align:center;
+  margin-top:1.1rem;line-height:1.65;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   WORKSHOPS
+═══════════════════════════════════════════════════════════════════ */
+#workshops{background:var(--ink2)}
+.ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:900px){.ws-grid{grid-template-columns:1fr}}
+.ws-card{
+  background:var(--ink3);border-left:4px solid var(--fire);
+  padding:1.75rem;display:flex;flex-direction:column;gap:.85rem;
+  transition:border-color .25s,box-shadow .25s;
+}
+.ws-card:hover{border-left-color:var(--gold);box-shadow:0 0 32px rgba(245,184,41,.2)}
+.ws-tag{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--fire);
+}
+.ws-dot{width:7px;height:7px;border-radius:50%;background:var(--fire);animation:dot 2s ease-in-out infinite}
+@keyframes dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.85)}}
+.ws-title{
+  font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:.03em;
+  color:var(--cream);line-height:1.2;
+}
+.ws-meta{display:flex;flex-direction:column;gap:.35rem}
+.ws-meta span{font-size:.88rem;color:var(--cream-a60)}
+.ws-meta span::before{margin-right:.4rem}
+.ws-prog-wrap{display:flex;flex-direction:column;gap:.35rem}
+.ws-prog-head{display:flex;justify-content:space-between;font-size:.75rem;font-weight:600;letter-spacing:.09em;color:var(--cream-a40)}
+.ws-prog-head .spots{color:var(--fire)}
+.ws-prog-bg{height:3px;background:var(--cream-a08);overflow:hidden}
+.ws-prog-fill{height:100%;background:var(--fire);transition:width 1.3s ease;width:0%}
+.ws-note{font-size:.88rem;color:var(--cream-a60);line-height:1.6}
+
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════════ */
+footer{
+  background:var(--ink);padding:5rem 2rem 2rem;
+  opacity:1!important;transform:none!important;
+}
+.footer-grid{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:4rem;margin-bottom:3rem;
+}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr;gap:2.5rem}}
+.foot-logo{display:flex;align-items:baseline;gap:.2rem;margin-bottom:.9rem}
+.foot-logo .nb{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:.05em}
+.foot-logo .ny{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--gold)}
+.foot-tag{font-size:.98rem;color:var(--cream-a60);margin-bottom:.4rem}
+.foot-mani{font-size:.88rem;color:var(--cream-a40);font-style:italic}
+.foot-col h4{
+  font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.08em;
+  color:var(--cream);margin-bottom:1rem;
+}
+.foot-links{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.foot-links a{font-size:.93rem;color:var(--cream-a40);transition:color .18s}
+.foot-links a:hover{color:var(--cream)}
+.foot-email{font-size:.93rem;color:var(--cream-a40);display:block;margin-bottom:.3rem;transition:color .18s}
+.foot-email:hover{color:var(--fire)}
+.foot-web{font-size:.93rem;color:var(--cream-a40);transition:color .18s}
+.foot-web:hover{color:var(--fire)}
+.social-row{display:flex;gap:.75rem;margin-top:1rem}
+.soc{
+  width:34px;height:34px;border:1px solid var(--cream-a15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;font-weight:700;color:var(--cream-a40);
+  transition:border-color .18s,color .18s;
+}
+.soc:hover{border-color:var(--fire);color:var(--fire)}
+.foot-rule{height:1px;background:var(--fire);opacity:.55;max-width:1200px;margin:0 auto 1.5rem}
+.foot-copy{text-align:center;font-size:.82rem;color:var(--cream-a40);max-width:1200px;margin:0 auto}
+
+/* ─── section heading helper ──── */
+.section-h{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.4rem,5vw,3.8rem);
+  letter-spacing:.04em;margin-bottom:.5rem;
+}
+.section-sub{font-size:1.1rem;color:var(--cream-a60);margin-bottom:3rem;font-weight:400}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE — base touch fixes (all screen sizes)
+═══════════════════════════════════════════════════════════════════ */
+*{-webkit-tap-highlight-color:transparent}
+
+/* iOS Safari: prevent input zoom (requires font-size ≥ 16px) */
+.fg input,.fg select,.fg textarea{font-size:1rem}
+@supports (-webkit-touch-callout:none){
+  .fg input,.fg select,.fg textarea{font-size:16px}
+}
+
+/* Hero: use svh so iOS address bar doesn't eat the viewport */
+@supports(height:100svh){
+  #hero{height:100svh}
+}
+
+/* ── 768px ── tablet / large phone ─────────────────────────── */
+@media(max-width:768px){
+  /* Sections */
+  .section{padding:4rem 1.5rem}
+
+  /* Navbar */
+  #nav{padding:1rem 1.5rem}
+
+  /* Hero eyebrow — key overflow fix */
+  .hero-eyebrow{font-size:.7rem;letter-spacing:.15em;margin-bottom:1rem}
+  .hero-sub{font-size:1.05rem;margin-bottom:2rem}
+  .hero-ctas{margin-bottom:2rem}
+  .stat-col{padding:.6rem 1.2rem}
+  .stat-num{font-size:1.75rem}
+  .stat-lbl{font-size:.68rem;letter-spacing:.1em}
+
+  /* About */
+  .manifesto-text{font-size:clamp(2rem,5.5vw,2.9rem)}
+
+  /* Podcast — always show Watch/Listen on touch devices */
+  .ep-actions{
+    opacity:1!important;
+    transform:none!important;
+    border-top:1px solid rgba(249,244,238,.1);
+  }
+
+  /* Community cards — flexible height */
+  .mcard{height:auto;min-height:290px}
+
+  /* VC form */
+  .form-card{padding:1.75rem}
+
+  /* Builder form */
+  .builder-form-wrap{padding:2rem 1.5rem}
+
+  /* Workshops */
+  .ws-tag{font-size:.68rem;letter-spacing:.12em}
+
+  /* Footer */
+  footer{padding:3.5rem 1.5rem 2rem}
+  .footer-grid{gap:2rem}
+}
+
+/* ── 480px ── standard smartphone ──────────────────────────── */
+@media(max-width:480px){
+  /* Sections */
+  .section{padding:3rem 1.15rem}
+
+  /* Hero */
+  .hero-eyebrow{font-size:.65rem;letter-spacing:.1em}
+  .hero-content{padding:0 .75rem}
+
+  /* Stack CTA buttons */
+  .hero-ctas{flex-direction:column;align-items:center;gap:.75rem;margin-bottom:1.75rem}
+  .hero-ctas .btn{width:100%;max-width:300px;justify-content:center}
+
+  /* Stack stat numbers vertically */
+  .hero-stats{flex-direction:column;align-items:center}
+  .stat-col{
+    border-right:none!important;
+    border-bottom:1px solid var(--cream-a15);
+    width:100%;max-width:240px;
+    padding:.55rem 0;
+  }
+  .stat-col:last-child{border-bottom:none}
+
+  /* About */
+  .manifesto-text{font-size:1.85rem}
+  .about-bio p{font-size:1rem}
+  .badges{gap:.5rem}
+  .badge{font-size:.82rem;padding:.45rem .9rem}
+
+  /* Podcast */
+  .ep-body{padding:1rem}
+  .ep-guest{font-size:1.65rem}
+  .ep-actions a{padding:.6rem .4rem;font-size:.75rem}
+
+  /* Community */
+  .mcard{min-height:270px}
+  .m-name{font-size:1.6rem}
+  .m-desc{font-size:.82rem}
+
+  /* VC section */
+  .vc-h2{font-size:clamp(1.8rem,7vw,3.1rem)}
+  .form-card{padding:1.25rem}
+
+  /* Young builders */
+  .builder-form-wrap{padding:1.5rem 1rem}
+  .elig-card{padding:1.5rem}
+  .elig-card h3{font-size:1.7rem}
+
+  /* Section headings */
+  .section-h{font-size:2.1rem}
+  .section-sub{font-size:1rem;margin-bottom:2rem}
+
+  /* Workshops */
+  .ws-card{padding:1.25rem}
+  .ws-title{font-size:1.25rem}
+  .btn{padding:.72rem 1.4rem;font-size:.88rem}
+
+  /* Footer */
+  footer{padding:2.5rem 1.15rem 1.5rem}
+  .foot-copy{font-size:.75rem;padding:0 .5rem}
+}
+
+/* ── 375px ── small phones (iPhone SE, etc.) ────────────────── */
+@media(max-width:375px){
+  .section{padding:2.5rem 1rem}
+  .hero-eyebrow{font-size:.6rem;letter-spacing:.08em}
+  .hero-sub{font-size:.95rem}
+  .section-h{font-size:1.9rem}
+  .manifesto-text{font-size:1.7rem}
+  .form-card{padding:1rem}
+  .builder-form-wrap{padding:1.25rem .875rem}
+  .vc-h2{font-size:1.75rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══════════════════════════════════════════════════════ -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <span class="nb">BUILT</span>
+    <span class="ny">Young</span>
+  </a>
+  <button class="ham" id="ham" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+    <li><a href="#community">Community</a></li>
+    <li><a href="#vc-access">VC Access</a></li>
+    <li><a href="#young-builders">Young Builders</a></li>
+    <li><a href="#workshops">Workshops</a></li>
+    <li><a href="#young-builders"><button class="nav-cta">Join Us</button></a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="grain"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Undergrad Founder Stories</span>
+    <div class="hero-h1">
+      <span class="hero-line white" id="hb">BUILT</span>
+      <span class="hero-line gold" id="hy">YOUNG</span>
+    </div>
+    <p class="hero-sub">Under 30. Over $1M. No permission needed.</p>
+    <div class="hero-ctas">
+      <a href="#podcast" class="btn btn-fire">Listen Now</a>
+      <a href="#community" class="btn btn-ghost">Join the Community</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-col">
+        <span class="stat-num" data-prefix="$" data-target="14" data-suffix="M+">$0</span>
+        <span class="stat-lbl">Combined Revenue</span>
+      </div>
+      <div class="stat-col">
+        <span class="stat-num" data-prefix="" data-target="20" data-suffix="+">0</span>
+        <span class="stat-lbl">Founders</span>
+      </div>
+      <div class="stat-col">
+        <span class="stat-num" data-prefix="" data-target="2" data-suffix="">0</span>
+        <span class="stat-lbl">Platforms</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-ind">
+    <span>Scroll</span>
+    <div class="chevron"></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═════════════════════════════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="manifesto-wrap" id="par-left">
+        <div class="manifesto-text">
+          EITHER YOU LEARN<br>OR YOU WIN.<br><br>EITHER WAY,<br>YOU MOVE.
+        </div>
+      </div>
+      <div class="about-bio">
+        <h3 class="host-name">Natalie Chu</h3>
+        <span class="host-role">Host, Built Young Podcast</span>
+        <p>Built Young is hosted by Natalie Chu, a headhunter-turned-founder advocate with deep roots in B2B sales, org design, and talent strategy. She built a bridge between young operators doing real revenue and the investors who want to back them before anyone else does.</p>
+        <div class="badges">
+          <div class="badge">🎙 Podcast + YouTube</div>
+          <div class="badge">🤝 Invite-Only Community</div>
+          <div class="badge">💼 VC Deal Flow</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PODCAST ═══════════════════════════════════════════════════════ -->
+<section id="podcast" class="section">
+  <div class="wrap" style="margin-bottom:2rem">
+    <span class="label">Listen &amp; Watch</span>
+    <h2 class="section-h">THE SHOW</h2>
+    <p class="section-sub">Real founders. Real revenue. No filters.</p>
+  </div>
+
+  <div class="marquee-outer">
+    <div class="marquee-track">
+      <div class="marquee-seg">
+        <span class="mitem">ALEX · $1.2M ARR</span>
+        <span class="mitem">JAMIE · $800K REVENUE</span>
+        <span class="mitem">SARAH · $2M EXIT</span>
+        <span class="mitem">RYAN · $1.5M</span>
+        <span class="mitem">CHLOE · $900K</span>
+        <span class="mitem">MARCUS · $3M</span>
+        <span class="mitem">PRIYA · $600K</span>
+        <span class="mitem">KAI · $1.1M</span>
+        <span class="mitem">LIN · $780K</span>
+      </div>
+      <div class="marquee-seg" aria-hidden="true">
+        <span class="mitem">ALEX · $1.2M ARR</span>
+        <span class="mitem">JAMIE · $800K REVENUE</span>
+        <span class="mitem">SARAH · $2M EXIT</span>
+        <span class="mitem">RYAN · $1.5M</span>
+        <span class="mitem">CHLOE · $900K</span>
+        <span class="mitem">MARCUS · $3M</span>
+        <span class="mitem">PRIYA · $600K</span>
+        <span class="mitem">KAI · $1.1M</span>
+        <span class="mitem">LIN · $780K</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="ep-grid">
+      <!-- EP 01 -->
+      <div class="ep-card">
+        <div class="ep-cover">
+          <div class="ep-rings" id="er1"></div>
+          <div class="ep-logomark">BUILT<br>YOUNG</div>
+        </div>
+        <div class="ep-body">
+          <div class="ep-num">Episode 01</div>
+          <div class="ep-guest">Alex Chen</div>
+          <div class="ep-company">FreightFlow · Logistics SaaS</div>
+          <div class="ep-tags">
+            <span class="tag-industry">SaaS</span>
+            <span class="tag-rev">$1.2M Revenue</span>
+          </div>
+        </div>
+        <div class="ep-actions">
+          <a href="#" class="ep-watch">▶ Watch Now</a>
+          <a href="#" class="ep-listen">♫ Listen Now</a>
+        </div>
+      </div>
+      <!-- EP 02 -->
+      <div class="ep-card">
+        <div class="ep-cover">
+          <div class="ep-rings" id="er2"></div>
+          <div class="ep-logomark">BUILT<br>YOUNG</div>
+        </div>
+        <div class="ep-body">
+          <div class="ep-num">Episode 02</div>
+          <div class="ep-guest">Jamie Liu</div>
+          <div class="ep-company">GlowRoot · DTC Skincare</div>
+          <div class="ep-tags">
+            <span class="tag-industry">DTC</span>
+            <span class="tag-rev">$800K Revenue</span>
+          </div>
+        </div>
+        <div class="ep-actions">
+          <a href="#" class="ep-watch">▶ Watch Now</a>
+          <a href="#" class="ep-listen">♫ Listen Now</a>
+        </div>
+      </div>
+      <!-- EP 03 -->
+      <div class="ep-card">
+        <div class="ep-cover">
+          <div class="ep-rings" id="er3"></div>
+          <div class="ep-logomark">BUILT<br>YOUNG</div>
+        </div>
+        <div class="ep-body">
+          <div class="ep-num">Episode 03</div>
+          <div class="ep-guest">Sarah Kim</div>
+          <div class="ep-company">CaseLaw AI · Legal Tech</div>
+          <div class="ep-tags">
+            <span class="tag-industry">LegalTech</span>
+            <span class="tag-rev">$2.1M Revenue</span>
+          </div>
+        </div>
+        <div class="ep-actions">
+          <a href="#" class="ep-watch">▶ Watch Now</a>
+          <a href="#" class="ep-listen">♫ Listen Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="platform-btns">
+      <a href="#" class="btn btn-fire">▶ YouTube</a>
+      <a href="#" class="btn btn-ghost-cream">♫ Spotify</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY ════════════════════════════════════════════════════ -->
+<section id="community" class="section">
+  <div class="wrap">
+    <span class="label">Who's Inside</span>
+    <h2 class="section-h">WHO BUILDS WITH US</h2>
+    <p class="section-sub">An invite-only network of the most interesting young operators doing real revenue right now.</p>
+
+    <div class="member-grid">
+
+      <!-- Alex -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Alex</span><span class="m-age">24</span></div>
+            <div class="m-company">FreightFlow</div>
+            <div><span class="m-itag">Freight SaaS</span></div>
+            <span class="m-rev">$1.2M</span>
+            <div class="m-city">📍 San Francisco</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Hiring</span><span class="need">Fundraising</span></div>
+            <p class="m-desc">Built an AI dispatch platform for mid-market freight carriers. Processing 200K+ shipments per month.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jamie -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Jamie</span><span class="m-age">26</span></div>
+            <div class="m-company">GlowRoot</div>
+            <div><span class="m-itag">DTC Skincare</span></div>
+            <span class="m-rev">$800K</span>
+            <div class="m-city">📍 Los Angeles</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Distribution</span><span class="need">GTM</span></div>
+            <p class="m-desc">Zero-ingredient transparency skincare brand. Built entirely through owned community, zero paid ads.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sarah -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Sarah</span><span class="m-age">23</span></div>
+            <div class="m-company">CaseLaw AI</div>
+            <div><span class="m-itag">Legal Tech</span></div>
+            <span class="m-rev">$2.1M</span>
+            <div class="m-city">📍 New York</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Intro to VCs</span></div>
+            <p class="m-desc">AI legal research tool used by 300+ solo practitioners and boutique law firms nationwide.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ryan -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Ryan</span><span class="m-age">27</span></div>
+            <div class="m-company">CreatorStack</div>
+            <div><span class="m-itag">Creator Economy</span></div>
+            <span class="m-rev">$1.5M</span>
+            <div class="m-city">📍 Austin</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Co-founder</span></div>
+            <p class="m-desc">Monetization infrastructure for mid-tier creators. 2K+ creators earning $500+ per month on platform.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chloe -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Chloe</span><span class="m-age">25</span></div>
+            <div class="m-company">PeerPath</div>
+            <div><span class="m-itag">EdTech</span></div>
+            <span class="m-rev">$950K</span>
+            <div class="m-city">📍 Toronto</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Mentorship</span></div>
+            <p class="m-desc">Peer tutoring marketplace for STEM undergrads. 12K registered students, 800+ active tutors.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marcus -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Marcus</span><span class="m-age">22</span></div>
+            <div class="m-company">PayBridge</div>
+            <div><span class="m-itag">B2B Payments</span></div>
+            <span class="m-rev">$3.2M</span>
+            <div class="m-city">📍 San Francisco</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Hiring</span></div>
+            <p class="m-desc">B2B invoice financing for SMBs in emerging markets. $8M in invoices processed in the last 90 days.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Priya -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Priya</span><span class="m-age">24</span></div>
+            <div class="m-company">TerraForge</div>
+            <div><span class="m-itag">Climate Hardware</span></div>
+            <span class="m-rev">$600K</span>
+            <div class="m-city">📍 Boston</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Fundraising</span><span class="need">GTM</span></div>
+            <p class="m-desc">Modular carbon capture units for mid-size manufacturing. First climate hardware startup under 25 to reach $600K.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kai -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Kai</span><span class="m-age">26</span></div>
+            <div class="m-company">HireLoop</div>
+            <div><span class="m-itag">Recruiting Tool</span></div>
+            <span class="m-rev">$1.1M</span>
+            <div class="m-city">📍 Remote</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Distribution</span></div>
+            <p class="m-desc">AI sourcing tool that surfaces passive candidates from non-traditional pipelines. 180+ agency and in-house teams.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lin -->
+      <div class="mcard">
+        <div class="mcard-inner">
+          <div class="mcard-front">
+            <div class="m-namerow"><span class="m-name">Lin</span><span class="m-age">23</span></div>
+            <div class="m-company">ChainMind</div>
+            <div><span class="m-itag">Supply Chain AI</span></div>
+            <span class="m-rev">$780K</span>
+            <div class="m-city">📍 Singapore</div>
+          </div>
+          <div class="mcard-back">
+            <span class="needs-lbl">Currently Needs:</span>
+            <div class="needs-tags"><span class="need">Intro to VCs</span></div>
+            <p class="m-desc">Predictive demand intelligence for SE Asian FMCG distributors. Reduces overstock waste by 35% on average.</p>
+            <button class="m-connect" onclick="location.href='#young-builders'">Connect</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /member-grid -->
+
+    <div class="comm-ticker">
+      <span class="ticker-lbl">Total Community Revenue</span>
+      <span class="ticker-num" id="comm-rev" data-target="12130000">$0</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ VC ACCESS ═════════════════════════════════════════════════════ -->
+<section id="vc-access" class="section">
+  <div class="wrap">
+    <div class="vc-grid">
+      <div>
+        <span class="label">For Investors</span>
+        <h2 class="vc-h2">SEE THE DEAL FLOW<br>BEFORE ANYONE ELSE</h2>
+        <p class="vc-intro">Built Young is an early signal network. Our founders are 18 to 24 months ahead of the market. If you invest in early-stage startups led by operators under 30, this is your access point.</p>
+        <div class="vc-rows">
+          <div class="vc-row"><span class="vc-n">01</span><span class="vc-t">Direct introductions to vetted sub-30 founders</span></div>
+          <div class="vc-row"><span class="vc-n">02</span><span class="vc-t">Quarterly cohort briefings on community highlights</span></div>
+          <div class="vc-row"><span class="vc-n">03</span><span class="vc-t">First look before any founder goes public with fundraising</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="form-card">
+          <div class="form-title">Request VC Access</div>
+          <form id="vc-form">
+            <div class="fg"><label>Full Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="you@fund.com" required></div>
+            <div class="fg"><label>Fund Name</label><input type="text" placeholder="Fund or firm name" required></div>
+            <div class="fg">
+              <label>AUM Range</label>
+              <select required>
+                <option value="" disabled selected>Select range</option>
+                <option>Less than $10M</option>
+                <option>$10M to $50M</option>
+                <option>$50M to $200M</option>
+                <option>$200M+</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>Investment Stage</label>
+              <select required>
+                <option value="" disabled selected>Select stage</option>
+                <option>Pre-seed</option>
+                <option>Seed</option>
+                <option>Series A</option>
+                <option>Multi-stage</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-fire" style="width:100%;margin-top:.4rem">Request Access</button>
+          </form>
+          <div class="form-success" id="vc-ok">
+            <div class="spark">🔥</div>
+            <p class="fs-head">You're on the list.</p>
+            <span class="fs-sub">We'll be in touch.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ YOUNG BUILDERS ════════════════════════════════════════════════ -->
+<section id="young-builders" class="section">
+  <div class="wrap">
+    <span class="label">Join Us</span>
+    <h2 class="section-h" style="color:var(--ink)">ARE YOU BUILDING<br>SOMETHING REAL?</h2>
+    <p class="section-sub" style="color:rgba(19,16,16,.6);margin-bottom:2.5rem">Tell us what you have built. We review every application personally.</p>
+
+    <div class="elig-grid">
+      <div class="elig-card">
+        <span class="elig-icon">⚡</span>
+        <h3>Under 30</h3>
+        <p>You are building before the world gives you permission. That is the point.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">📈</span>
+        <h3>Real Revenue</h3>
+        <p>Customers pay you. Not just downloads, not just traction. Actual money changing hands.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">🔨</span>
+        <h3>Built From Scratch</h3>
+        <p>You started with nothing except an idea and the will to make it real.</p>
+      </div>
+    </div>
+
+    <div class="builder-form-wrap">
+      <div class="form-title">Apply to Join the Community</div>
+      <form id="builder-form">
+        <div class="frow">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="First name" required></div>
+          <div class="fg"><label>Age</label><input type="number" placeholder="Your age" min="16" max="30" required></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Company Name</label><input type="text" placeholder="What you built" required></div>
+          <div class="fg"><label>Your Role</label><input type="text" placeholder="e.g. Founder, CEO" required></div>
+        </div>
+        <div class="fg">
+          <label>Current Revenue</label>
+          <select required>
+            <option value="" disabled selected>Select range</option>
+            <option>Pre-revenue</option>
+            <option>Less than $100K</option>
+            <option>$100K to $500K</option>
+            <option>$500K to $1M</option>
+            <option>$1M+</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>What do you build?</label>
+          <textarea placeholder="1 to 2 sentences about your product or company" rows="3" required></textarea>
+        </div>
+        <div class="fg">
+          <label>How did you hear about Built Young?</label>
+          <input type="text" placeholder="Podcast, friend, social media...">
+        </div>
+        <button type="submit" class="btn btn-ink" style="width:100%;margin-top:.4rem">Apply Now</button>
+      </form>
+      <div class="form-success" id="builder-ok">
+        <div class="spark">✊</div>
+        <p class="fs-head" style="color:var(--gold)">Application received.</p>
+        <span class="fs-sub">We review every application personally. If you are the real thing, we will reach out.</span>
+      </div>
+      <p class="elig-note">We review every application personally.<br>If you are the real thing, we will reach out.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORKSHOPS ════════════════════════════════════════════════════ -->
+<section id="workshops" class="section">
+  <div class="wrap">
+    <span class="label">Events</span>
+    <h2 class="section-h">EVENTS &amp; WORKSHOPS</h2>
+    <p class="section-sub">Built Young runs workshops where young builders get real tools, real feedback, and real connections.</p>
+
+    <div class="ws-grid">
+
+      <div class="ws-card">
+        <div class="ws-tag"><span class="ws-dot"></span> UPCOMING · IN-PERSON</div>
+        <div class="ws-title">FROM ZERO TO FIRST $100K</div>
+        <div class="ws-meta">
+          <span>📅 June 14, 2025 · San Francisco, CA</span>
+          <span>⏱ Half-day workshop · 20 seats</span>
+        </div>
+        <div class="ws-prog-wrap">
+          <div class="ws-prog-head">
+            <span>Seats filled</span>
+            <span class="spots">7 spots left</span>
+          </div>
+          <div class="ws-prog-bg"><div class="ws-prog-fill" data-w="65%"></div></div>
+        </div>
+        <a href="#" class="btn btn-fire" style="font-size:.85rem;padding:.68rem 1.4rem;align-self:flex-start">Reserve Your Spot</a>
+      </div>
+
+      <div class="ws-card">
+        <div class="ws-tag"><span class="ws-dot"></span> UPCOMING · ONLINE</div>
+        <div class="ws-title">HOW TO PITCH WITHOUT BEING PITCHY</div>
+        <div class="ws-meta">
+          <span>📅 June 28, 2025 · Zoom</span>
+          <span>⏱ 90-minute live session · 50 seats</span>
+        </div>
+        <div class="ws-prog-wrap">
+          <div class="ws-prog-head">
+            <span>Seats filled</span>
+            <span class="spots">23 spots left</span>
+          </div>
+          <div class="ws-prog-bg"><div class="ws-prog-fill" data-w="54%"></div></div>
+        </div>
+        <a href="#" class="btn btn-fire" style="font-size:.85rem;padding:.68rem 1.4rem;align-self:flex-start">Reserve Your Spot</a>
+      </div>
+
+      <div class="ws-card" style="border-left-color:var(--gold)">
+        <div class="ws-tag" style="color:var(--gold)">
+          <span class="ws-dot" style="background:var(--gold);animation:none"></span> OPEN FOR PARTNERS
+        </div>
+        <div class="ws-title">HOST A BUILT YOUNG WORKSHOP</div>
+        <div class="ws-meta">
+          <span>📅 Rolling Applications</span>
+          <span>🏛 Incubators, universities &amp; accelerators</span>
+        </div>
+        <p class="ws-note">Partner with Built Young to bring founder programming to your community. We bring the curriculum, the energy, and the network.</p>
+        <a href="#" class="btn btn-ghost-gold" style="font-size:.85rem;padding:.68rem 1.4rem;align-self:flex-start">Apply to Host</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="foot-logo"><span class="nb">BUILT</span><span class="ny">Young</span></div>
+      <p class="foot-tag">Under 30. Over $1M. No permission needed.</p>
+      <p class="foot-mani">"Either you learn or you win. Either way, you move."</p>
+    </div>
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      <ul class="foot-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="#vc-access">VC Access</a></li>
+        <li><a href="#young-builders">Join as Builder</a></li>
+        <li><a href="#workshops">Workshops</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Connect</h4>
+      <a href="mailto:hello@builtyoung.co" class="foot-email">hello@builtyoung.co</a>
+      <a href="https://builtyoung.co" class="foot-web">builtyoung.co</a>
+      <div class="social-row">
+        <a href="#" class="soc" title="YouTube">YT</a>
+        <a href="#" class="soc" title="Spotify">SP</a>
+        <a href="#" class="soc" title="Instagram">IG</a>
+        <a href="#" class="soc" title="LinkedIn">in</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-rule"></div>
+  <p class="foot-copy">Built Young © 2025 · builtyoung.co · All rights reserved.</p>
+</footer>
+
+<script>
+/* ─── NAV SCROLL ──────────────────────────────────────────────────── */
+const nav = document.getElementById('nav');
+const ham = document.getElementById('ham');
+const navLinks = document.getElementById('nav-links');
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive:true});
+
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    ham.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+/* ─── SMOOTH SCROLL ──────────────────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+
+/* ─── HERO CANVAS PARTICLES ──────────────────────────────────────── */
+(function(){
+  const c = document.getElementById('hero-canvas');
+  const ctx = c.getContext('2d');
+  let W, H, pts = [];
+  const isMobile = () => window.innerWidth <= 768;
+  const N = isMobile() ? 35 : 75;
+  const DIST = isMobile() ? 100 : 145;
+
+  function init(){
+    W = c.width = window.innerWidth;
+    H = c.height = window.innerHeight;
+    pts = Array.from({length:N}, () => ({
+      x: Math.random()*W, y: Math.random()*H,
+      vx:(Math.random()-.5)*.38, vy:(Math.random()-.5)*.38,
+      r: Math.random()*1.6+.7
+    }));
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    pts.forEach(p => {
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>W) p.vx*=-1;
+      if(p.y<0||p.y>H) p.vy*=-1;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(224,78,18,.75)';
+      ctx.fill();
+    });
+    for(let i=0;i<pts.length;i++){
+      for(let j=i+1;j<pts.length;j++){
+        const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+        const d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x,pts[i].y);
+          ctx.lineTo(pts[j].x,pts[j].y);
+          ctx.strokeStyle=`rgba(224,78,18,${(1-d/DIST)*.22})`;
+          ctx.lineWidth=.6;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', init, {passive:true});
+  init(); draw();
+})();
+
+/* ─── HERO HEADLINE CHAR ANIMATION ──────────────────────────────── */
+(function(){
+  function split(el){
+    const txt = el.textContent;
+    el.innerHTML = [...txt].map((ch,i) =>
+      `<span class="hero-char" style="transition-delay:${i*.065}s">${ch}</span>`
+    ).join('');
+  }
+  split(document.getElementById('hb'));
+  split(document.getElementById('hy'));
+  setTimeout(() => {
+    document.querySelectorAll('.hero-char').forEach(c => c.classList.add('in'));
+  }, 180);
+})();
+
+/* ─── STAT COUNTERS ──────────────────────────────────────────────── */
+function runCounters(){
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+    const target = +el.dataset.target;
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    let cur = 0;
+    const step = target / (2000/16);
+    const t = setInterval(() => {
+      cur = Math.min(cur+step, target);
+      el.textContent = prefix + Math.floor(cur) + suffix;
+      if(cur >= target) clearInterval(t);
+    }, 16);
+  });
+}
+runCounters();
+
+/* ─── INTERSECTION OBSERVER — SECTION FADE IN ───────────────────── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, {threshold:.1});
+document.querySelectorAll('.section').forEach(s => io.observe(s));
+
+/* ─── COMMUNITY REVENUE TICKER ───────────────────────────────────── */
+const commEl = document.getElementById('comm-rev');
+let commDone = false;
+const commIo = new IntersectionObserver(entries => {
+  if(entries[0].isIntersecting && !commDone){
+    commDone = true;
+    const target = +commEl.dataset.target;
+    let cur = 0;
+    const step = target/(2500/16);
+    const t = setInterval(() => {
+      cur = Math.min(cur+step, target);
+      commEl.textContent = '$'+(cur/1e6).toFixed(2)+'M';
+      if(cur>=target) clearInterval(t);
+    }, 16);
+  }
+}, {threshold:.3});
+commIo.observe(document.getElementById('community'));
+
+/* ─── PROGRESS BARS ──────────────────────────────────────────────── */
+const progIo = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.ws-prog-fill').forEach(bar => {
+        bar.style.width = bar.dataset.w;
+      });
+      progIo.unobserve(e.target);
+    }
+  });
+}, {threshold:.3});
+document.querySelectorAll('.ws-card').forEach(c => progIo.observe(c));
+
+/* ─── CONCENTRIC RINGS (EPISODE COVERS) ─────────────────────────── */
+[['er1',[170,130,95,65,35]],['er2',[165,125,90,60,30]],['er3',[175,135,100,68,38]]]
+  .forEach(([id, sizes]) => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    sizes.forEach(s => {
+      const d = document.createElement('div');
+      d.className = 'ep-ring';
+      d.style.cssText = `width:${s}px;height:${s}px`;
+      el.appendChild(d);
+    });
+  });
+
+/* ─── PARALLAX (ABOUT MANIFESTO — desktop only) ──────────────────── */
+const parEl = document.getElementById('par-left');
+if(parEl && window.innerWidth > 768){
+  window.addEventListener('scroll', () => {
+    const rect = parEl.closest('section').getBoundingClientRect();
+    const p = -rect.top / window.innerHeight;
+    if(p > -.6 && p < 1.6) parEl.style.transform = `translateY(${p*28}px)`;
+  }, {passive:true});
+}
+
+/* ─── FORM SUBMIT ────────────────────────────────────────────────── */
+function hookForm(formId, successId){
+  const f = document.getElementById(formId);
+  const s = document.getElementById(successId);
+  if(!f||!s) return;
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    f.style.display = 'none';
+    s.classList.add('show');
+  });
+}
+hookForm('vc-form','vc-ok');
+hookForm('builder-form','builder-ok');
+
+/* ─── MOBILE CARD FLIP (TAP) ─────────────────────────────────────── */
+document.querySelectorAll('.mcard').forEach(card => {
+  card.addEventListener('click', e => {
+    if(e.target.closest('button')) return;
+    card.classList.toggle('flipped');
+  });
+});
+</script>
+</body>
+</html>
