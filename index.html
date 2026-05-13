@@ -615,23 +615,17 @@ footer{
 @keyframes sTagIn{to{opacity:.7}}
 
 /* ═══════════════════════════════════════════════════════════════════
-   MOBILE — base touch fixes (all screen sizes)
+   MOBILE RESPONSIVE — strictly scoped, never touches desktop
 ═══════════════════════════════════════════════════════════════════ */
-*{-webkit-tap-highlight-color:transparent}
-
-/* iOS Safari: prevent input zoom (requires font-size ≥ 16px) */
-.fg input,.fg select,.fg textarea{font-size:1rem}
-@supports (-webkit-touch-callout:none){
-  .fg input,.fg select,.fg textarea{font-size:16px}
-}
-
-/* Hero: use svh so iOS address bar doesn't eat the viewport */
-@supports(height:100svh){
-  #hero{height:100svh}
-}
 
 /* ── 768px ── tablet / large phone ─────────────────────────── */
 @media(max-width:768px){
+  /* iOS touch highlight — invisible on desktop anyway */
+  *{-webkit-tap-highlight-color:transparent}
+
+  /* iOS Safari: fix address bar eating hero + prevent input zoom */
+  #hero{height:100svh}
+  .fg input,.fg select,.fg textarea{font-size:16px!important}
   /* Sections */
   .section{padding:4rem 1.5rem}
 
