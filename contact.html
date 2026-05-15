@@ -6,20 +6,13 @@
 <title>Contact | Built Young</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --fire:#E04E12;--gold:#F5B829;--cream:#F9F4EE;--ink:#131010;--ink2:#1b1818;
-  --gray:#c8c4c0;--gray2:#a8a4a0;
-  --fd:'Bebas Neue',sans-serif;--fb:'Barlow Condensed',sans-serif;
-  --pad:clamp(5rem,9vw,9rem);--wrap:1200px;
-}
+:root{--fire:#E04E12;--gold:#F5B829;--cream:#F9F4EE;--ink:#131010;--ink2:#1b1818;--gray:#c8c4c0;--gray2:#a8a4a0;--fd:'Bebas Neue',sans-serif;--fb:'Barlow Condensed',sans-serif;--wrap:1200px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--cream);font-family:var(--fb);overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:9999}
 a{color:inherit;text-decoration:none}
-
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 4vw;display:flex;align-items:center;justify-content:space-between;transition:background .3s,backdrop-filter .3s;background:rgba(19,16,16,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(249,244,238,.07)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 4vw;display:flex;align-items:center;justify-content:space-between;background:rgba(19,16,16,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(249,244,238,.07)}
 .nav-logo{font-size:1.5rem;line-height:1;display:flex;align-items:baseline;gap:.08em}
 .nav-logo .b{font-family:var(--fd);color:var(--cream);letter-spacing:.02em}
 .nav-logo .y{font-family:var(--fb);font-weight:800;font-style:italic;color:var(--gold)}
@@ -27,7 +20,7 @@ a{color:inherit;text-decoration:none}
 .nav-links a{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--cream)}
 .nav-cta{font-family:var(--fb);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.5rem 1.2rem;background:var(--fire);color:#fff;border:2px solid var(--fire);transition:all .2s;cursor:pointer}
-.nav-cta:hover{background:#c84210;transform:translateY(-1px);box-shadow:0 5px 16px rgba(224,78,18,.4)}
+.nav-cta:hover{background:#c84210}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem}
 .hamburger span{display:block;width:22px;height:2px;background:var(--cream)}
 .mobile-menu{display:none;position:fixed;inset:0;background:var(--ink);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
@@ -35,52 +28,67 @@ a{color:inherit;text-decoration:none}
 .mobile-menu a{font-family:var(--fd);font-size:2.5rem;color:var(--cream);transition:color .2s}
 .mobile-menu a:hover{color:var(--fire)}
 .mobile-close{position:absolute;top:1.5rem;right:5vw;font-size:1.5rem;color:var(--gray2);cursor:pointer;background:none;border:none}
-
-/* SHARED */
 .container{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
-.page-body{padding-top:5rem}
-section{padding-block:var(--pad)}
-.s-tag{font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:.75rem}
-.s-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;margin-bottom:1rem}
-.s-sub{font-size:1.05rem;color:var(--gray);max-width:520px;line-height:1.6}
-.section-header{margin-bottom:3.5rem}
+section{padding-block:clamp(5rem,9vw,8rem)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-
-.btn{font-family:var(--fb);font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.9rem;border:2px solid transparent;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+.btn{font-family:var(--fb);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.75rem 1.6rem;border:2px solid transparent;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem;justify-content:center}
 .btn-primary{background:var(--fire);color:#fff;border-color:var(--fire)}
 .btn-primary:hover{background:#c84210;transform:translateY(-2px);box-shadow:0 8px 24px rgba(224,78,18,.4)}
 .btn-ghost{background:transparent;color:var(--fire);border-color:var(--fire)}
 .btn-ghost:hover{background:rgba(224,78,18,.09);transform:translateY(-2px)}
-.btn-gold{background:transparent;color:var(--gold);border-color:var(--gold)}
-.btn-gold:hover{background:rgba(245,184,41,.09);transform:translateY(-2px)}
 
-/* PAGE HERO BANNER (for inner pages) */
-.page-hero{padding:8rem 0 4rem;position:relative;overflow:hidden}
-.page-hero .rings-bg{position:absolute;right:-8vw;top:50%;transform:translateY(-50%);opacity:.08}
-.page-hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--fire);margin-bottom:1rem}
-.page-hero-title{font-family:var(--fd);font-size:clamp(3rem,7vw,6rem);line-height:.92;margin-bottom:1rem}
-.page-hero-sub{font-size:1.1rem;color:var(--gray);max-width:500px;line-height:1.65}
+/* HERO */
+.ct-hero{padding:9rem 0 5rem;background:var(--ink2);position:relative;overflow:hidden}
+.ct-hero .rings-deco{position:absolute;left:-10vw;top:60%;transform:translateY(-50%);opacity:.04}
+.ct-hero-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:start}
+.ct-hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1.25rem}
+.ct-hero-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4rem);line-height:.92;color:var(--cream);margin-bottom:1.25rem}
+.ct-hero-title span{color:var(--gold)}
+.ct-hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.7;max-width:400px;margin-bottom:1.5rem}
+.ct-hero-note{font-size:.9rem;color:var(--gray2);line-height:1.6;max-width:380px;margin-bottom:2.5rem}
+.ct-info{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.ct-info-row{display:flex;flex-direction:column;gap:.15rem;padding-left:1rem;border-left:2px solid rgba(224,78,18,.3)}
+.ct-info-label{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gray2)}
+.ct-info-value{font-size:.95rem;color:var(--cream)}
+.ct-info-value a{color:var(--fire);transition:color .2s}
+.ct-info-value a:hover{color:var(--gold)}
+.ct-social{display:flex;gap:.6rem;flex-wrap:wrap}
+.ct-social-link{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);border:1px solid rgba(249,244,238,.1);padding:.35rem .75rem;transition:all .2s}
+.ct-social-link:hover{color:var(--fire);border-color:var(--fire)}
 
-/* FORMS */
-.form-card{background:rgba(249,244,238,.03);border:1px solid rgba(249,244,238,.08);padding:2.5rem}
-.form-title{font-family:var(--fd);font-size:1.8rem;color:var(--cream);margin-bottom:.4rem}
-.form-sub{font-size:.88rem;color:var(--gray);margin-bottom:2rem;line-height:1.55}
-.form-group{margin-bottom:1.1rem}
-.form-label{font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(249,244,238,.55);display:block;margin-bottom:.35rem}
-.form-input,.form-select,.form-textarea{width:100%;background:rgba(249,244,238,.04);border:none;border-bottom:1.5px solid rgba(249,244,238,.18);color:var(--cream);font-family:var(--fb);font-size:.95rem;padding:.7rem .9rem;outline:none;transition:border-color .2s,background .2s;appearance:none}
+/* Form card */
+.ct-form-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:2.5rem}
+.ct-form-title{font-family:var(--fd);font-size:1.5rem;color:var(--cream);margin-bottom:1.75rem}
+.form-group{margin-bottom:1rem}
+.form-label{font-size:.63rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(249,244,238,.5);display:block;margin-bottom:.3rem}
+.form-input,.form-select,.form-textarea{width:100%;background:rgba(249,244,238,.04);border:none;border-bottom:1.5px solid rgba(249,244,238,.15);color:var(--cream);font-family:var(--fb);font-size:.92rem;padding:.65rem .85rem;outline:none;transition:border-color .2s,background .2s;appearance:none}
 .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--fire);background:rgba(224,78,18,.05)}
 .form-input::placeholder,.form-textarea::placeholder{color:var(--gray2)}
 .form-select option{background:var(--ink2);color:var(--cream)}
 .form-textarea{resize:vertical;min-height:80px}
-.form-submit{width:100%;margin-top:1.5rem;justify-content:center}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-success{text-align:center;padding:2rem 1rem;display:none}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.form-submit{width:100%;margin-top:1.25rem;justify-content:center}
+.form-micro{font-size:.68rem;color:var(--gray2);text-align:center;margin-top:1rem;font-style:italic}
+.form-success{text-align:center;padding:2.5rem 1rem;display:none}
 .form-success.show{display:block}
-.success-icon{font-size:2.2rem;color:var(--fire);display:block;margin-bottom:1rem}
-.success-title{font-family:var(--fd);font-size:1.8rem;color:var(--cream);margin-bottom:.5rem}
-.success-msg{font-size:.9rem;color:var(--gray);line-height:1.6}
+.success-icon{font-size:2rem;color:var(--fire);display:block;margin-bottom:.75rem}
+.success-title{font-family:var(--fd);font-size:1.6rem;color:var(--cream);margin-bottom:.4rem}
+.success-msg{font-size:.88rem;color:var(--gray);line-height:1.6}
+
+/* ROUTING */
+.routing{background:var(--ink)}
+.rt-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
+.rt-title{font-family:var(--fd);font-size:clamp(2rem,3.5vw,2.8rem);line-height:.95;color:var(--cream);margin-bottom:3rem}
+.rt-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.rt-card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:1.75rem 1.25rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.75rem;transition:transform .25s,box-shadow .25s,border-top-color .25s}
+.rt-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(224,78,18,.12);border-top-color:var(--gold)}
+.rt-card-icon{font-size:1.5rem;color:var(--fire)}
+.rt-card-title{font-family:var(--fd);font-size:1rem;color:var(--cream);line-height:1.1}
+.rt-card-desc{font-size:.78rem;color:var(--gray);line-height:1.5}
+.rt-card-cta{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fire);transition:color .2s;margin-top:auto}
+.rt-card-cta:hover{color:var(--gold)}
 
 /* FOOTER */
 footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2rem}
@@ -95,7 +103,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 .footer-links a{font-size:.88rem;color:var(--gray);transition:color .2s}
 .footer-links a:hover{color:var(--cream)}
 .footer-bottom{border-top:1px solid rgba(249,244,238,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.72rem;color:rgba(249,244,238,.25);letter-spacing:.05em}
+.footer-copy{font-size:.72rem;color:rgba(249,244,238,.25)}
 .footer-social{display:flex;gap:.75rem}
 .footer-social a{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
 .footer-social a:hover{color:var(--fire)}
@@ -103,38 +111,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 @media(max-width:900px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .form-row{grid-template-columns:1fr}
+  .ct-hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .rt-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
 }
 @media(max-width:600px){
+  .ct-hero{padding:7rem 0 3rem}
+  .ct-hero-title{font-size:2.3rem}
+  .rt-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
+  .ct-form-card{padding:1.75rem 1.25rem}
 }
-
-
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.contact-tagline{font-family:var(--fd);font-size:clamp(2rem,4vw,3.5rem);line-height:1;color:var(--cream);margin-bottom:1.5rem}
-.contact-tagline span{color:var(--fire)}
-.contact-detail{display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2rem}
-.c-item{display:flex;flex-direction:column;gap:.2rem;padding-left:1.25rem;border-left:2px solid rgba(224,78,18,.4)}
-.c-lbl{font-size:.63rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gray2)}
-.c-val{font-size:1rem;color:var(--cream)}
-.c-val a{color:var(--fire);transition:color .2s}
-.c-val a:hover{color:var(--gold)}
-.social-row{display:flex;gap:.75rem;flex-wrap:wrap}
-.social-link{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray2);border:1px solid rgba(249,244,238,.13);padding:.4rem .9rem;transition:all .2s}
-.social-link:hover{color:var(--fire);border-color:var(--fire)}
-@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
-
-
-@media(max-width:480px){
-  .page-hero{padding:6rem 0 3rem}
-  .page-hero-title{font-size:clamp(2.2rem,9vw,4rem)!important}
-  .page-hero-sub{font-size:.95rem}
-  .mobile-menu a{font-size:2rem}
-  .footer-grid{gap:2rem}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-}
-
 </style>
 </head>
 <body>
@@ -145,157 +133,160 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕</button>
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
   <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Join Us</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
-<div class="page-body">
-  <section class="page-hero" style="background:var(--ink2)">
-    <div class="container" style="position:relative">
-      <svg class="rings-bg" width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-<circle cx="250" cy="250" r="240" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/>
-<circle cx="250" cy="250" r="190" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/>
-<circle cx="250" cy="250" r="145" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.2"/>
-<circle cx="250" cy="250" r="102" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.3"/>
-<circle cx="250" cy="250" r="64" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.5"/>
-<circle cx="250" cy="250" r="32" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.8"/>
-</svg>
-      <p class="page-hero-tag">Get in Touch</p>
-      <h1 class="page-hero-title">LET'S TALK.<br><span style="color:var(--fire)">SERIOUSLY.</span></h1>
-      <p class="page-hero-sub">Guest inquiries, partnerships, workshop hosting, or anything else. We read everything.</p>
-    </div>
-  </section>
-  <section style="background:var(--ink)">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="reveal">
-          <div class="contact-detail">
-            <div class="c-item"><span class="c-lbl">Email</span><span class="c-val"><a href="mailto:hello@built-young.com">hello@built-young.com</a></span></div>
-            <div class="c-item"><span class="c-lbl">Website</span><span class="c-val"><a href="https://built-young.com">built-young.com</a></span></div>
-            <div class="c-item"><span class="c-lbl">Host</span><span class="c-val">Natalie Chu</span></div>
-            <div class="c-item"><span class="c-lbl">Based in</span><span class="c-val">Bay Area, CA</span></div>
+
+<!-- HERO + FORM -->
+<section class="ct-hero">
+  <svg class="rings-deco" width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="250" cy="250" r="240" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/><circle cx="250" cy="250" r="190" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/><circle cx="250" cy="250" r="145" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.2"/></svg>
+  <div class="container">
+    <div class="ct-hero-grid">
+      <div class="reveal">
+        <span class="ct-hero-tag">Contact</span>
+        <h1 class="ct-hero-title">LET'S FIND THE RIGHT <span>DOOR.</span></h1>
+        <p class="ct-hero-sub">Whether you are building, investing, partnering, or pitching a story, choose the path that fits best.</p>
+        <p class="ct-hero-note">Built Young is selective, but we are always open to serious builders, thoughtful investors, and people helping young founders win.</p>
+        <div class="ct-info">
+          <div class="ct-info-row">
+            <span class="ct-info-label">Email</span>
+            <span class="ct-info-value"><a href="mailto:hello@built-young.com">hello@built-young.com</a></span>
           </div>
-          <div class="social-row">
-            <a href="#" class="social-link">YouTube</a>
-            <a href="#" class="social-link">Spotify</a>
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">LinkedIn</a>
+          <div class="ct-info-row">
+            <span class="ct-info-label">Host</span>
+            <span class="ct-info-value">Natalie Chu</span>
+          </div>
+          <div class="ct-info-row">
+            <span class="ct-info-label">Based in</span>
+            <span class="ct-info-value">Bay Area, CA</span>
           </div>
         </div>
-        <div class="reveal d2">
-          <div class="form-card">
-            <h3 class="form-title">GET IN TOUCH</h3>
-            <p class="form-sub">Workshop inquiries, branding collaborations, podcast guest suggestions, media requests, or anything else. We read everything.</p>
-            <form id="contactForm" action="https://formspree.io/f/mvzlwbnv" method="POST">
-
+        <div class="ct-social">
+          <a href="#" class="ct-social-link">YouTube</a>
+          <a href="#" class="ct-social-link">Spotify</a>
+          <a href="#" class="ct-social-link">Instagram</a>
+          <a href="#" class="ct-social-link">LinkedIn</a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="ct-form-card">
+          <div class="ct-form-title">TELL US WHY YOU ARE REACHING OUT</div>
+          <form id="contactForm" action="https://formspree.io/f/mvzlwbnv" method="POST">
+            <div class="form-row">
               <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" type="text" name="full_name" placeholder="Your name" required></div>
               <div class="form-group"><label class="form-label">Email *</label><input class="form-input" type="email" name="email" placeholder="you@example.com" required></div>
-              <div class="form-group"><label class="form-label">Phone Number</label><input class="form-input" type="tel" name="phone" placeholder="+1 (555) 000-0000"></div>
-              <div class="form-group"><label class="form-label">Company / Organization</label><input class="form-input" type="text" name="company" placeholder="Your company or organization name"></div>
-              <div class="form-group"><label class="form-label">Your Role</label><input class="form-input" type="text" name="role" placeholder="e.g. Founder, Marketing Director, Program Manager"></div>
-
-              <div class="form-group"><label class="form-label">What is this about? *</label>
-                <select class="form-select" name="inquiry_type" required>
-                  <option value="">Select a category</option>
-                  <option>Workshop Inquiry (host or attend)</option>
-                  <option>Branding / Content Collaboration</option>
-                  <option>Sponsorship Opportunity</option>
-                  <option>Podcast Guest Suggestion</option>
-                  <option>Media / Press Request</option>
-                  <option>Speaking Engagement for Natalie</option>
-                  <option>University / Incubator Partnership</option>
-                  <option>Feedback on an Episode</option>
-                  <option>General Question</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="form-group"><label class="form-label">Your Message *</label><textarea class="form-textarea" style="min-height:120px" name="message" placeholder="Tell us what you have in mind. The more context you give, the faster we can respond with something useful." required></textarea></div>
-
-              <div class="form-group"><label class="form-label">Is there a timeline or deadline?</label>
-                <select class="form-select" name="urgency">
-                  <option value="">Select one</option>
-                  <option>Just exploring, no rush</option>
-                  <option>Within the next 2 weeks</option>
-                  <option>Within the next month</option>
-                  <option>Within the next 3 months</option>
-                  <option>Urgent (less than a week)</option>
-                </select>
-              </div>
-
-              <div class="form-group"><label class="form-label">Relevant Link (optional)</label><input class="form-input" type="url" name="relevant_link" placeholder="e.g. your website, a specific episode, or a project page"></div>
-
-              <div class="form-group"><label class="form-label">How did you find us?</label>
-                <select class="form-select" name="referral_source">
-                  <option value="">Select one</option>
-                  <option>YouTube / Podcast</option>
-                  <option>Instagram</option>
-                  <option>LinkedIn</option>
-                  <option>Google Search</option>
-                  <option>Referred by someone</option>
-                  <option>Event / Conference</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-              <p class="form-note" style="margin-top:1rem;font-size:.72rem;color:var(--gray2);text-align:center;font-style:italic">We respond to every message within 48 hours.</p>
-            </form>
-            <div class="form-success" id="contactSuccess"><span class="success-icon">✦</span><h3 class="success-title">MESSAGE SENT</h3><p class="success-msg">We will get back to you within 48 hours.</p></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label class="form-label">Company or Organization</label><input class="form-input" type="text" name="company" placeholder="Your company"></div>
+              <div class="form-group"><label class="form-label">LinkedIn or Website</label><input class="form-input" type="url" name="link" placeholder="https://"></div>
+            </div>
+            <div class="form-group"><label class="form-label">What best describes you? *</label>
+              <select class="form-select" name="describes_you" required>
+                <option value="">Select one</option>
+                <option>Founder</option>
+                <option>Investor or VC</option>
+                <option>Podcast guest</option>
+                <option>Partner or sponsor</option>
+                <option>School or founder community</option>
+                <option>Press or media</option>
+                <option>Operator or mentor</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">What are you reaching out about? *</label>
+              <select class="form-select" name="reaching_out_about" required>
+                <option value="">Select one</option>
+                <option>Apply as a founder</option>
+                <option>Request VC access</option>
+                <option>Be featured on the podcast</option>
+                <option>Start a partnership conversation</option>
+                <option>Press or media inquiry</option>
+                <option>Workshop or speaking opportunity</option>
+                <option>Nominate a founder</option>
+                <option>General question</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Tell us more *</label><textarea class="form-textarea" name="message" placeholder="What is on your mind? The more context you give, the faster we can respond with something useful." style="min-height:90px" required></textarea></div>
+            <div class="form-group"><label class="form-label">Any link we should review?</label><input class="form-input" type="url" name="review_link" placeholder="https://"></div>
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+            <p class="form-micro">We review messages personally and will reply if there is a fit.</p>
+          </form>
+          <div class="form-success" id="contactSuccess">
+            <span class="success-icon">&#x2726;</span>
+            <h3 class="success-title">MESSAGE SENT</h3>
+            <p class="success-msg">We read everything. If there is a fit, you will hear from us within 48 hours.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-</div>
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo"><span class="b">BUILT</span><span class="y">Young</span></div>
-        <p class="footer-tag">Under 25. Over $1M. Their story starts where yours can too.</p>
-        <p class="footer-manifesto">Either you learn or you win. Either way, you move.</p>
-      </div>
-      <div>
-        <p class="footer-col-title">Navigate</p>
-        <div class="footer-links">
-          <a href="about.html">About</a><a href="podcast.html">Podcast</a>
-          <a href="community.html">Community</a><a href="vc.html">VC Access</a>
-          <a href="builders.html">Apply as Builder</a><a href="workshops.html">Workshops</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer-col-title">Connect</p>
-        <div class="footer-links">
-          <a href="#">YouTube Channel</a><a href="#">Spotify Podcast</a>
-          <a href="#">Instagram</a><a href="#">LinkedIn</a>
-          <a href="mailto:hello@built-young.com">hello@built-young.com</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2025 Built Young &middot; built-young.com</p>
-      <div class="footer-social">
-        <a href="#">YouTube</a><a href="#">Spotify</a><a href="#">Instagram</a><a href="#">LinkedIn</a>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ROUTING CARDS -->
+<section class="routing">
+  <div class="container">
+    <div class="reveal">
+      <span class="rt-tag">Quick Links</span>
+      <h2 class="rt-title">CHOOSE THE PATH THAT FITS</h2>
+    </div>
+    <div class="rt-grid">
+      <a href="builders.html#apply-form" class="rt-card reveal d1">
+        <div class="rt-card-icon">&#x25CE;</div>
+        <div class="rt-card-title">I AM A FOUNDER</div>
+        <p class="rt-card-desc">Under 30, real revenue, building from scratch.</p>
+        <span class="rt-card-cta">Apply as a Founder &#x2192;</span>
+      </a>
+      <a href="vc.html" class="rt-card reveal d2">
+        <div class="rt-card-icon">&#x25B2;</div>
+        <div class="rt-card-title">I AM AN INVESTOR</div>
+        <p class="rt-card-desc">Looking for early founder signal before the market.</p>
+        <span class="rt-card-cta">Request VC Access &#x2192;</span>
+      </a>
+      <a href="builders.html#apply-form" class="rt-card reveal d3">
+        <div class="rt-card-icon">&#x25C6;</div>
+        <div class="rt-card-title">I WANT TO BE ON THE PODCAST</div>
+        <p class="rt-card-desc">Real story, real revenue, ready to share it.</p>
+        <span class="rt-card-cta">Apply to Be Featured &#x2192;</span>
+      </a>
+      <a href="mailto:hello@built-young.com?subject=Partnership%20Inquiry" class="rt-card reveal d4">
+        <div class="rt-card-icon">&#x25A0;</div>
+        <div class="rt-card-title">I WANT TO PARTNER</div>
+        <p class="rt-card-desc">Brands, programs, universities, accelerators.</p>
+        <span class="rt-card-cta">Start a Conversation &#x2192;</span>
+      </a>
+      <a href="mailto:hello@built-young.com?subject=Press%20Inquiry" class="rt-card reveal d5">
+        <div class="rt-card-icon">&#x2726;</div>
+        <div class="rt-card-title">PRESS OR MEDIA</div>
+        <p class="rt-card-desc">Coverage, interviews, or founder stories.</p>
+        <span class="rt-card-cta">Contact Built Young &#x2192;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><span class="b">BUILT</span><span class="y">Young</span></div><p class="footer-tag">Under 25. Over $1M. Their story starts where yours can too.</p><p class="footer-manifesto">Either you learn or you win. Either way, you move.</p></div>
+      <div><p class="footer-col-title">Navigate</p><div class="footer-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply as Builder</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div></div>
+      <div><p class="footer-col-title">Connect</p><div class="footer-links"><a href="#">YouTube Channel</a><a href="#">Spotify Podcast</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="mailto:hello@built-young.com">hello@built-young.com</a></div></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">&copy; 2025 Built Young &middot; built-young.com</p><div class="footer-social"><a href="#">YouTube</a><a href="#">Spotify</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div></div>
+  </div>
 </footer>
+
 <script>
 document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
 document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
-const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.spots-fill').forEach(b=>{const p=b.getAttribute('data-pct');setTimeout(()=>b.style.width=p+'%',200);});ro.unobserve(e.target);}});},{threshold:.1});
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-</script>
-<script>
-const f=document.getElementById('contactForm');
-f?.addEventListener('submit',function(e){
+const cf=document.getElementById('contactForm');
+cf?.addEventListener('submit',function(e){
   e.preventDefault();
-  const data=new FormData(f);
-  fetch(f.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
-  .then(r=>{if(r.ok){f.style.display='none';document.getElementById('contactSuccess').classList.add('show');}})
-  .catch(()=>{});
+  const d=new FormData(cf);
+  fetch(cf.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
+  .then(r=>{if(r.ok){cf.style.display='none';document.getElementById('contactSuccess').classList.add('show');}}).catch(()=>{});
 });
 </script>
 </body>
