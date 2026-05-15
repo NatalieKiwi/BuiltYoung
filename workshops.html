@@ -6,20 +6,13 @@
 <title>Workshops | Built Young</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --fire:#E04E12;--gold:#F5B829;--cream:#F9F4EE;--ink:#131010;--ink2:#1b1818;
-  --gray:#c8c4c0;--gray2:#a8a4a0;
-  --fd:'Bebas Neue',sans-serif;--fb:'Barlow Condensed',sans-serif;
-  --pad:clamp(5rem,9vw,9rem);--wrap:1200px;
-}
+:root{--fire:#E04E12;--gold:#F5B829;--cream:#F9F4EE;--ink:#131010;--ink2:#1b1818;--gray:#c8c4c0;--gray2:#a8a4a0;--fd:'Bebas Neue',sans-serif;--fb:'Barlow Condensed',sans-serif;--wrap:1200px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--cream);font-family:var(--fb);overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:9999}
 a{color:inherit;text-decoration:none}
-
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 4vw;display:flex;align-items:center;justify-content:space-between;transition:background .3s,backdrop-filter .3s;background:rgba(19,16,16,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(249,244,238,.07)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 4vw;display:flex;align-items:center;justify-content:space-between;background:rgba(19,16,16,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(249,244,238,.07)}
 .nav-logo{font-size:1.5rem;line-height:1;display:flex;align-items:baseline;gap:.08em}
 .nav-logo .b{font-family:var(--fd);color:var(--cream);letter-spacing:.02em}
 .nav-logo .y{font-family:var(--fb);font-weight:800;font-style:italic;color:var(--gold)}
@@ -35,19 +28,11 @@ a{color:inherit;text-decoration:none}
 .mobile-menu a{font-family:var(--fd);font-size:2.5rem;color:var(--cream);transition:color .2s}
 .mobile-menu a:hover{color:var(--fire)}
 .mobile-close{position:absolute;top:1.5rem;right:5vw;font-size:1.5rem;color:var(--gray2);cursor:pointer;background:none;border:none}
-
-/* SHARED */
 .container{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
-.page-body{padding-top:5rem}
-section{padding-block:var(--pad)}
-.s-tag{font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:.75rem}
-.s-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4.5rem);line-height:.95;margin-bottom:1rem}
-.s-sub{font-size:1.05rem;color:var(--gray);max-width:520px;line-height:1.6}
-.section-header{margin-bottom:3.5rem}
+section{padding-block:clamp(5rem,9vw,8rem)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-
 .btn{font-family:var(--fb);font-size:.85rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.8rem 1.9rem;border:2px solid transparent;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
 .btn-primary{background:var(--fire);color:#fff;border-color:var(--fire)}
 .btn-primary:hover{background:#c84210;transform:translateY(-2px);box-shadow:0 8px 24px rgba(224,78,18,.4)}
@@ -56,31 +41,69 @@ section{padding-block:var(--pad)}
 .btn-gold{background:transparent;color:var(--gold);border-color:var(--gold)}
 .btn-gold:hover{background:rgba(245,184,41,.09);transform:translateY(-2px)}
 
-/* PAGE HERO BANNER (for inner pages) */
-.page-hero{padding:8rem 0 4rem;position:relative;overflow:hidden}
-.page-hero .rings-bg{position:absolute;right:-8vw;top:50%;transform:translateY(-50%);opacity:.08}
-.page-hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--fire);margin-bottom:1rem}
-.page-hero-title{font-family:var(--fd);font-size:clamp(3rem,7vw,6rem);line-height:.92;margin-bottom:1rem}
-.page-hero-sub{font-size:1.1rem;color:var(--gray);max-width:500px;line-height:1.65}
+/* HERO */
+.ws-hero{padding:10rem 0 6rem;background:var(--ink2);position:relative;overflow:hidden}
+.ws-hero .rings-deco{position:absolute;right:-5vw;top:50%;transform:translateY(-50%);opacity:.06}
+.ws-hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1.25rem}
+.ws-hero-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,4rem);line-height:.92;color:var(--cream);margin-bottom:1.25rem;max-width:700px}
+.ws-hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.7;max-width:540px;margin-bottom:2.5rem}
+.ws-hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.ws-hero-btns .btn{min-width:200px;justify-content:center}
 
-/* FORMS */
-.form-card{background:rgba(249,244,238,.03);border:1px solid rgba(249,244,238,.08);padding:2.5rem}
-.form-title{font-family:var(--fd);font-size:1.8rem;color:var(--cream);margin-bottom:.4rem}
-.form-sub{font-size:.88rem;color:var(--gray);margin-bottom:2rem;line-height:1.55}
-.form-group{margin-bottom:1.1rem}
-.form-label{font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(249,244,238,.55);display:block;margin-bottom:.35rem}
-.form-input,.form-select,.form-textarea{width:100%;background:rgba(249,244,238,.04);border:none;border-bottom:1.5px solid rgba(249,244,238,.18);color:var(--cream);font-family:var(--fb);font-size:.95rem;padding:.7rem .9rem;outline:none;transition:border-color .2s,background .2s;appearance:none}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--fire);background:rgba(224,78,18,.05)}
-.form-input::placeholder,.form-textarea::placeholder{color:var(--gray2)}
-.form-select option{background:var(--ink2);color:var(--cream)}
-.form-textarea{resize:vertical;min-height:80px}
-.form-submit{width:100%;margin-top:1.5rem;justify-content:center}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-success{text-align:center;padding:2rem 1rem;display:none}
-.form-success.show{display:block}
-.success-icon{font-size:2.2rem;color:var(--fire);display:block;margin-bottom:1rem}
-.success-title{font-family:var(--fd);font-size:1.8rem;color:var(--cream);margin-bottom:.5rem}
-.success-msg{font-size:.9rem;color:var(--gray);line-height:1.6}
+/* TOPICS */
+.topics{background:var(--ink)}
+.topics-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
+.topics-title{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:.95;color:var(--cream);margin-bottom:.75rem}
+.topics-sub{font-size:1.05rem;color:var(--gray);line-height:1.6;max-width:480px;margin-bottom:3.5rem}
+.topics-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.topic-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-left:3px solid var(--fire);padding:2rem;display:flex;flex-direction:column;gap:.6rem;transition:transform .25s,box-shadow .25s,border-left-color .25s}
+.topic-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(224,78,18,.12);border-left-color:var(--gold)}
+.topic-card-num{font-size:.58rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--fire)}
+.topic-card-title{font-family:var(--fd);font-size:clamp(1.2rem,2vw,1.5rem);color:var(--cream);line-height:1.05}
+.topic-card-desc{font-size:.9rem;color:var(--gray);line-height:1.6}
+
+/* FEATURED WORKSHOP */
+.featured{background:var(--ink2)}
+.feat-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:start}
+.feat-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
+.feat-title{font-family:var(--fd);font-size:clamp(2rem,3.5vw,2.8rem);line-height:.95;color:var(--cream);margin-bottom:.5rem}
+.feat-subtitle{font-size:1rem;color:var(--gold);font-weight:700;font-style:italic;margin-bottom:2rem}
+.feat-includes{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem}
+.feat-item{display:flex;align-items:flex-start;gap:.75rem;padding:.75rem 0 .75rem 1rem;border-left:2px solid rgba(224,78,18,.35);font-size:.92rem;color:var(--gray);line-height:1.5}
+.feat-item-icon{color:var(--fire);font-size:.9rem;flex-shrink:0;margin-top:.15rem}
+
+/* Format card */
+.format-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:2.5rem}
+.format-card-title{font-family:var(--fd);font-size:1.5rem;color:var(--cream);margin-bottom:1.5rem}
+.format-list{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem}
+.format-item{display:flex;align-items:flex-start;gap:.7rem;font-size:.9rem;color:var(--gray);line-height:1.5}
+.format-item-icon{color:var(--gold);font-size:.9rem;flex-shrink:0;margin-top:.15rem}
+.format-divider{height:1px;background:rgba(249,244,238,.07);margin:1.5rem 0}
+
+/* FREE RESOURCE */
+.resource{background:var(--ink)}
+.resource-card{background:rgba(224,78,18,.04);border:1px solid rgba(224,78,18,.15);border-left:4px solid var(--fire);padding:3rem;display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.resource-tag{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:.75rem}
+.resource-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--cream);line-height:1;margin-bottom:1rem}
+.resource-desc{font-size:.95rem;color:var(--gray);line-height:1.65;margin-bottom:1.5rem}
+.resource-includes{display:flex;flex-direction:column;gap:.5rem}
+.resource-inc{font-size:.82rem;color:var(--gray);display:flex;align-items:center;gap:.5rem}
+.resource-inc-icon{color:var(--gold);font-size:.8rem}
+.resource-form{display:flex;flex-direction:column;gap:1rem}
+.resource-input{background:rgba(249,244,238,.05);border:none;border-bottom:1.5px solid rgba(249,244,238,.18);color:var(--cream);font-family:var(--fb);font-size:.95rem;padding:.7rem .9rem;outline:none;transition:border-color .2s}
+.resource-input:focus{border-color:var(--fire)}
+.resource-input::placeholder{color:var(--gray2)}
+.resource-success{display:none;text-align:center;padding:1rem}
+.resource-success.show{display:block}
+.resource-success p{font-family:var(--fd);font-size:1.3rem;color:var(--cream)}
+
+/* FINAL CTA */
+.final-cta{background:var(--ink2);text-align:center}
+.final-cta-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
+.final-cta-title{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.2rem);line-height:.95;color:var(--cream);margin-bottom:1.25rem;max-width:600px;margin-inline:auto}
+.final-cta-title span{color:var(--fire)}
+.final-cta-sub{font-size:1.05rem;color:var(--gray);line-height:1.65;max-width:440px;margin:0 auto 2.5rem}
+.final-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
 /* FOOTER */
 footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2rem}
@@ -95,7 +118,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 .footer-links a{font-size:.88rem;color:var(--gray);transition:color .2s}
 .footer-links a:hover{color:var(--cream)}
 .footer-bottom{border-top:1px solid rgba(249,244,238,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-copy{font-size:.72rem;color:rgba(249,244,238,.25);letter-spacing:.05em}
+.footer-copy{font-size:.72rem;color:rgba(249,244,238,.25)}
 .footer-social{display:flex;gap:.75rem}
 .footer-social a{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
 .footer-social a:hover{color:var(--fire)}
@@ -103,46 +126,23 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 @media(max-width:900px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .form-row{grid-template-columns:1fr}
+  .topics-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .resource-card{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .ws-hero-btns .btn{min-width:auto}
 }
 @media(max-width:600px){
+  .ws-hero{padding:7rem 0 3.5rem}
+  .ws-hero-title{font-size:2.2rem}
   .footer-grid{grid-template-columns:1fr}
+  .ws-hero-btns{flex-direction:column}
+  .ws-hero-btns .btn{width:100%;justify-content:center}
+  .final-cta-btns{flex-direction:column;align-items:center}
+  .final-cta-btns .btn{width:100%;max-width:320px;justify-content:center}
+  .format-card{padding:1.75rem}
+  .resource-card{padding:2rem 1.5rem}
 }
-
-
-.workshops-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.ws-card{border:1px solid rgba(249,244,238,.08);border-left:3px solid var(--fire);background:rgba(255,255,255,.02);padding:2rem;display:flex;flex-direction:column;gap:1rem;transition:transform .25s,box-shadow .25s,border-left-color .25s}
-.ws-card:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(224,78,18,.14);border-left-color:var(--gold)}
-.ws-card.partner{border-left-color:var(--gold)}.ws-card.partner:hover{border-left-color:var(--fire)}
-.ws-status{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-.ws-badge{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .55rem;background:rgba(224,78,18,.15);color:var(--fire)}
-.ws-format{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2)}
-.ws-title{font-family:var(--fd);font-size:1.35rem;color:var(--cream);line-height:1.05}
-.ws-date{font-size:.82rem;font-weight:700;color:var(--gray)}
-.ws-desc{font-size:.88rem;color:var(--gray);line-height:1.58}
-.ws-spots{margin-top:auto}
-.spots-label{display:flex;justify-content:space-between;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2);margin-bottom:.4rem}
-.spots-num{color:var(--fire)}
-.spots-bar{height:3px;background:rgba(249,244,238,.1);overflow:hidden}
-.spots-fill{height:100%;background:var(--fire);transition:width 1.2s ease}
-@media(max-width:900px){.workshops-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.workshops-grid{grid-template-columns:1fr}}
-
-
-@media(max-width:480px){
-  .page-hero{padding:6rem 0 3rem}
-  .page-hero-title{font-size:clamp(2.2rem,9vw,4rem)!important}
-  .page-hero-sub{font-size:.95rem}
-  .mobile-menu a{font-size:2rem}
-  .footer-grid{gap:2rem}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
-}
-
-@media(max-width:480px){
-  .ws-card{padding:1.5rem}
-}
-
 </style>
 </head>
 <body>
@@ -153,31 +153,152 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">✕</button>
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
   <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Join Us</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
-<div class="page-body">
-  <section class="page-hero" style="background:var(--ink2)">
-    <div class="container" style="position:relative">
-      <svg class="rings-bg" width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-<circle cx="250" cy="250" r="240" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/>
-<circle cx="250" cy="250" r="190" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/>
-<circle cx="250" cy="250" r="145" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.2"/>
-<circle cx="250" cy="250" r="102" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.3"/>
-<circle cx="250" cy="250" r="64" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.5"/>
-<circle cx="250" cy="250" r="32" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.8"/>
-</svg>
-      <p class="page-hero-tag">Events &amp; Workshops</p>
-      <h1 class="page-hero-title">BUILT YOUNG<br>WORKSHOPS</h1>
-      <p class="page-hero-sub">Real tools. Real feedback. Real connections. Built Young runs workshops where young builders get what they actually need to move.</p>
+
+<!-- HERO -->
+<section class="ws-hero">
+  <svg class="rings-deco" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="300" cy="300" r="290" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/>
+    <circle cx="300" cy="300" r="230" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.1"/>
+    <circle cx="300" cy="300" r="175" fill="none" stroke="rgba(249,244,238,0.5)" stroke-width="1.2"/>
+  </svg>
+  <div class="container">
+    <div class="reveal">
+      <span class="ws-hero-tag">Built Young Workshops</span>
+      <h1 class="ws-hero-title">FOUNDER WORKSHOPS FOR HIRING, SCALING, AND LEADING BEFORE YOU FEEL READY</h1>
+      <p class="ws-hero-sub">Practical sessions for young founders making their first real people decisions: interviewing senior talent, finding cofounders, building leadership layers, and scaling teams without becoming the bottleneck.</p>
+      <div class="ws-hero-btns">
+        <a href="#resource" class="btn btn-primary">Join the Next Workshop</a>
+        <a href="contact.html" class="btn btn-ghost">Request a Topic</a>
+      </div>
     </div>
-  </section>
-  <section style="background:var(--ink)">
-    <div class="container">
-      <div class="workshops-grid reveal" id="workshopsGrid"></div>
+  </div>
+</section>
+
+<!-- WORKSHOP TOPICS -->
+<section class="topics">
+  <div class="container">
+    <div class="reveal">
+      <span class="topics-tag">What We Teach</span>
+      <h2 class="topics-title">WORKSHOP TOPICS</h2>
+      <p class="topics-sub">Every session is built around a decision young founders actually face, taught by people who have made that decision at scale.</p>
     </div>
-  </section>
-</div>
+    <div class="topics-grid">
+      <div class="topic-card reveal d1">
+        <div class="topic-card-num">Workshop 01</div>
+        <div class="topic-card-title">HOW TO INTERVIEW C LEVEL TALENT WHEN YOU ARE STILL EARLY</div>
+        <p class="topic-card-desc">AI can polish a resume. It cannot fully fake judgment, leadership, and operating depth. Learn how to ask better questions, evaluate senior candidates, and communicate with C level talent as a young founder.</p>
+      </div>
+      <div class="topic-card reveal d2">
+        <div class="topic-card-num">Workshop 02</div>
+        <div class="topic-card-title">HOW A 20 PERSON TEAM STARTS OPERATING LIKE 50</div>
+        <p class="topic-card-desc">The team does not break because you grow. It breaks because no one redesigned how decisions, ownership, and communication work. This session covers the structural shifts that make small teams punch above their weight.</p>
+      </div>
+      <div class="topic-card reveal d3">
+        <div class="topic-card-num">Workshop 03</div>
+        <div class="topic-card-title">FINDING A COFOUNDER WHO CAN BUILD WITH YOU, NOT JUST DREAM WITH YOU</div>
+        <p class="topic-card-desc">A good cofounder is not just someone you like. It is someone whose judgment, risk tolerance, work style, and ambition can survive pressure with yours. We cover how to evaluate, test, and formalize the right partnership.</p>
+      </div>
+      <div class="topic-card reveal d4">
+        <div class="topic-card-num">Workshop 04</div>
+        <div class="topic-card-title">YOUR FIRST LEADERSHIP HIRES: WHO TO HIRE, WHEN, AND WHY</div>
+        <p class="topic-card-desc">Before you hire a VP, know whether you need a strategist, operator, builder, closer, or player coach. This session gives you the framework to make the right leadership hire at the right stage.</p>
+      </div>
+      <div class="topic-card reveal d1" style="grid-column:1/3">
+        <div class="topic-card-num">Workshop 05</div>
+        <div class="topic-card-title">BUILDING A TEAM THAT MATCHES THE COMPANY YOU ARE BECOMING</div>
+        <p class="topic-card-desc">Early hiring is not about filling seats. It is about designing the next version of the company. This session covers how to hire for where you are going, not just where you are, and how to build a team culture that scales without you micromanaging every piece of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED WORKSHOP -->
+<section class="featured">
+  <div class="container">
+    <div class="feat-grid">
+      <div class="reveal">
+        <span class="feat-tag">Featured Workshop</span>
+        <h2 class="feat-title">INTERVIEWING C LEVEL TALENT AS A YOUNG FOUNDER</h2>
+        <p class="feat-subtitle">When AI can write the resume, your questions have to get better.</p>
+        <div class="feat-includes">
+          <div class="feat-item"><span class="feat-item-icon">&#x2726;</span> C level interview question bank designed for early stage founders evaluating experienced operators</div>
+          <div class="feat-item"><span class="feat-item-icon">&#x2726;</span> Candidate evaluation scorecard you can use immediately after every senior interview</div>
+          <div class="feat-item"><span class="feat-item-icon">&#x2726;</span> Senior candidate communication framework: how to write, respond, and negotiate with people who have 20 years on you</div>
+          <div class="feat-item"><span class="feat-item-icon">&#x2726;</span> Leadership fit checklist: how to tell if someone will thrive in your stage versus just survive it</div>
+        </div>
+        <a href="#resource" class="btn btn-primary">Get the Starter Kit</a>
+      </div>
+      <div class="reveal d2">
+        <div class="format-card">
+          <div class="format-card-title">HOW OUR WORKSHOPS WORK</div>
+          <div class="format-list">
+            <div class="format-item"><span class="format-item-icon">&#x2726;</span> Small group sessions: 12 to 20 founders per cohort, no lectures</div>
+            <div class="format-item"><span class="format-item-icon">&#x2726;</span> Real founder scenarios: we use actual situations from the Built Young community</div>
+            <div class="format-item"><span class="format-item-icon">&#x2726;</span> Practical frameworks: every session ends with a tool, template, or scorecard you keep</div>
+            <div class="format-item"><span class="format-item-icon">&#x2726;</span> Live discussion and feedback: not a webinar, a working session</div>
+            <div class="format-item"><span class="format-item-icon">&#x2726;</span> Templates and worksheets you can use the same week with your team</div>
+          </div>
+          <div class="format-divider"></div>
+          <p style="font-size:.82rem;color:var(--gray2);line-height:1.5">Sessions run monthly. Virtual and in person (Bay Area). Dates announced to community members first.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE RESOURCE -->
+<section class="resource" id="resource">
+  <div class="container">
+    <div class="resource-card reveal">
+      <div>
+        <span class="resource-tag">Free Resource</span>
+        <div class="resource-title">GET THE C LEVEL INTERVIEW QUESTION STARTER KIT</div>
+        <p class="resource-desc">20 questions designed to help young founders evaluate senior candidates beyond the resume. Built from hundreds of real executive interviews.</p>
+        <div class="resource-includes">
+          <div class="resource-inc"><span class="resource-inc-icon">&#x2726;</span> 20 interview questions organized by competency</div>
+          <div class="resource-inc"><span class="resource-inc-icon">&#x2726;</span> Red flag and green flag response guide</div>
+          <div class="resource-inc"><span class="resource-inc-icon">&#x2726;</span> One page candidate comparison scorecard</div>
+        </div>
+      </div>
+      <div>
+        <form id="resourceForm" class="resource-form">
+          <input class="resource-input" type="text" name="name" placeholder="Your name" required>
+          <input class="resource-input" type="email" name="email" placeholder="Your email" required>
+          <select class="resource-input" name="stage" style="appearance:none">
+            <option value="">Your stage (optional)</option>
+            <option>Pre-revenue founder</option>
+            <option>Under $500K revenue</option>
+            <option>$500K to $1M revenue</option>
+            <option>$1M+ revenue</option>
+            <option>Investor or advisor</option>
+          </select>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Me the Kit</button>
+        </form>
+        <div class="resource-success" id="resourceSuccess">
+          <p>CHECK YOUR INBOX</p>
+          <p style="font-size:.85rem;color:var(--gray);font-family:var(--fb);margin-top:.5rem">The starter kit is on its way.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container reveal">
+    <span class="final-cta-tag">Ready?</span>
+    <h2 class="final-cta-title">BUILD THE TEAM BEFORE THE TEAM <span>BREAKS.</span></h2>
+    <p class="final-cta-sub">The people decisions you make in year one define the company you become in year three. Start making them better.</p>
+    <div class="final-cta-btns">
+      <a href="#resource" class="btn btn-primary">Join the Next Workshop</a>
+      <a href="contact.html" class="btn btn-ghost">Request a Topic</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -212,25 +333,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     </div>
   </div>
 </footer>
+
 <script>
 document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
 document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
-const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.spots-fill').forEach(b=>{const p=b.getAttribute('data-pct');setTimeout(()=>b.style.width=p+'%',200);});ro.unobserve(e.target);}});},{threshold:.1});
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-</script>
-<script>
-const ws=[
-{status:"UPCOMING",format:"In Person · San Francisco",title:"FROM ZERO TO FIRST $100K",date:"June 14, 2025",desc:"Half day workshop on sales, positioning, and the first 10 customers. For founders in the pre revenue to early revenue stage.",spots:7,total:20,cta:"Reserve Your Spot",partner:false},
-{status:"UPCOMING",format:"Online · Zoom",title:"HOW TO PITCH WITHOUT BEING PITCHY",date:"June 28, 2025",desc:"90 minute live session on founder storytelling for VC conversations, customer sales, and team recruiting.",spots:23,total:50,cta:"Reserve Your Spot",partner:false},
-{status:"OPEN FOR PARTNERS",format:"Incubators · Universities · Accelerators",title:"HOST A BUILT YOUNG WORKSHOP",date:"Rolling Applications",desc:"Bring the Built Young energy to your institution. We partner with programs that want to give their cohorts real access to peer founders.",spots:null,total:null,cta:"Apply to Host",partner:true},
-];
-const wg=document.getElementById('workshopsGrid');
-ws.forEach(w=>{
-  const pct=w.spots!==null?Math.round((1-w.spots/w.total)*100):null;
-  const spotsHtml=w.spots!==null?'<div class="ws-spots"><div class="spots-label"><span>Spots remaining</span><span class="spots-num">'+w.spots+' of '+w.total+'</span></div><div class="spots-bar"><div class="spots-fill" data-pct="'+pct+'" style="width:0%"></div></div></div>':'';
-  const btnClass=w.partner?'btn-gold':'btn-ghost';
-  wg.innerHTML+='<div class="ws-card '+(w.partner?'partner':'')+' reveal"><div class="ws-status"><span class="ws-badge">'+w.status+'</span><span class="ws-format">'+w.format+'</span></div><h3 class="ws-title">'+w.title+'</h3><p class="ws-date">'+w.date+'</p><p class="ws-desc">'+w.desc+'</p>'+spotsHtml+'<a href="contact.html" class="btn '+btnClass+'" style="justify-content:center">'+w.cta+'</a></div>';
+const rf=document.getElementById('resourceForm');
+rf?.addEventListener('submit',function(e){
+  e.preventDefault();
+  rf.style.display='none';
+  document.getElementById('resourceSuccess').classList.add('show');
 });
 </script>
 </body>
