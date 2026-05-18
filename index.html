@@ -125,6 +125,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .b-group{
     transform:translate(500px,200px) scale(0.4);
   }
+  .community-cards{grid-template-columns:1fr 1fr !important}
 }
 @media(max-width:600px){
   .footer-grid{grid-template-columns:1fr}
@@ -145,6 +146,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     transform:translate(440px,250px) scale(0.35);
     opacity:0.6;
   }
+  .community-cards{grid-template-columns:1fr !important}
 }
 
 
@@ -353,13 +355,13 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-logo"><span class="b">BUILT</span><span class="y">Young</span></a>
-  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Join Us</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
+  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
   <a href="builders.html" class="nav-cta">Apply Now</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Join Us</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
+  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
 <section id="hero">
   <svg class="hero-svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -406,7 +408,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     <p class="hero-tagline">Their story starts where yours can too.</p>
     <div class="hero-ctas">
       <a href="podcast.html" class="btn btn-primary">Listen Now</a>
-      <a href="builders.html" class="btn btn-ghost">Join the Community</a>
+      <a href="builders.html" class="btn btn-ghost">Apply to Built Young</a>
     </div>
   </div>
 
@@ -476,12 +478,48 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
         <span class="scouting-tag">Now Scouting</span>
         <p class="scouting-text">We are actively building our next cohort of young founders doing real revenue before 30. If that is you, or you know someone who should be on this show, the door is open.</p>
         <div class="scouting-ctas">
-          <a href="builders.html" class="btn btn-primary">Apply to Join</a>
+          <a href="builders.html" class="btn btn-primary">Apply to Built Young</a>
           <a href="nominate.html" class="btn btn-ghost">Nominate a Founder</a>
         </div>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section id="community-preview" style="background:var(--ink);padding:clamp(5rem,9vw,8rem) 0">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:3.5rem">
+      <span style="font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem">The Community</span>
+      <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:.95;color:var(--cream);margin-bottom:.75rem">WHO IS ALREADY IN THE ROOM</h2>
+      <p style="font-size:1.05rem;color:var(--gray);line-height:1.6;max-width:500px">A curated circle of founders, investors, and operators paying attention to young revenue builders before the market catches up.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:3rem" class="community-cards">
+      <div class="reveal d1" style="background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2rem 1.5rem;text-align:center;transition:transform .25s,box-shadow .25s,border-top-color .25s">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">&#x25CE;</div>
+        <div style="font-family:var(--fd);font-size:1.15rem;color:var(--cream);margin-bottom:.4rem">FOUNDERS &amp; STARTUPS</div>
+        <p style="font-size:.85rem;color:var(--gray);line-height:1.55">Young founders with real revenue, building from scratch. Under 30. Self funded or early stage.</p>
+      </div>
+      <div class="reveal d2" style="background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2rem 1.5rem;text-align:center;transition:transform .25s,box-shadow .25s,border-top-color .25s">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">&#x25B2;</div>
+        <div style="font-family:var(--fd);font-size:1.15rem;color:var(--cream);margin-bottom:.4rem">INVESTORS &amp; VCs</div>
+        <p style="font-size:.85rem;color:var(--gray);line-height:1.55">Backers looking for early founder signal before traditional deal flow. Pre-seed to Series A.</p>
+      </div>
+      <div class="reveal d3" style="background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2rem 1.5rem;text-align:center;transition:transform .25s,box-shadow .25s,border-top-color .25s">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">&#x25C6;</div>
+        <div style="font-family:var(--fd);font-size:1.15rem;color:var(--cream);margin-bottom:.4rem">OPERATORS &amp; MENTORS</div>
+        <p style="font-size:.85rem;color:var(--gray);line-height:1.55">Experienced builders helping founders with hiring, sales, strategy, and leadership.</p>
+      </div>
+      <div class="reveal d4" style="background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2rem 1.5rem;text-align:center;transition:transform .25s,box-shadow .25s,border-top-color .25s">
+        <div style="font-size:1.5rem;margin-bottom:.75rem">&#x25A0;</div>
+        <div style="font-family:var(--fd);font-size:1.15rem;color:var(--cream);margin-bottom:.4rem">PARTNERS</div>
+        <p style="font-size:.85rem;color:var(--gray);line-height:1.55">Universities, accelerators, brands, and ecosystems helping young builders get access.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center">
+      <a href="community.html" class="btn btn-ghost">Explore the Community</a>
+    </div>
   </div>
 </section>
 
@@ -550,7 +588,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
         <div class="footer-links">
           <a href="about.html">About</a><a href="podcast.html">Podcast</a>
           <a href="community.html">Community</a><a href="vc.html">VC Access</a>
-          <a href="builders.html">Apply as Builder</a><a href="workshops.html">Workshops</a>
+          <a href="builders.html">Apply to Built Young</a><a href="workshops.html">Workshops</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
