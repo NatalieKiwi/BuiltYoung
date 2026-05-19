@@ -39,15 +39,14 @@ section{padding-block:clamp(5rem,9vw,8rem)}
 .btn-ghost{background:transparent;color:var(--fire);border-color:var(--fire)}
 .btn-ghost:hover{background:rgba(224,78,18,.09);transform:translateY(-2px)}
 
-/* HERO + FORM */
+/* HERO */
 .vc-hero{padding:9rem 0 5rem;background:var(--ink2);position:relative;overflow:hidden}
 .vc-hero .rings-deco{position:absolute;left:-8vw;top:60%;transform:translateY(-50%);opacity:.04}
 .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:start}
-.hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1.25rem}
+.hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.25rem}
 .hero-title{font-family:var(--fd);font-size:clamp(2.5rem,5vw,3.8rem);line-height:.92;color:var(--cream);margin-bottom:1.25rem}
-.hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.7;max-width:400px;margin-bottom:1rem}
-.hero-note{font-size:.85rem;color:var(--gray2);font-style:italic;max-width:380px}
-/* Form card */
+.hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.7;max-width:420px;margin-bottom:1rem}
+.hero-note{font-size:.88rem;color:var(--gray2);font-style:italic;max-width:400px}
 .form-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:2.25rem}
 .form-card-title{font-family:var(--fd);font-size:1.4rem;color:var(--cream);margin-bottom:1.5rem}
 .form-group{margin-bottom:.9rem}
@@ -71,49 +70,37 @@ section{padding-block:clamp(5rem,9vw,8rem)}
 .ben-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
 .ben-title{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:.95;color:var(--cream);margin-bottom:.75rem}
 .ben-sub{font-size:1.05rem;color:var(--gray);line-height:1.6;max-width:500px;margin-bottom:3.5rem}
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.ben-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:2.25rem 2rem;display:flex;flex-direction:column;gap:.6rem;transition:transform .25s,box-shadow .25s,border-top-color .25s}
+.ben-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:2rem}
+.ben-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:2.25rem;display:flex;flex-direction:column;gap:.5rem;transition:transform .25s,box-shadow .25s,border-top-color .25s}
 .ben-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(224,78,18,.12);border-top-color:var(--gold)}
 .ben-card-num{font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--fire)}
 .ben-card-title{font-family:var(--fd);font-size:1.3rem;color:var(--cream);line-height:1.05}
 .ben-card-title span{color:var(--gold)}
 .ben-card-desc{font-size:.9rem;color:var(--gray);line-height:1.6}
+.ben-trust{font-size:.78rem;color:var(--gray2);font-style:italic;line-height:1.55;border-left:2px solid rgba(249,244,238,.08);padding-left:1.25rem;max-width:520px}
 
-/* COMMUNITY BRIEF */
-.brief{background:var(--ink2)}
-.brief-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:4rem;align-items:start}
-.brief-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
-.brief-title{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:.95;color:var(--cream);margin-bottom:1.5rem}
-.brief-p{font-size:1rem;color:var(--gray);line-height:1.75;margin-bottom:1.25rem}
-.brief-p strong{color:var(--cream);font-weight:700}
-.brief-list{display:flex;flex-direction:column;gap:0;margin-top:1.5rem}
-.brief-item{padding:1.25rem 0 1.25rem 1.5rem;border-left:3px solid var(--fire);border-bottom:1px solid rgba(249,244,238,.06);transition:border-left-color .2s}
-.brief-item:last-child{border-bottom:none}
-.brief-item:hover{border-left-color:var(--gold)}
-.brief-item-title{font-family:var(--fd);font-size:1.1rem;color:var(--cream);margin-bottom:.3rem}
-.brief-item-desc{font-size:.85rem;color:var(--gray);line-height:1.55}
-/* Brief preview card */
-.brief-card{background:rgba(224,78,18,.04);border:1px solid rgba(224,78,18,.15);border-left:4px solid var(--fire);padding:2rem;position:sticky;top:6rem}
-.brief-card-tag{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:.75rem}
-.brief-card-title{font-family:var(--fd);font-size:1.3rem;color:var(--cream);margin-bottom:1.25rem}
-.brief-card-row{padding:.7rem 0;border-bottom:1px solid rgba(249,244,238,.06);display:flex;justify-content:space-between;align-items:center}
-.brief-card-row:last-of-type{border-bottom:none}
-.brief-card-label{font-size:.82rem;color:var(--gray)}
-.brief-card-value{font-size:.82rem;font-weight:700;color:var(--cream)}
-.brief-card-value.fire{color:var(--fire)}
-.brief-card-note{font-size:.72rem;color:var(--gray2);font-style:italic;margin-top:1.25rem;line-height:1.5}
-
-/* CRITERIA */
-.criteria{background:var(--ink)}
-.crit-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
-.crit-title{font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.5rem);line-height:.95;color:var(--cream);margin-bottom:2.5rem}
-.crit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem}
-.crit-card{border:1px solid rgba(249,244,238,.08);border-left:3px solid var(--gold);padding:1.75rem;background:rgba(245,184,41,.02)}
-.crit-card-title{font-family:var(--fd);font-size:1.1rem;color:var(--cream);margin-bottom:.4rem}
-.crit-card-desc{font-size:.85rem;color:var(--gray);line-height:1.55}
+/* MENTORS — who is in the club */
+.mentors{background:var(--ink2)}
+.men-tag{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.men-title{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:.95;color:var(--cream);margin-bottom:.75rem}
+.men-sub{font-size:1.05rem;color:var(--gray);line-height:1.6;max-width:500px;margin-bottom:3.5rem}
+.men-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
+.men-card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.men-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(224,78,18,.12)}
+.men-card-vc{padding:1.75rem;border-bottom:1px solid rgba(249,244,238,.06)}
+.men-card-vc-tag{font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.men-card-vc-name{font-family:var(--fd);font-size:1.2rem;color:var(--cream);line-height:1;margin-bottom:.2rem}
+.men-card-vc-role{font-size:.78rem;color:var(--gray2);line-height:1.4}
+.men-card-founder{padding:1.25rem 1.75rem;background:rgba(224,78,18,.03)}
+.men-card-founder-tag{font-size:.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:.4rem}
+.men-card-founder-name{font-family:var(--fd);font-size:1rem;color:var(--cream);line-height:1;margin-bottom:.15rem}
+.men-card-founder-co{font-size:.78rem;color:var(--gray);line-height:1.3}
+.men-card-match{padding:1rem 1.75rem;border-top:1px solid rgba(249,244,238,.04)}
+.men-card-match-text{font-size:.75rem;color:var(--gray2);font-style:italic;line-height:1.5}
+.men-note{font-size:.82rem;color:var(--gray2);font-style:italic;line-height:1.55;text-align:center;max-width:500px;margin:0 auto}
 
 /* FINAL */
-.final{background:var(--ink2);text-align:center}
+.final{background:var(--ink);text-align:center}
 .final-title{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.2rem);line-height:.95;color:var(--cream);margin-bottom:1rem}
 .final-title span{color:var(--fire)}
 .final-sub{font-size:1rem;color:var(--gray);line-height:1.65;max-width:460px;margin:0 auto 2.5rem}
@@ -140,17 +127,16 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 @media(max-width:900px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .hero-grid,.brief-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
   .ben-grid{grid-template-columns:1fr 1fr}
-  .crit-grid{grid-template-columns:1fr 1fr}
+  .men-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .form-row{grid-template-columns:1fr}
-  .brief-card{position:static}
 }
 @media(max-width:600px){
   .vc-hero{padding:7rem 0 3rem}
   .hero-title{font-size:2.3rem}
-  .ben-grid,.crit-grid{grid-template-columns:1fr}
+  .ben-grid,.men-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .form-card{padding:1.5rem 1.25rem}
   .final-btns{flex-direction:column;align-items:center}
@@ -177,10 +163,10 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <div class="container">
     <div class="hero-grid">
       <div class="reveal">
-        <span class="hero-tag">For Investors</span>
-        <h1 class="hero-title">SEE YOUNG REVENUE BUILDERS BEFORE THE MARKET DOES</h1>
-        <p class="hero-sub">Built Young curates founders under 30 who are already earning real revenue, building from scratch, and moving before traditional deal flow notices.</p>
-        <p class="hero-note">Curated founder signal for investors looking beyond polished decks and obvious networks.</p>
+        <span class="hero-tag">Built Young VC Access</span>
+        <h1 class="hero-title">FIND THE 22 YEAR OLD VERSION OF YOURSELF</h1>
+        <p class="hero-sub">Every successful investor or operator remembers being young, hungry, and underestimated. You remember what it felt like to build something when nobody was watching. Someone with your experience showing up at that exact moment would have changed everything.</p>
+        <p class="hero-note">Built Young connects you with young founders building in industries you already understand, facing challenges you have already solved.</p>
       </div>
       <div class="reveal d2">
         <div class="form-card">
@@ -196,12 +182,11 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
               <div class="form-group"><label class="form-label">LinkedIn</label><input class="form-input" type="url" name="linkedin" placeholder="https://"></div>
             </div>
             <div class="form-row">
-              <div class="form-group"><label class="form-label">AUM Range *</label>
-                <select class="form-select" name="aum_range" required><option value="">Select</option><option>Angel / personal</option><option>Under $10M</option><option>$10M to $50M</option><option>$50M to $200M</option><option>$200M+</option></select></div>
-              <div class="form-group"><label class="form-label">Stage *</label>
-                <select class="form-select" name="stage" required><option value="">Select</option><option>Pre-seed</option><option>Seed</option><option>Series A</option><option>Multi-stage</option></select></div>
+              <div class="form-group"><label class="form-label">Stage Focus *</label>
+                <select class="form-select" name="stage" required><option value="">Select</option><option>Pre-seed</option><option>Seed</option><option>Series A</option><option>Multi-stage</option><option>Angel / personal</option></select></div>
+              <div class="form-group"><label class="form-label">Industry Focus</label><input class="form-input" type="text" name="industry" placeholder="e.g. SaaS, Fintech"></div>
             </div>
-            <div class="form-group"><label class="form-label">What founder signal interests you?</label><textarea class="form-textarea" name="signal_interest" placeholder="Industries, stages, or founder profiles you find most interesting."></textarea></div>
+            <div class="form-group"><label class="form-label">What kind of young founders are you looking to meet?</label><textarea class="form-textarea" name="signal_interest" placeholder="Stages, industries, founder profiles, or the kind of help you can offer beyond capital."></textarea></div>
             <button type="submit" class="btn btn-primary form-submit">Request Access</button>
             <p class="form-micro">We review every request personally and respond within 48 hours.</p>
           </form>
@@ -216,113 +201,107 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   </div>
 </section>
 
-<!-- 2. VC BENEFITS -->
+<!-- 2. WHAT YOU GET -->
 <section class="benefits">
   <div class="container">
     <div class="reveal">
-      <span class="ben-tag">Why Join as an Investor</span>
-      <h2 class="ben-title">WHAT YOU GET AS A BUILT YOUNG VC PARTNER</h2>
-      <p class="ben-sub">This is not a newsletter. It is a curated relationship between you, the founders, and the network that helps them grow.</p>
+      <span class="ben-tag">What You Get</span>
+      <h2 class="ben-title">HOW YOU HELP. HOW YOU CONNECT.</h2>
+      <p class="ben-sub">Built Young matches you with young founders based on your background, your expertise, and what you can actually help with. Not random intros. Intentional relationships.</p>
     </div>
     <div class="ben-grid">
       <div class="ben-card reveal d1">
         <div class="ben-card-num">01</div>
-        <div class="ben-card-title">FOUNDER COMMUNITY <span>BRIEF</span></div>
-        <p class="ben-card-desc">After approval, you receive a confidential overview of who is in the Built Young founder community: what they build, what stage they are at, what kind of help they need, and where your network or expertise could make a real difference.</p>
+        <div class="ben-card-title">CURATED FOUNDER <span>INTRODUCTIONS</span></div>
+        <p class="ben-card-desc">Receive founder profiles of club members building in your space. We match you with 2 founders for one-on-one meetings based on your background, their needs, and where your experience can make a real difference.</p>
       </div>
       <div class="ben-card reveal d2">
         <div class="ben-card-num">02</div>
-        <div class="ben-card-title">WARM INTRODUCTIONS, <span>NOT COLD LISTS</span></div>
-        <p class="ben-card-desc">We do not send you a spreadsheet. We match you with specific founders based on your thesis, sector interest, and the value you bring beyond capital. Every introduction is personal and intentional.</p>
+        <div class="ben-card-title">INTIMATE FOUNDER <span>DINNERS</span></div>
+        <p class="ben-card-desc">3 to 4 founders, 2 investors, one evening. No pitch decks. No demo days. Real conversation over a real meal. The kind of meeting where both sides leave thinking about the other.</p>
       </div>
       <div class="ben-card reveal d3">
         <div class="ben-card-num">03</div>
-        <div class="ben-card-title">SIGNAL BEFORE <span>FUNDRAISING NOISE</span></div>
-        <p class="ben-card-desc">Meet founders while they are still building, before the deck is polished, before the round is oversubscribed, and before five other VCs have already had the first meeting. You see the signal early or you do not see it at all.</p>
+        <div class="ben-card-title">3 MONTH <span>MENTOR MATCH</span></div>
+        <p class="ben-card-desc">Commit to mentoring one founder for 3 months. You bring the experience. They bring the energy. Help them navigate hiring, fundraising, GTM, or whatever challenge matches your strength.</p>
       </div>
-      <div class="ben-card reveal d1">
+      <div class="ben-card reveal d4">
         <div class="ben-card-num">04</div>
-        <div class="ben-card-title">YOUR STRENGTHS <span>MATCHED TO NEEDS</span></div>
-        <p class="ben-card-desc">Our founders need more than capital. They need hiring help, GTM strategy, distribution channels, customer introductions, and operational guidance. We match your specific strengths to founders who actually need what you bring.</p>
-      </div>
-      <div class="ben-card reveal d2">
-        <div class="ben-card-num">05</div>
-        <div class="ben-card-title">SHAPE THEIR TRAJECTORY <span>EARLY</span></div>
-        <p class="ben-card-desc">When you engage with a Built Young founder, your involvement lands at a moment when it actually changes the outcome. A conversation, an intro, a framework: it compounds. Be the investor they credit two years from now.</p>
-      </div>
-      <div class="ben-card reveal d3">
-        <div class="ben-card-num">06</div>
-        <div class="ben-card-title">QUARTERLY <span>COMMUNITY UPDATES</span></div>
-        <p class="ben-card-desc">Receive curated updates on community momentum: who is growing fastest, who just hit a milestone, who is preparing to fundraise, and which new founders just joined the network.</p>
+        <div class="ben-card-title">QUARTERLY <span>SIGNAL REPORTS</span></div>
+        <p class="ben-card-desc">What the community is building, who is growing fastest, which sectors are heating up, and who is preparing for their next milestone. Founder intelligence you will not find in any database.</p>
       </div>
     </div>
+    <p class="ben-trust reveal">Introductions are curated. Access does not guarantee deal flow, meetings, or outcomes. We match based on real fit and mutual value.</p>
   </div>
 </section>
 
-<!-- 3. COMMUNITY BRIEF PREVIEW -->
-<section class="brief">
-  <div class="container">
-    <div class="brief-grid">
-      <div class="reveal">
-        <span class="brief-tag">After You Are Approved</span>
-        <h2 class="brief-title">YOU GET A FOUNDER COMMUNITY BRIEF</h2>
-        <p class="brief-p">Once your access is approved, we send you a <strong>confidential overview of the Built Young founder community.</strong> Not a pitch deck. Not a database. A curated brief designed to help you understand who is in the room and where your value fits.</p>
-        <p class="brief-p">The brief includes the types of companies in the community, what stages they are at, what challenges they are actively working through, and where they need help from investors, operators, and mentors.</p>
-        <div class="brief-list">
-          <div class="brief-item">
-            <div class="brief-item-title">WHO IS BUILDING</div>
-            <p class="brief-item-desc">Company profiles, industries, revenue ranges, and founder backgrounds across the current community.</p>
-          </div>
-          <div class="brief-item">
-            <div class="brief-item-title">WHAT THEY NEED</div>
-            <p class="brief-item-desc">Active founder needs: fundraising, hiring, GTM, distribution, co-founder search, mentorship, and customer introductions.</p>
-          </div>
-          <div class="brief-item">
-            <div class="brief-item-title">WHERE YOU FIT</div>
-            <p class="brief-item-desc">We map your expertise, network, and thesis against what the community actually needs right now, so introductions are relevant from day one.</p>
-          </div>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <div class="brief-card">
-          <span class="brief-card-tag">Sample Brief Preview</span>
-          <div class="brief-card-title">CURRENT COMMUNITY SNAPSHOT</div>
-          <div class="brief-card-row"><span class="brief-card-label">Industries</span><span class="brief-card-value">SaaS, Fintech, EdTech, DTC, Climate, Creator Economy</span></div>
-          <div class="brief-card-row"><span class="brief-card-label">Revenue Range</span><span class="brief-card-value">$100K to $3M+</span></div>
-          <div class="brief-card-row"><span class="brief-card-label">Founder Ages</span><span class="brief-card-value">20 to 28</span></div>
-          <div class="brief-card-row"><span class="brief-card-label">Top Need: Fundraising</span><span class="brief-card-value fire">42%</span></div>
-          <div class="brief-card-row"><span class="brief-card-label">Top Need: Hiring</span><span class="brief-card-value fire">31%</span></div>
-          <div class="brief-card-row"><span class="brief-card-label">Top Need: GTM / Distribution</span><span class="brief-card-value fire">27%</span></div>
-          <p class="brief-card-note">Full community brief is shared after VC access is approved. Data reflects the current Built Young founder community.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. CRITERIA -->
-<section class="criteria">
+<!-- 3. WHO IS IN THE CLUB -->
+<section class="mentors">
   <div class="container">
     <div class="reveal">
-      <span class="crit-tag">Founder Quality Filter</span>
-      <h2 class="crit-title">WHAT KIND OF FOUNDERS WE CURATE</h2>
+      <span class="men-tag">Inside the Club</span>
+      <h2 class="men-title">WHO IS ALREADY MENTORING</h2>
+      <p class="men-sub">These investors and operators joined Built Young to meet the next generation of serious builders. Here is who they are working with right now.</p>
     </div>
-    <div class="crit-grid reveal">
-      <div class="crit-card"><div class="crit-card-title">UNDER 30</div><p class="crit-card-desc">Young enough to be underestimated. Serious enough to prove people wrong.</p></div>
-      <div class="crit-card"><div class="crit-card-title">REAL REVENUE</div><p class="crit-card-desc">Paying customers, traction, or strong evidence the founder can execute.</p></div>
-      <div class="crit-card"><div class="crit-card-title">BUILT FROM SCRATCH</div><p class="crit-card-desc">No inherited customer base. Their idea, their risk, their execution.</p></div>
+    <div class="men-grid">
+      <div class="men-card reveal d1">
+        <div class="men-card-vc">
+          <div class="men-card-vc-tag">Investor</div>
+          <div class="men-card-vc-name">DAVID PARK</div>
+          <div class="men-card-vc-role">Partner, Horizon Ventures<br>Pre-seed to Seed, B2B SaaS</div>
+        </div>
+        <div class="men-card-founder">
+          <div class="men-card-founder-tag">Mentoring</div>
+          <div class="men-card-founder-name">MARCUS CHEN, 22</div>
+          <div class="men-card-founder-co">Stackflow &middot; B2B Payments</div>
+        </div>
+        <div class="men-card-match">
+          <p class="men-card-match-text">"Marcus reminds me of myself at 22. Same hunger, same impatience, same refusal to wait for permission."</p>
+        </div>
+      </div>
+      <div class="men-card reveal d2">
+        <div class="men-card-vc">
+          <div class="men-card-vc-tag">Operator</div>
+          <div class="men-card-vc-name">JENNIFER LIN</div>
+          <div class="men-card-vc-role">Former VP Eng, Stripe<br>Hiring, Eng Leadership, Scaling</div>
+        </div>
+        <div class="men-card-founder">
+          <div class="men-card-founder-tag">Mentoring</div>
+          <div class="men-card-founder-name">SARAH KIM, 23</div>
+          <div class="men-card-founder-co">ClearForm &middot; Legal Tech</div>
+        </div>
+        <div class="men-card-match">
+          <p class="men-card-match-text">"Sarah is building the exact tool I wished existed when I was scaling my first engineering team."</p>
+        </div>
+      </div>
+      <div class="men-card reveal d3">
+        <div class="men-card-vc">
+          <div class="men-card-vc-tag">Investor</div>
+          <div class="men-card-vc-name">ALEX MORALES</div>
+          <div class="men-card-vc-role">Angel Investor<br>Creator Economy, Consumer</div>
+        </div>
+        <div class="men-card-founder">
+          <div class="men-card-founder-tag">Mentoring</div>
+          <div class="men-card-founder-name">RYAN TORRES, 27</div>
+          <div class="men-card-founder-co">Clipwave &middot; Creator Monetisation</div>
+        </div>
+        <div class="men-card-match">
+          <p class="men-card-match-text">"I spent 8 years in the creator economy. Ryan is solving the monetisation problem I could never crack."</p>
+        </div>
+      </div>
     </div>
+    <p class="men-note reveal">Mentor matches are curated by Built Young based on expertise, industry fit, and what each founder needs most. New matches announced quarterly.</p>
   </div>
 </section>
 
-<!-- 5. FINAL -->
+<!-- 4. FINAL -->
 <section class="final">
   <div class="container reveal">
-    <h2 class="final-title">FIND THE SIGNAL BEFORE IT BECOMES <span>OBVIOUS.</span></h2>
-    <p class="final-sub">If you invest in young founders, emerging operators, or early revenue builders, request access and tell us what kind of signal you are looking for.</p>
+    <h2 class="final-title">REMEMBER WHEN SOMEONE BELIEVING IN YOU WOULD HAVE CHANGED <span>EVERYTHING?</span></h2>
+    <p class="final-sub">Now you are that person. Request access and we will match you with the young founders who need exactly what you have to offer.</p>
     <div class="final-btns">
       <a href="#" class="btn btn-primary" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Request VC Access</a>
-      <a href="apply.html" class="btn btn-ghost">See Founder Applications</a>
+      <a href="apply.html" class="btn btn-ghost">Explore All Paths</a>
     </div>
   </div>
 </section>
@@ -338,6 +317,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   </div>
 </footer>
 
+<div class="sticky-cta" id="stickyCta"><a href="#" class="sticky-cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Request VC Access</a></div>
 <script>
 document.getElementById('hamburger')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('mobileClose')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open'));
@@ -351,7 +331,7 @@ vf?.addEventListener('submit',function(e){
   fetch(vf.action,{method:'POST',body:d,headers:{'Accept':'application/json'}})
   .then(r=>{if(r.ok){vf.style.display='none';document.getElementById('vcSuccess').classList.add('show');}}).catch(()=>{});
 });
+const sc=document.getElementById("stickyCta");if(sc){window.addEventListener("scroll",()=>{if(window.scrollY>400){sc.classList.add("show")}else{sc.classList.remove("show")}},{passive:true});}
 </script>
-<div class="sticky-cta" id="stickyCta"><a href="#" class="sticky-cta-btn">Request VC Access</a></div>
 </body>
 </html>
