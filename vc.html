@@ -157,17 +157,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .final-btns .btn{width:100%;max-width:320px}
 }
 </style>
+<link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-logo"><span class="b">BUILT</span><span class="y">Young</span></a>
-  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html" class="active">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
-  <a href="builders.html" class="nav-cta">Apply Now</a>
+  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html" class="active">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&#x2715;</button>
-  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
+  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
 
 <!-- 1. HERO + FORM -->
@@ -321,7 +322,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     <p class="final-sub">If you invest in young founders, emerging operators, or early revenue builders, request access and tell us what kind of signal you are looking for.</p>
     <div class="final-btns">
       <a href="#" class="btn btn-primary" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">Request VC Access</a>
-      <a href="builders.html" class="btn btn-ghost">See Founder Applications</a>
+      <a href="apply.html" class="btn btn-ghost">See Founder Applications</a>
     </div>
   </div>
 </section>
@@ -330,7 +331,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <div class="container">
     <div class="footer-grid">
       <div><div class="footer-logo"><span class="b">BUILT</span><span class="y">Young</span></div><p class="footer-tag">Under 25. Over $1M. Their story starts where yours can too.</p><p class="footer-manifesto">Either you learn or you win. Either way, you move.</p></div>
-      <div><p class="footer-col-title">Navigate</p><div class="footer-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply to Built Young</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div></div>
+      <div><p class="footer-col-title">Navigate</p><div class="footer-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div></div>
       <div><p class="footer-col-title">Connect</p><div class="footer-links"><a href="#">YouTube Channel</a><a href="#">Spotify Podcast</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="mailto:hello@built-young.com">hello@built-young.com</a></div></div>
     </div>
     <div class="footer-bottom"><p class="footer-copy">&copy; 2025 Built Young &middot; built-young.com</p><div class="footer-social"><a href="#">YouTube</a><a href="#">Spotify</a><a href="#">Instagram</a><a href="#">LinkedIn</a></div></div>
@@ -351,5 +352,6 @@ vf?.addEventListener('submit',function(e){
   .then(r=>{if(r.ok){vf.style.display='none';document.getElementById('vcSuccess').classList.add('show');}}).catch(()=>{});
 });
 </script>
+<div class="sticky-cta" id="stickyCta"><a href="#" class="sticky-cta-btn">Request VC Access</a></div>
 </body>
 </html>

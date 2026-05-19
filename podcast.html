@@ -151,17 +151,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .ep-card-thumb{width:100%;height:80px}
 }
 </style>
+<link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-logo"><span class="b">BUILT</span><span class="y">Young</span></a>
-  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html" class="active">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
-  <a href="builders.html" class="nav-cta">Apply Now</a>
+  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html" class="active">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&#x2715;</button>
-  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
+  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
 
 <!-- 1. HERO + EPISODES -->
@@ -211,7 +212,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     <h2 class="guest-cta-title">BUILDING SOMETHING WORTH <span>TALKING ABOUT?</span></h2>
     <p class="guest-cta-sub">If you are under 30 and building real revenue from scratch, we want to hear your story. Every guest leaves with their founder moment documented and shared.</p>
     <div class="guest-cta-btns">
-      <a href="builders.html" class="btn btn-primary">Apply to Be Featured</a>
+      <a href="apply.html" class="btn btn-primary">Apply to Be Featured</a>
       <a href="nominate.html" class="btn btn-ghost">Nominate a Founder</a>
     </div>
   </div>
@@ -268,8 +269,8 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
         <p class="footer-col-title">Navigate</p>
         <div class="footer-links">
           <a href="about.html">About</a><a href="podcast.html">Podcast</a>
-          <a href="community.html">Community</a><a href="vc.html">VC Access</a>
-          <a href="builders.html">Apply to Built Young</a><a href="workshops.html">Workshops</a>
+          <a href="club.html">Club</a><a href="vc.html">VC Access</a>
+          <a href="apply.html">Apply</a><a href="workshops.html">Workshops</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -324,5 +325,6 @@ eps.forEach((ep,i)=>{
     +'</div></div>';
 });
 </script>
+<div class="sticky-cta" id="stickyCta"><a href="#" class="sticky-cta-btn">Listen Now</a></div>
 </body>
 </html>

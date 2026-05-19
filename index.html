@@ -351,17 +351,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 }
 
 </style>
+<link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-logo"><span class="b">BUILT</span><span class="y">Young</span></a>
-  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
-  <a href="builders.html" class="nav-cta">Apply Now</a>
+  <div class="nav-links"><a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
+  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
 <section id="hero">
   <svg class="hero-svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
@@ -408,7 +409,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     <p class="hero-tagline">Their story starts where yours can too.</p>
     <div class="hero-ctas">
       <a href="podcast.html" class="btn btn-primary">Listen Now</a>
-      <a href="builders.html" class="btn btn-ghost">Apply to Built Young</a>
+      <a href="apply.html" class="btn btn-ghost">Apply</a>
     </div>
   </div>
 
@@ -478,7 +479,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
         <span class="scouting-tag">Now Scouting</span>
         <p class="scouting-text">We are actively building our next cohort of young founders doing real revenue before 30. If that is you, or you know someone who should be on this show, the door is open.</p>
         <div class="scouting-ctas">
-          <a href="builders.html" class="btn btn-primary">Apply to Built Young</a>
+          <a href="apply.html" class="btn btn-primary">Apply</a>
           <a href="nominate.html" class="btn btn-ghost">Nominate a Founder</a>
         </div>
       </div>
@@ -492,7 +493,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <div class="container">
     <div class="reveal" style="margin-bottom:3.5rem">
       <span style="font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem">The Community</span>
-      <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:.95;color:var(--cream);margin-bottom:.75rem">WHO IS ALREADY IN THE ROOM</h2>
+      <h2 style="font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);line-height:.95;color:var(--cream);margin-bottom:.75rem">WHO IS IN THE BUILT YOUNG CLUB</h2>
       <p style="font-size:1.05rem;color:var(--gray);line-height:1.6;max-width:500px">A curated circle of founders, investors, and operators paying attention to young revenue builders before the market catches up.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-bottom:3rem" class="community-cards">
@@ -518,7 +519,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
       </div>
     </div>
     <div class="reveal" style="text-align:center">
-      <a href="community.html" class="btn btn-ghost">Explore the Community</a>
+      <a href="club.html" class="btn btn-ghost">Explore the Club</a>
     </div>
   </div>
 </section>
@@ -587,8 +588,8 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
         <p class="footer-col-title">Navigate</p>
         <div class="footer-links">
           <a href="about.html">About</a><a href="podcast.html">Podcast</a>
-          <a href="community.html">Community</a><a href="vc.html">VC Access</a>
-          <a href="builders.html">Apply to Built Young</a><a href="workshops.html">Workshops</a>
+          <a href="club.html">Club</a><a href="vc.html">VC Access</a>
+          <a href="apply.html">Apply</a><a href="workshops.html">Workshops</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -616,6 +617,7 @@ document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.spots-fill').forEach(b=>{const p=b.getAttribute('data-pct');setTimeout(()=>b.style.width=p+'%',200);});ro.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 </script>
+
 <script>
 function countUp(el,target,fmt,dur,delay){
   if(!el)return;
@@ -625,5 +627,6 @@ function countUp(el,target,fmt,dur,delay){
     el.textContent=fmt(Math.round(e*target));if(p<1)requestAnimationFrame(t);};
     requestAnimationFrame(t);},delay);}
 </script>
+<div class="sticky-cta" id="stickyCta"><a href="apply-founder.html" class="sticky-cta-btn">Apply</a></div>
 </body>
 </html>

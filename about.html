@@ -128,17 +128,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .cta-card-btns .btn{font-size:.8rem}
 }
 </style>
+<link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-logo"><span class="b">BUILT</span><span class="y">Young</span></a>
-  <div class="nav-links"><a href="about.html" class="active">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
-  <a href="builders.html" class="nav-cta">Apply Now</a>
+  <div class="nav-links"><a href="about.html" class="active">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a></div>
+  <a href="apply.html" class="nav-cta">Apply Now</a>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">&#x2715;</button>
-  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="community.html">Community</a><a href="vc.html">VC Access</a><a href="builders.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
+  <a href="about.html">About</a><a href="podcast.html">Podcast</a><a href="club.html">Club</a><a href="vc.html">VC Access</a><a href="apply.html">Apply</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -206,7 +207,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
           <div class="cta-card-title">BUILDING SOMETHING REAL, OR KNOW SOMEONE <span>WHO IS?</span></div>
           <p class="cta-card-sub">If you are under 30 and building from scratch, or if you know a founder who deserves to be seen, we want to hear from you.</p>
           <div class="cta-card-btns">
-            <a href="builders.html" class="btn btn-primary">Apply as a Founder</a>
+            <a href="apply.html" class="btn btn-primary">Apply as a Founder</a>
             <a href="nominate.html" class="btn btn-ghost">Nominate a Founder</a>
           </div>
           <div class="cta-card-divider"></div>
@@ -230,8 +231,8 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
         <p class="footer-col-title">Navigate</p>
         <div class="footer-links">
           <a href="about.html">About</a><a href="podcast.html">Podcast</a>
-          <a href="community.html">Community</a><a href="vc.html">VC Access</a>
-          <a href="builders.html">Apply to Built Young</a><a href="workshops.html">Workshops</a>
+          <a href="club.html">Club</a><a href="vc.html">VC Access</a>
+          <a href="apply.html">Apply</a><a href="workshops.html">Workshops</a>
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -259,5 +260,6 @@ document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 </script>
+<div class="sticky-cta" id="stickyCta"><a href="apply-founder.html" class="sticky-cta-btn">Apply</a></div>
 </body>
 </html>
