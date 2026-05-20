@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="og-logo.png">
+<link rel="apple-touch-icon" href="og-logo.png">
+<meta property="og:image" content="https://built-young.com/og-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Built Young">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://built-young.com/og-logo.png">
 <title>Built Young</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,800&display=swap" rel="stylesheet">
 <style>
@@ -112,24 +119,18 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .hero-manifesto{display:none}
   .hero-content{
     padding:6.5rem 6vw 0;
-    max-width:100%;
+    max-width:60%;
     position:relative;
     z-index:20;
   }
   .hero-eyebrow{white-space:normal}
-  .rings-pulse{
-    transform:scale(0.5);
-    transform-origin:680px 450px;
-    opacity:0.3;
-  }
-  .b-group{
-    transform:translate(500px,200px) scale(0.4);
-  }
+  .hero-svg .b-group{display:none}
+  .mobile-b{display:block}
   .community-cards{grid-template-columns:1fr 1fr !important}
 }
 @media(max-width:600px){
   .footer-grid{grid-template-columns:1fr}
-  .hero-content{padding:5.5rem 6vw 0}
+  .hero-content{padding:5.5rem 6vw 0;max-width:58%}
   .hero-eyebrow{font-size:.6rem;letter-spacing:.2em;margin-bottom:1.25rem}
   .hero-headline{font-size:2.5rem}
   .hero-tagline{font-size:.95rem;max-width:260px}
@@ -137,15 +138,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .hero-ctas .btn{width:100%;justify-content:center}
   .hero-stats{gap:1.5rem;margin-top:1.25rem;padding-top:1rem}
   .stat-num{font-size:1.3rem}
-  .rings-pulse{
-    transform:scale(0.4);
-    transform-origin:680px 450px;
-    opacity:0.2;
-  }
-  .b-group{
-    transform:translate(440px,250px) scale(0.35);
-    opacity:0.6;
-  }
+  .mobile-b{width:48vw;right:-4vw;opacity:.65}
   .community-cards{grid-template-columns:1fr !important}
 }
 
@@ -197,6 +190,11 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 @keyframes bGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(224,78,18,.28))}50%{filter:drop-shadow(0 0 22px rgba(224,78,18,.58))}}
 @keyframes textUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{to{opacity:1}}
+@keyframes bDraw{to{stroke-dashoffset:0}}
+@keyframes bDot{to{opacity:1}}
+
+/* Mobile-only B */
+.mobile-b{display:none;position:absolute;right:-2vw;top:50%;transform:translateY(-50%);width:42vw;height:auto;z-index:5;opacity:.75;pointer-events:none}
 
 /* ═══ SOCIAL PROOF ═══ */
 .proof-section{background:var(--ink2);padding:clamp(4rem,8vw,8rem) 0}
@@ -412,6 +410,15 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
       <a href="apply.html" class="btn btn-ghost">Apply</a>
     </div>
   </div>
+
+  <!-- Mobile-only B animation -->
+  <svg class="mobile-b" viewBox="0 0 260 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M50,18 C52,90 54,200 56,320 C57,370 56,420 52,490" fill="none" stroke="#E04E12" stroke-width="13" stroke-linecap="round" style="stroke-dasharray:900;stroke-dashoffset:900;animation:bDraw 2s ease 2.5s forwards"/>
+    <path d="M50,18 C95,14 148,30 172,62 C195,94 192,136 164,162 C142,183 100,190 56,188" fill="none" stroke="#E04E12" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:500;stroke-dashoffset:500;animation:bDraw 1.5s ease 3s forwards"/>
+    <path d="M56,188 C108,186 178,206 208,248 C238,290 234,348 200,385 C168,420 112,432 52,430" fill="none" stroke="#E04E12" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:600;stroke-dashoffset:600;animation:bDraw 1.5s ease 3.5s forwards"/>
+    <circle cx="56" cy="188" r="11" fill="#F5B829" opacity="0" style="animation:bDot .4s ease 4.5s forwards"/>
+    <circle cx="56" cy="188" r="5.5" fill="#F9F4EE" opacity="0" style="animation:bDot .4s ease 4.6s forwards"/>
+  </svg>
 
   <div class="hero-manifesto">Either you learn or you win. Either way, you move.</div>
   <div class="hero-rule"></div>
