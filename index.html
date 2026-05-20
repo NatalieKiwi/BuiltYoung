@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="og-image.png">
 <meta property="og:image" content="https://built-young.com/og-image.png">
 <meta property="og:type" content="website">
@@ -124,12 +124,6 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     z-index:20;
   }
   .hero-eyebrow{white-space:normal}
-  /* Hide B in the main SVG, keep rings */
-  .hero-svg .b-group{display:none}
-  .hero-svg .rings-pulse{opacity:.4}
-  .hero-svg text{display:none}
-  /* Show separate mobile B */
-  .mobile-b{display:block}
   .community-cards{grid-template-columns:1fr 1fr !important}
 }
 @media(max-width:600px){
@@ -142,7 +136,6 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   .hero-ctas .btn{width:100%;justify-content:center;min-width:auto}
   .hero-stats{gap:1.5rem;margin-top:1.25rem;padding-top:1rem}
   .stat-num{font-size:1.3rem}
-  .mobile-b{width:50vw;right:0;top:12%;opacity:.7}
   .community-cards{grid-template-columns:1fr !important}
 }
 
@@ -194,11 +187,6 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 @keyframes bGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(224,78,18,.28))}50%{filter:drop-shadow(0 0 22px rgba(224,78,18,.58))}}
 @keyframes textUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{to{opacity:1}}
-@keyframes bDraw{to{stroke-dashoffset:0}}
-@keyframes bDot{to{opacity:1}}
-
-/* Mobile-only B */
-.mobile-b{display:none;position:absolute;right:2vw;top:15%;width:42vw;height:auto;z-index:5;opacity:.75;pointer-events:none}
 
 /* ═══ SOCIAL PROOF ═══ */
 .proof-section{background:var(--ink2);padding:clamp(4rem,8vw,8rem) 0}
@@ -415,15 +403,6 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     </div>
   </div>
 
-  <!-- Mobile-only B animation -->
-  <svg class="mobile-b" viewBox="0 0 260 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M50,18 C52,90 54,200 56,320 C57,370 56,420 52,490" fill="none" stroke="#E04E12" stroke-width="13" stroke-linecap="round" style="stroke-dasharray:900;stroke-dashoffset:900;animation:bDraw 2s ease 2.5s forwards"/>
-    <path d="M50,18 C95,14 148,30 172,62 C195,94 192,136 164,162 C142,183 100,190 56,188" fill="none" stroke="#E04E12" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:500;stroke-dashoffset:500;animation:bDraw 1.5s ease 3s forwards"/>
-    <path d="M56,188 C108,186 178,206 208,248 C238,290 234,348 200,385 C168,420 112,432 52,430" fill="none" stroke="#E04E12" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:600;stroke-dashoffset:600;animation:bDraw 1.5s ease 3.5s forwards"/>
-    <circle cx="56" cy="188" r="11" fill="#F5B829" opacity="0" style="animation:bDot .4s ease 4.5s forwards"/>
-    <circle cx="56" cy="188" r="5.5" fill="#F9F4EE" opacity="0" style="animation:bDot .4s ease 4.6s forwards"/>
-  </svg>
-
   <div class="hero-manifesto">Either you learn or you win. Either way, you move.</div>
   <div class="hero-rule"></div>
 </section>
@@ -627,6 +606,12 @@ document.getElementById('mobileClose')?.addEventListener('click',()=>document.ge
 document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('.spots-fill').forEach(b=>{const p=b.getAttribute('data-pct');setTimeout(()=>b.style.width=p+'%',200);});ro.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// Move B into visible area on mobile
+if(window.innerWidth<=900){
+  const bg=document.querySelector('.b-group');
+  if(bg) bg.setAttribute('transform','translate(800,180) scale(0.85)');
+}
 </script>
 
 <script>
