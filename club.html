@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="og-image.png">
+<meta property="og:title" content="Built Young Club">
+<meta property="og:description" content="A private founder club for young builders with real traction.">
+<meta property="og:image" content="https://built-young.com/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Built Young">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://built-young.com/og-image.png">
+<title>Built Young Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--fire:#E04E12;--gold:#F5B829;--cream:#F9F4EE;--ink:#131010;--ink2:#1b1818;--gray:#c8c4c0;--gray2:#a8a4a0;--fd:'Bebas Neue',sans-serif;--fb:'Sora',sans-serif;--max:1100px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:var(--fb);font-weight:300;font-size:1rem;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.04;pointer-events:none;z-index:9999}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(19,16,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(249,244,238,.06)}
+.nav-logo{font-size:1.6rem;line-height:1;display:flex;align-items:baseline;gap:.1em}
+.nav-logo .b{font-family:var(--fd);color:var(--cream)}.nav-logo .y{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:2.2rem}
+.nav-links a{font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cream)}
+.nav-cta{font-family:var(--fb);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.55rem 1.4rem;background:var(--fire);color:#fff;border:none;cursor:pointer;transition:all .2s}
+.nav-cta:hover{background:#c84210}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.hamburger span{display:block;width:22px;height:2px;background:var(--cream)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--ink);z-index:998;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--fd);font-size:2.8rem;color:var(--cream)}.mob-menu a:hover{color:var(--fire)}
+.mob-close{position:absolute;top:1.5rem;right:5vw;font-size:1.5rem;color:var(--gray2);cursor:pointer;background:none;border:none}
+.container{width:min(var(--max),100% - 3rem);margin-inline:auto}
+section{padding:clamp(5rem,10vw,9rem) 0}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.22s}.d3{transition-delay:.32s}.d4{transition-delay:.42s}
+.btn{font-family:var(--fb);font-size:.9rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.9rem 2.2rem;border:2px solid transparent;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;justify-content:center}
+.btn-fire{background:var(--fire);color:#fff;border-color:var(--fire)}
+.btn-fire:hover{background:#c84210;transform:translateY(-2px);box-shadow:0 8px 24px rgba(224,78,18,.35)}
+
+/* HERO */
+.hero{padding:10rem 0 5rem;background:var(--ink2);text-align:center;position:relative;overflow:hidden}
+.hero-rings{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.06}
+.hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.5rem}
+.hero-title{font-family:var(--fd);font-size:clamp(2.8rem,6vw,4.5rem);line-height:.9;color:var(--cream);margin-bottom:1.25rem;max-width:650px;margin-inline:auto}
+.hero-title span{color:var(--fire)}
+.hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.65;max-width:440px;margin:0 auto 1rem}
+.hero-note{font-size:.85rem;color:var(--gray2);font-style:italic;margin-bottom:2.5rem}
+.hero-btn{margin:0 auto}
+
+/* WHAT OPENS UP */
+.sec-tag{font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
+.sec-title{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.2rem);line-height:.92;color:var(--cream);margin-bottom:3rem}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2.5rem 2rem;transition:transform .25s,box-shadow .25s,border-top-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(224,78,18,.12);border-top-color:var(--gold)}
+.card-num{font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:.5rem}
+.card-title{font-family:var(--fd);font-size:1.4rem;color:var(--cream);line-height:1.05;margin-bottom:.5rem}
+.card-title span{color:var(--gold)}
+.card-desc{font-size:.95rem;color:var(--gray);line-height:1.65}
+
+/* APPLICATION */
+.apply{background:var(--ink2)}
+.apply-tag{font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.apply-title{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.2rem);line-height:.92;color:var(--cream);margin-bottom:1rem}
+.apply-sub{font-size:1rem;color:var(--gray);line-height:1.6;max-width:500px;margin-bottom:3rem}
+.form-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:3rem;max-width:700px}
+.form-group{margin-bottom:1.1rem}
+.form-label{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(249,244,238,.5);display:block;margin-bottom:.3rem}
+.form-input,.form-select,.form-textarea{width:100%;background:rgba(249,244,238,.04);border:none;border-bottom:1.5px solid rgba(249,244,238,.15);color:var(--cream);font-family:var(--fb);font-size:1rem;padding:.7rem .85rem;outline:none;transition:border-color .2s,background .2s;appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--fire);background:rgba(224,78,18,.04)}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--gray2)}
+.form-select option{background:var(--ink2);color:var(--cream)}
+.form-textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.form-submit{width:100%;margin-top:1.25rem;justify-content:center;font-size:.85rem}
+.form-micro{font-size:.7rem;color:var(--gray2);text-align:center;margin-top:1rem;font-style:italic}
+.form-success{text-align:center;padding:2.5rem 1rem;display:none}
+.form-success.show{display:block}
+.form-success p{font-family:var(--fd);font-size:1.6rem;color:var(--cream);margin-bottom:.4rem}
+.form-success span{font-size:.9rem;color:var(--gray)}
+.form-note{font-size:.82rem;color:var(--gray2);margin-top:2rem;text-align:center;max-width:500px}
+.form-note a{color:var(--fire);border-bottom:1px solid rgba(224,78,18,.3)}
+
+/* FOOTER */
+footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2rem}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.ft-logo{font-size:2rem;line-height:1;display:flex;align-items:baseline;gap:.1em;margin-bottom:.75rem}
+.ft-logo .b{font-family:var(--fd);color:var(--cream)}.ft-logo .y{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;color:var(--gold)}
+.ft-tag{font-size:.88rem;color:var(--gray);line-height:1.6;max-width:260px;margin-bottom:1rem}
+.ft-motto{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,244,238,.2)}
+.ft-col-title{font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);margin-bottom:1.25rem}
+.ft-links{display:flex;flex-direction:column;gap:.65rem}
+.ft-links a{font-size:.88rem;color:var(--gray);transition:color .2s}.ft-links a:hover{color:var(--cream)}
+.ft-bottom{border-top:1px solid rgba(249,244,238,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.ft-copy{font-size:.7rem;color:rgba(249,244,238,.2)}
+.ft-social{display:flex;gap:.75rem}
+.ft-social a{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2);transition:color .2s}.ft-social a:hover{color:var(--fire)}
+
+@media(max-width:900px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}
+  .sticky-cta{display:block}.cards{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.hero{padding:7rem 0 3rem}.hero-title{font-size:2.5rem}.cards{grid-template-columns:1fr}.ft-grid{grid-template-columns:1fr}.form-card{padding:2rem 1.25rem}footer{padding-bottom:4rem}}
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;padding:.55rem .75rem;background:rgba(19,16,16,.96);backdrop-filter:blur(12px);border-top:2px solid var(--fire);transform:translateY(100%);transition:transform .35s}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta-btn{display:block;width:100%;text-align:center;font-family:var(--fb);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.7rem;background:var(--fire);color:#fff;border:none;cursor:pointer}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><span class="b">BUILT</span><span class="y">Young</span></a>
+  <div class="nav-links"><a href="about.html">About</a><a href="club.html" class="active">Club</a><a href="podcast.html">Podcast</a><a href="contact.html">Contact</a></div>
+  <a href="#apply" class="nav-cta">Apply</a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-menu" id="mobMenu"><button class="mob-close" id="mobClose">&#x2715;</button><a href="about.html">About</a><a href="club.html">Club</a><a href="podcast.html">Podcast</a><a href="contact.html">Contact</a><a href="#apply" style="color:var(--fire)" onclick="document.getElementById('mobMenu').classList.remove('open')">Apply</a></div>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="hero-rings" width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="300" cy="300" r="290" fill="none" stroke="#F9F4EE" stroke-width="1"/><circle cx="300" cy="300" r="220" fill="none" stroke="#F9F4EE" stroke-width=".8"/><circle cx="300" cy="300" r="150" fill="none" stroke="#F9F4EE" stroke-width=".6"/></svg>
+  <div class="container">
+    <div class="reveal">
+      <span class="hero-tag">Built Young Club</span>
+      <h1 class="hero-title">YOU BUILT THE REVENUE. NOW FIND THE <span>CLUB.</span></h1>
+      <p class="hero-sub">A private founder club for young builders with real traction to meet aligned mentors, hiring resources, operators, and peers building at the same pace to grow up together.</p>
+      <p class="hero-note">Not everyone gets in. That is the point.</p>
+      <a href="#apply" class="btn btn-fire hero-btn">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT OPENS UP -->
+<section style="background:var(--ink)">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-tag">Inside the Club</span>
+      <h2 class="sec-title">WHAT OPENS UP WHEN YOU GET IN</h2>
+    </div>
+    <div class="cards">
+      <div class="card reveal d1">
+        <div class="card-num">01</div>
+        <div class="card-title">MATCHED VCs AND <span>MENTORS</span></div>
+        <p class="card-desc">We connect you with investors and operators aligned with your industry, stage, and ambition. Not cold intros. Curated matches.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="card-num">02</div>
+        <div class="card-title">PRIVATE <span>WORKSHOPS</span></div>
+        <p class="card-desc">Practical sessions on hiring, scaling, and leading. Built for founders who are already in motion, not still planning.</p>
+      </div>
+      <div class="card reveal d3">
+        <div class="card-num">03</div>
+        <div class="card-title">A PEER CIRCLE THAT <span>GETS IT</span></div>
+        <p class="card-desc">Founders your age, at your level, solving the same problems. No networking events. Real relationships with real builders.</p>
+      </div>
+      <div class="card reveal d4">
+        <div class="card-num">04</div>
+        <div class="card-title">MORE THAT UNLOCKS <span>INSIDE</span></div>
+        <p class="card-desc">Some things are better experienced than explained. Apply, get in, and find out what the club actually looks like from the inside.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="apply" id="apply">
+  <div class="container">
+    <div class="reveal">
+      <span class="apply-tag">Application</span>
+      <h2 class="apply-title">TELL US WHAT YOU ARE BUILDING</h2>
+      <p class="apply-sub">Every submission is reviewed personally. We are looking for founders with real traction, not perfect stories.</p>
+    </div>
+    <div class="form-card reveal">
+      <form id="applyForm" action="https://formspree.io/f/mgodnlbn" method="POST">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" type="text" name="full_name" placeholder="Your name" required></div>
+          <div class="form-group"><label class="form-label">Age *</label><input class="form-input" type="number" name="age" placeholder="Your age" min="16" max="35" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Email *</label><input class="form-input" type="email" name="email" placeholder="you@example.com" required></div>
+          <div class="form-group"><label class="form-label">LinkedIn or Website</label><input class="form-input" type="url" name="link" placeholder="https://"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Company or Project *</label><input class="form-input" type="text" name="company" placeholder="What is it called?" required></div>
+        <div class="form-group"><label class="form-label">What are you building? *</label><textarea class="form-textarea" name="what_building" placeholder="Explain it the way you would to someone who has never heard of it." required></textarea></div>
+        <div class="form-group"><label class="form-label">What traction, revenue, or customer signal do you have? *</label><textarea class="form-textarea" name="traction" placeholder="Revenue range, number of customers, growth rate, or any signal that shows momentum." required></textarea></div>
+        <div class="form-group"><label class="form-label">What do you need most right now?</label>
+          <select class="form-select" name="biggest_need">
+            <option value="">Select one</option>
+            <option>Hiring and team building</option>
+            <option>Fundraising guidance</option>
+            <option>GTM and distribution</option>
+            <option>Mentorship and founder peers</option>
+            <option>Customer introductions</option>
+            <option>Equity and compensation design</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-fire form-submit">Submit Application</button>
+        <p class="form-micro">We review every submission with intention. You will hear from us if there is a fit.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <p>APPLICATION RECEIVED</p>
+        <span>We will review your submission and be in touch if there is a fit.</span>
+      </div>
+    </div>
+    <p class="form-note reveal">Not at threshold yet? <a href="apply-potential.html">Start with Built Young Potential</a> for founder resources and workshop updates.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div><div class="ft-logo"><span class="b">BUILT</span><span class="y">Young</span></div><p class="ft-tag">Under 25. Over $1M. Their story starts where yours can too.</p><p class="ft-motto">Either you learn or you win. Either way, you move.</p></div>
+      <div><p class="ft-col-title">Navigate</p><div class="ft-links"><a href="about.html">About</a><a href="club.html">Club</a><a href="podcast.html">Podcast</a><a href="contact.html">Contact</a></div></div>
+      <div><p class="ft-col-title">Connect</p><div class="ft-links"><a href="https://www.instagram.com/builtyoung25" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a><a href="mailto:hello@built-young.com">hello@built-young.com</a></div></div>
+    </div>
+    <div class="ft-bottom"><p class="ft-copy">&copy; 2025 Built Young &middot; built-young.com</p><div class="ft-social"><a href="https://www.instagram.com/builtyoung25" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a></div></div>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta"><a href="#apply" class="sticky-cta-btn">Apply Now</a></div>
+<script>
+document.getElementById('ham')?.addEventListener('click',()=>document.getElementById('mobMenu').classList.add('open'));
+document.getElementById('mobClose')?.addEventListener('click',()=>document.getElementById('mobMenu').classList.remove('open'));
+document.querySelectorAll('.mob-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobMenu').classList.remove('open')));
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1}).observe(el));
+const sc=document.getElementById('stickyCta');if(sc)window.addEventListener('scroll',()=>{sc.classList.toggle('show',scrollY>400)},{passive:true});
+const af=document.getElementById('applyForm');
+af?.addEventListener('submit',function(e){e.preventDefault();const d=new FormData(af);fetch(af.action,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(r=>{if(r.ok){af.style.display='none';document.getElementById('formSuccess').classList.add('show')}});});
+</script>
+</body>
+</html>
