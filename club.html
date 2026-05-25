@@ -50,14 +50,14 @@ section{padding:clamp(5rem,10vw,9rem) 0}
 .hero-tag{font-size:.7rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.5rem}
 .hero-title{font-family:var(--fd);font-size:clamp(2.8rem,6vw,4.5rem);line-height:.9;color:var(--cream);margin-bottom:1.25rem;max-width:650px;margin-inline:auto}
 .hero-title span{color:var(--fire)}
-.hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.65;max-width:440px;margin:0 auto 1rem}
+.hero-sub{font-size:1.15rem;color:var(--gray);line-height:1.65;max-width:680px;margin:0 auto 1rem}
 .hero-note{font-size:.85rem;color:var(--gray2);font-style:italic;margin-bottom:2.5rem}
 .hero-btn{margin:0 auto}
 
 /* WHAT OPENS UP */
 .sec-tag{font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
 .sec-title{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.2rem);line-height:.92;color:var(--cream);margin-bottom:3rem}
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:900px;margin:0 auto;text-align:left}
 .card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2.5rem 2rem;transition:transform .25s,box-shadow .25s,border-top-color .25s}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(224,78,18,.12);border-top-color:var(--gold)}
 .card-num{font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--fire);margin-bottom:.5rem}
@@ -67,10 +67,11 @@ section{padding:clamp(5rem,10vw,9rem) 0}
 
 /* APPLICATION */
 .apply{background:var(--ink2)}
+.apply{text-align:center}
 .apply-tag{font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
 .apply-title{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.2rem);line-height:.92;color:var(--cream);margin-bottom:1rem}
-.apply-sub{font-size:1rem;color:var(--gray);line-height:1.6;max-width:500px;margin-bottom:3rem}
-.form-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:3rem;max-width:700px}
+.apply-sub{font-size:1rem;color:var(--gray);line-height:1.6;max-width:500px;margin:0 auto 3rem}
+.form-card{background:rgba(255,255,255,.025);border:1px solid rgba(249,244,238,.08);border-top:3px solid var(--fire);padding:3rem;max-width:700px;margin:0 auto}
 .form-group{margin-bottom:1.1rem}
 .form-label{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(249,244,238,.5);display:block;margin-bottom:.3rem}
 .form-input,.form-select,.form-textarea{width:100%;background:rgba(249,244,238,.04);border:none;border-bottom:1.5px solid rgba(249,244,238,.15);color:var(--cream);font-family:var(--fb);font-size:1rem;padding:.7rem .85rem;outline:none;transition:border-color .2s,background .2s;appearance:none}
@@ -85,12 +86,12 @@ section{padding:clamp(5rem,10vw,9rem) 0}
 .form-success.show{display:block}
 .form-success p{font-family:var(--fd);font-size:1.6rem;color:var(--cream);margin-bottom:.4rem}
 .form-success span{font-size:.9rem;color:var(--gray)}
-.form-note{font-size:.82rem;color:var(--gray2);margin-top:2rem;text-align:center;max-width:500px}
+.form-note{font-size:.82rem;color:var(--gray2);margin-top:2rem;text-align:center;max-width:500px;margin-left:auto;margin-right:auto}
 .form-note a{color:var(--fire);border-bottom:1px solid rgba(224,78,18,.3)}
 
 /* FOOTER */
 footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2rem}
-.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.ft-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;margin-bottom:3rem}
 .ft-logo{font-size:2rem;line-height:1;display:flex;align-items:baseline;gap:.1em;margin-bottom:.75rem}
 .ft-logo .b{font-family:var(--fd);color:var(--cream)}.ft-logo .y{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;color:var(--gold)}
 .ft-tag{font-size:.88rem;color:var(--gray);line-height:1.6;max-width:260px;margin-bottom:1rem}
@@ -127,15 +128,15 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     <div class="reveal">
       <span class="hero-tag">Built Young Club</span>
       <h1 class="hero-title">YOU BUILT THE REVENUE. NOW FIND THE <span>CLUB.</span></h1>
-      <p class="hero-sub">A private founder club for young builders with real traction to meet aligned mentors, hiring resources, operators, and peers building at the same pace to grow up together.</p>
-      <p class="hero-note">Not everyone gets in. That is the point.</p>
+      <p class="hero-sub">An exclusive founder club for young builders with real traction to meet aligned mentors, hiring resources, operators, and peers building at the same pace to grow up together.</p>
+      <p class="hero-note">Only founders who are working just as hard as you, striving for the next level, belong in this club.</p>
       <a href="#apply" class="btn btn-fire hero-btn">Apply Now</a>
     </div>
   </div>
 </section>
 
 <!-- WHAT OPENS UP -->
-<section style="background:var(--ink)">
+<section style="background:var(--ink);text-align:center">
   <div class="container">
     <div class="reveal">
       <span class="sec-tag">Inside the Club</span>
@@ -145,22 +146,22 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
       <div class="card reveal d1">
         <div class="card-num">01</div>
         <div class="card-title">MATCHED VCs AND <span>MENTORS</span></div>
-        <p class="card-desc">We connect you with investors and operators aligned with your industry, stage, and ambition. Not cold intros. Curated matches.</p>
+        <p class="card-desc">We match you with VCs and mentors based on your market, industry experience, and what you actually need right now. Every introduction is intentional.</p>
       </div>
       <div class="card reveal d2">
         <div class="card-num">02</div>
-        <div class="card-title">PRIVATE <span>WORKSHOPS</span></div>
-        <p class="card-desc">Practical sessions on hiring, scaling, and leading. Built for founders who are already in motion, not still planning.</p>
+        <div class="card-title">SMALL GROUP <span>WORKSHOPS</span></div>
+        <p class="card-desc">Customized sessions focused on recruiting, team building, GTM strategy, and the challenges that matter most at your stage. Small groups. Real depth.</p>
       </div>
       <div class="card reveal d3">
         <div class="card-num">03</div>
         <div class="card-title">A PEER CIRCLE THAT <span>GETS IT</span></div>
-        <p class="card-desc">Founders your age, at your level, solving the same problems. No networking events. Real relationships with real builders.</p>
+        <p class="card-desc">Founders your age, at your level, solving the same problems. We focus on building deeper connections that actually move things forward.</p>
       </div>
       <div class="card reveal d4">
         <div class="card-num">04</div>
-        <div class="card-title">MORE THAT UNLOCKS <span>INSIDE</span></div>
-        <p class="card-desc">Some things are better experienced than explained. Apply, get in, and find out what the club actually looks like from the inside.</p>
+        <div class="card-title">FOUNDER GATHERINGS <span>AND MORE</span></div>
+        <p class="card-desc">Dinners, meetups, and experiences that only happen inside the club. What they look like, when they happen, and who is there. you will find out when you are in.</p>
       </div>
     </div>
   </div>
@@ -214,10 +215,9 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <div class="container">
     <div class="ft-grid">
       <div><div class="ft-logo"><span class="b">BUILT</span><span class="y">Young</span></div><p class="ft-tag">Under 25. Over $1M. Their story starts where yours can too.</p><p class="ft-motto">Either you learn or you win. Either way, you move.</p></div>
-      <div><p class="ft-col-title">Navigate</p><div class="ft-links"><a href="about.html">About</a><a href="club.html">Club</a><a href="podcast.html">Podcast</a><a href="contact.html">Contact</a></div></div>
-      <div><p class="ft-col-title">Connect</p><div class="ft-links"><a href="https://www.instagram.com/builtyoung25" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a><a href="mailto:hello@built-young.com">hello@built-young.com</a></div></div>
+      <div><p class="ft-col-title">Connect</p><div class="ft-links"><a href="https://www.instagram.com/builtyoungclub/" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a><a href="https://www.youtube.com/@BuiltYoungClub" target="_blank">YouTube</a><a href="mailto:hello@built-young.com">hello@built-young.com</a></div></div>
     </div>
-    <div class="ft-bottom"><p class="ft-copy">&copy; 2025 Built Young &middot; built-young.com</p><div class="ft-social"><a href="https://www.instagram.com/builtyoung25" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a></div></div>
+    <div class="ft-bottom"><p class="ft-copy">&copy; 2025 Built Young &middot; built-young.com</p><div class="ft-social"><a href="https://www.instagram.com/builtyoungclub/" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a><a href="https://www.youtube.com/@BuiltYoungClub" target="_blank">YouTube</a></div></div>
   </div>
 </footer>
 
