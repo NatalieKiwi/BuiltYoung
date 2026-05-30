@@ -6,7 +6,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="og-image.png">
 <meta property="og:title" content="Built Young | Under 25. Over $1M.">
-<meta property="og:description" content="Real founders. Real revenue. Their story starts where yours can too.">
+<meta property="og:description" content="We tell founder stories. Then we build the bridge.">
 <meta property="og:image" content="https://built-young.com/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Built Young">
@@ -28,7 +28,7 @@ a{color:inherit;text-decoration:none}
 .nav-logo .b{font-family:var(--fd);color:var(--cream)}
 .nav-logo .y{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;color:var(--gold)}
 .nav-links{display:flex;align-items:center;gap:2.2rem}
-.nav-links a{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
+.nav-links a{font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--cream)}
 .nav-cta{font-family:var(--fb);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.55rem 1.4rem;background:var(--fire);color:#fff;border:none;cursor:pointer;transition:all .2s}
 .nav-cta:hover{background:#c84210}
@@ -42,41 +42,30 @@ a{color:inherit;text-decoration:none}
 
 /* SHARED */
 .container{width:min(var(--max),100% - 3rem);margin-inline:auto}
-section{padding:clamp(5rem,10vw,9rem) 0}
+section{padding:clamp(5rem,10vw,8rem) 0}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.visible{opacity:1;transform:none}
-.d1{transition-delay:.12s}.d2{transition-delay:.22s}.d3{transition-delay:.32s}
-.btn{font-family:var(--fb);font-size:.95rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:1rem 2.4rem;border:2px solid transparent;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;justify-content:center}
+.d1{transition-delay:.12s}.d2{transition-delay:.22s}.d3{transition-delay:.32s}.d4{transition-delay:.42s}
+.btn{font-family:var(--fb);font-size:.95rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:1rem 2.2rem;border:2px solid transparent;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;justify-content:center}
 .btn-fire{background:var(--fire);color:#fff;border-color:var(--fire)}
 .btn-fire:hover{background:#c84210;transform:translateY(-2px);box-shadow:0 8px 24px rgba(224,78,18,.35)}
 .btn-ghost{background:transparent;color:var(--fire);border-color:var(--fire)}
 .btn-ghost:hover{background:rgba(224,78,18,.08);transform:translateY(-2px)}
+.sec-tag{font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
 
-/* ═══ HERO — full original animation ═══ */
-#hero{position:relative;width:100vw;height:100vh;display:flex;align-items:center;overflow:hidden;padding:0;clip-path:inset(0)}
+/* ═══ 1. HERO ═══ */
+#hero{position:relative;width:100vw;height:100vh;display:flex;align-items:center;overflow:hidden;clip-path:inset(0)}
 .hero-svg{position:absolute;inset:0;width:100%;height:100%}
-.hero-content{position:relative;z-index:10;padding:0 5vw;max-width:420px}
-.hero-built-float{
-  position:absolute;left:34vw;top:20%;z-index:11;
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,12vw,11rem);
-  color:var(--cream);line-height:.88;letter-spacing:.03em;
-  pointer-events:none;opacity:0;animation:textUp .7s ease 2s forwards;
-}
-.hero-young-float{
-  position:absolute;left:42vw;top:55%;z-index:11;
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;
-  font-size:clamp(5rem,13vw,12rem);color:var(--gold);line-height:.88;letter-spacing:.01em;
-  pointer-events:none;opacity:0;animation:textUp .7s ease 2.2s forwards;
-}
-.hero-eyebrow{font-size:clamp(.65rem,1vw,.8rem);font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1.5rem;opacity:0;animation:textUp .6s ease 2.4s forwards}
-.hero-headline{font-family:var(--fd);font-size:clamp(2.8rem,6vw,4.5rem);line-height:.9;color:var(--cream);margin-bottom:.5rem;opacity:0;animation:textUp .6s ease 2.45s forwards}
-.hero-headline span{color:var(--gold)}
-.hero-tagline{font-size:clamp(1rem,1.5vw,1.2rem);color:var(--gray);line-height:1.6;font-weight:400;margin-bottom:2rem;opacity:0;animation:textUp .6s ease 2.5s forwards}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:textUp .6s ease 2.6s forwards}
+.hero-content{position:relative;z-index:10;padding:0 5vw;max-width:520px}
+.hero-desc{font-size:clamp(1.25rem,2.2vw,1.6rem);color:var(--cream);line-height:1.6;font-weight:400;margin-bottom:2.5rem;opacity:0;animation:fadeUp .6s ease 2.2s forwards}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .6s ease 2.6s forwards}
 .hero-ctas .btn{width:240px;padding:1rem 0;text-align:center;justify-content:center}
-.hero-manifesto{position:absolute;bottom:1.8rem;right:5vw;font-size:clamp(.55rem,.8vw,.68rem);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(249,244,238,.22);z-index:10;opacity:0;animation:textUp .6s ease 3s forwards}
+/* Floating text on target */
+.hero-float-1{position:absolute;left:32vw;top:16%;z-index:11;font-family:var(--fd);font-size:clamp(4rem,10vw,9rem);color:var(--cream);line-height:.88;letter-spacing:.03em;pointer-events:none;opacity:0;animation:fadeUp .7s ease 2s forwards}
+.hero-float-2{position:absolute;left:40vw;top:65%;z-index:11;font-family:var(--fd);font-size:clamp(4rem,10vw,9rem);color:var(--gold);line-height:.88;letter-spacing:.03em;pointer-events:none;opacity:0;animation:fadeUp .7s ease 2.2s forwards}
+.hero-manifesto{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(249,244,238,.6);z-index:10;opacity:0;animation:fadeUp .6s ease 3s forwards;text-align:center;white-space:nowrap}
 .hero-rule{position:absolute;bottom:0;left:0;width:40vw;height:2px;background:linear-gradient(to right,var(--fire),transparent);opacity:0;animation:fadeIn 1s ease 3.2s forwards}
-/* SVG animation classes */
+/* SVG */
 .ring{opacity:0}
 .r1{animation:rIn 1s ease .1s forwards}.r2{animation:rIn 1s ease .3s forwards}
 .r3{animation:rIn 1s ease .5s forwards}.r4{animation:rIn 1s ease .7s forwards}
@@ -94,44 +83,68 @@ section{padding:clamp(5rem,10vw,9rem) 0}
 @keyframes drawB{to{stroke-dashoffset:0}}
 @keyframes dotPop{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
 @keyframes bGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(224,78,18,.28))}50%{filter:drop-shadow(0 0 22px rgba(224,78,18,.58))}}
-@keyframes textUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{to{opacity:1}}
 
-/* ═══ SECTIONS ═══ */
-.sec-tag{font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--fire);display:block;margin-bottom:1rem}
-.sec-title{font-family:var(--fd);font-size:clamp(2.5rem,5.5vw,3.8rem);line-height:.92;color:var(--cream);margin-bottom:3.5rem}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);border-top:3px solid var(--fire);padding:2.5rem 2rem;transition:transform .25s,box-shadow .25s,border-top-color .25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(224,78,18,.12);border-top-color:var(--gold)}
-.card-title{font-family:var(--fd);font-size:1.5rem;color:var(--cream);line-height:1.05;margin-bottom:.6rem}
-.card-title span{color:var(--gold)}
-.card-desc{font-size:1.05rem;color:var(--gray);line-height:1.7;font-weight:400}
+/* ═══ 2. WHY ═══ */
+.why{background:var(--ink)}
+.why-title{font-family:var(--fd);font-size:clamp(2.5rem,5.5vw,3.8rem);line-height:.92;color:var(--cream);margin-bottom:3.5rem}
+.why-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{border-top:3px solid var(--fire);padding:2.25rem 2rem;background:rgba(255,255,255,.02);transition:transform .25s,box-shadow .25s,border-top-color .25s}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(224,78,18,.12);border-top-color:var(--gold)}
+.why-card-title{font-family:var(--fd);font-size:1.5rem;color:var(--cream);margin-bottom:.5rem}
+.why-card-title span{color:var(--gold)}
+.why-card-desc{font-size:1rem;color:var(--gray);line-height:1.65}
 
-/* HOST */
-.host{background:var(--ink2)}
-.host-grid{display:grid;grid-template-columns:.35fr .65fr;gap:3rem;align-items:center}
-.host-photo{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(.15)}
-.host-tag{font-size:.68rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--fire);margin-bottom:.75rem}
-.host-name{font-family:var(--fd);font-size:clamp(2rem,4vw,2.8rem);color:var(--cream);line-height:1;margin-bottom:1rem}
-.host-bio{font-size:1rem;color:var(--gray);line-height:1.8;font-weight:400;margin-bottom:1.5rem}
-.host-link{font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--fire);border-bottom:1px solid rgba(224,78,18,.3);padding-bottom:2px}
+/* ═══ 3. WHO + CTA ═══ */
+.who{background:var(--ink2)}
+.who-title{font-family:var(--fd);font-size:clamp(2.2rem,5vw,3.2rem);line-height:.92;color:var(--cream);margin-bottom:3.5rem}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.who-card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);padding:3rem 2.5rem;display:flex;flex-direction:column;gap:1rem;transition:transform .25s,box-shadow .25s}
+.who-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(224,78,18,.12)}
+.who-card:first-child{border-top:3px solid var(--fire)}
+.who-card:last-child{border-top:3px solid var(--gold)}
+.who-card-title{font-family:var(--fd);font-size:1.6rem;color:var(--cream)}
+.who-card-title span{color:var(--gold)}
+.who-card-desc{font-size:1.05rem;color:var(--gray);line-height:1.65;flex-grow:1}
+.who-card .btn{width:100%;justify-content:center}
+
+/* ═══ 4. STORIES ═══ */
+.stories{background:var(--ink)}
+.stories-title{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3rem);line-height:.92;color:var(--cream);margin-bottom:3rem}
+.stories-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.story-card{background:rgba(255,255,255,.02);border:1px solid rgba(249,244,238,.07);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.story-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(224,78,18,.12)}
+.story-card-body{padding:1.75rem;flex-grow:1;display:flex;flex-direction:column}
+.story-card-name{font-family:var(--fd);font-size:1.2rem;color:var(--cream);line-height:1}
+.story-card-co{font-size:.78rem;color:var(--gold);margin-bottom:.75rem}
+.story-card-hook{font-size:.92rem;color:var(--gray);line-height:1.55;font-style:italic;flex-grow:1;margin-bottom:1rem}
+.story-card-btn{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--fire);transition:color .2s}
+.story-card-btn:hover{color:var(--gold)}
+.story-card.invite{border-top:3px solid var(--gold);text-align:center;justify-content:center}
+.story-card.invite .story-card-body{align-items:center}
+.story-card.invite .story-card-name{font-size:1.3rem;margin-bottom:.5rem}
+.story-card.invite .story-card-hook{font-style:normal;max-width:180px}
+
+/* ═══ 5. FINAL ═══ */
+.final{background:var(--ink2);text-align:center}
+.final-title{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.2rem);line-height:.92;color:var(--cream);margin-bottom:1rem}
+.final-sub{font-size:1.1rem;color:var(--gray);line-height:1.6;max-width:500px;margin:0 auto 2.5rem}
+.final-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.final-btns .btn{width:260px;padding:1rem 0;justify-content:center}
 
 /* FOOTER */
-footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2rem}
-.ft-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;margin-bottom:3rem}
-.ft-logo{font-size:2rem;line-height:1;display:flex;align-items:baseline;gap:.1em;margin-bottom:.75rem}
+footer{background:var(--ink);border-top:2px solid var(--fire);padding:3rem 0 1.5rem}
+.ft-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+.ft-logo{font-size:1.6rem;line-height:1;display:flex;align-items:baseline;gap:.1em}
 .ft-logo .b{font-family:var(--fd);color:var(--cream)}.ft-logo .y{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-style:italic;color:var(--gold)}
-.ft-tag{font-size:.92rem;color:var(--gray);line-height:1.6;max-width:260px;margin-bottom:1rem;font-weight:400}
-.ft-motto{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,244,238,.2)}
-.ft-col-title{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--fire);margin-bottom:1.25rem}
-.ft-links{display:flex;flex-direction:column;gap:.7rem}
-.ft-links a{font-size:.95rem;color:var(--gray);transition:color .2s;font-weight:400}.ft-links a:hover{color:var(--cream)}
-.ft-bottom{border-top:1px solid rgba(249,244,238,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.ft-copy{font-size:.72rem;color:rgba(249,244,238,.2)}
-.ft-social{display:flex;gap:.75rem}
-.ft-social a{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2);transition:color .2s}.ft-social a:hover{color:var(--fire)}
+.ft-tag{font-size:.82rem;color:var(--gray2);margin-top:.3rem}
+.ft-social{display:flex;gap:1.25rem}
+.ft-social a{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2);transition:color .2s}
+.ft-social a:hover{color:var(--fire)}
+.ft-copy{font-size:.65rem;color:rgba(249,244,238,.18);text-align:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(249,244,238,.05)}
 
-/* STICKY CTA */
+/* STICKY */
 .sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:900;padding:.55rem .75rem;background:rgba(19,16,16,.96);backdrop-filter:blur(12px);border-top:2px solid var(--fire);transform:translateY(100%);transition:transform .35s}
 .sticky-cta.show{transform:translateY(0)}
 .sticky-cta-btn{display:block;width:100%;text-align:center;font-family:var(--fb);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.7rem;background:var(--fire);color:#fff;border:none;cursor:pointer}
@@ -139,26 +152,21 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
 @media(max-width:900px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .ft-grid{grid-template-columns:1fr 1fr}
-  .hero-built-float{display:none}
-  .hero-young-float{display:none}
-  .hero-manifesto{display:none}
-  .hero-content{padding:6.5rem 6vw 0;max-width:100%;position:relative;z-index:20}
-  .hero-eyebrow{white-space:normal}
-  .cards{grid-template-columns:1fr 1fr}
-  .host-grid{grid-template-columns:1fr;text-align:center}
-  .host-photo{max-width:220px;margin:0 auto}
+  .hero-float-1,.hero-float-2,.hero-manifesto{display:none}
+  .hero-content{max-width:100%;padding:6rem 6vw 0}
+  .why-cards{grid-template-columns:1fr 1fr}
+  .who-grid{grid-template-columns:1fr 1fr}
+  .stories-grid{grid-template-columns:1fr 1fr}
+  .final-btns{flex-direction:column;align-items:center}
+  .final-btns .btn{width:100%;max-width:320px}
   .sticky-cta{display:block}
 }
 @media(max-width:600px){
-  .ft-grid{grid-template-columns:1fr}
-  .hero-content{padding:5.5rem 6vw 0}
-  .hero-eyebrow{font-size:.6rem;letter-spacing:.2em;margin-bottom:1.25rem}
-  .hero-headline{font-size:2.5rem}
-  .hero-tagline{font-size:1rem;max-width:280px}
+  .hero-content{padding:5rem 6vw 0}
+  .hero-desc{font-size:1.1rem}
   .hero-ctas{flex-direction:column}
-  .hero-ctas .btn{width:100%;justify-content:center}
-  .cards{grid-template-columns:1fr}
+  .hero-ctas .btn{width:100%}
+  .why-cards,.who-grid,.stories-grid{grid-template-columns:1fr}
   footer{padding-bottom:4rem}
 }
 </style>
@@ -176,7 +184,7 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <a href="about.html">About</a><a href="club.html">Club</a><a href="podcast.html">Podcast</a><a href="workshops.html">Workshops</a><a href="contact.html">Contact</a><a href="club.html" style="color:var(--fire)">Apply</a>
 </div>
 
-<!-- ═══ HERO with full animation ═══ -->
+<!-- ═══ 1. HERO ═══ -->
 <section id="hero">
   <svg class="hero-svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
     <defs>
@@ -205,16 +213,14 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
     <line x1="0" y1="898" x2="500" y2="898" stroke="rgba(224,78,18,0.4)" stroke-width="2"/>
   </svg>
 
-  <div class="hero-built-float">BUILT</div>
-  <div class="hero-young-float">Young</div>
+  <div class="hero-float-1">UNDER 25</div>
+  <div class="hero-float-2">OVER $1M</div>
 
   <div class="hero-content">
-    <span class="hero-eyebrow">Undergrad Founder Stories</span>
-    <h1 class="hero-headline">UNDER 25,<br>OVER <span>$1M</span></h1>
-    <p class="hero-tagline">Their story starts where yours can too.</p>
+    <p class="hero-desc">Built Young tells the stories of young founders and builds the bridge that helps them grow.</p>
     <div class="hero-ctas">
-      <a href="podcast.html" class="btn btn-fire">Listen Now</a>
-      <a href="club.html" class="btn btn-ghost">Apply</a>
+      <a href="podcast.html" class="btn btn-fire">Listen Stories</a>
+      <a href="club.html" class="btn btn-ghost">Apply to Club</a>
     </div>
   </div>
 
@@ -222,88 +228,126 @@ footer{background:var(--ink2);border-top:2px solid var(--fire);padding:4rem 0 2r
   <div class="hero-rule"></div>
 </section>
 
-<!-- WHO BELONGS -->
-<section style="background:var(--ink)">
+<!-- ═══ 2. WHY ═══ -->
+<section class="why">
   <div class="container">
     <div class="reveal">
-      <span class="sec-tag">Who We Feature</span>
-      <h2 class="sec-title">WHO BELONGS IN THE CLUB</h2>
+      <span class="sec-tag">Why Built Young</span>
+      <h2 class="why-title">YOUNG FOUNDERS DO NOT LACK AMBITION.<br>THEY LACK ACCESS.</h2>
     </div>
-    <div class="cards">
-      <div class="card reveal d1">
-        <div class="card-title">UNDER 30. BUILT FROM <span>SCRATCH.</span></div>
-        <p class="card-desc">No inherited advantages. No safety nets. You started with nothing and made something real.</p>
+    <div class="why-cards">
+      <div class="why-card reveal d1">
+        <div class="why-card-title"><span>RESOURCES</span></div>
+        <p class="why-card-desc">Workshops and playbooks for hiring, GTM, leadership, and scaling.</p>
       </div>
-      <div class="card reveal d2">
-        <div class="card-title">REAL REVENUE OR EXCEPTIONAL <span>TRACTION.</span></div>
-        <p class="card-desc">Not ideas. Not projections. Actual customers paying actual money for something you created.</p>
+      <div class="why-card reveal d2">
+        <div class="why-card-title"><span>CONNECTIONS</span></div>
+        <p class="why-card-desc">Mentors, operators, and industry people who help founders grow.</p>
       </div>
-      <div class="card reveal d3">
-        <div class="card-title">RESILIENT AND WILLING TO <span>SHARE.</span></div>
-        <p class="card-desc">You have been through it and you are willing to tell the real story. Not the polished version.</p>
+      <div class="why-card reveal d3">
+        <div class="why-card-title"><span>REVENUE PEERS</span></div>
+        <p class="why-card-desc">Young founders building real companies and making real money.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU GET -->
-<section style="background:var(--ink2)">
+<!-- ═══ 3. WHO + CTA ═══ -->
+<section class="who">
   <div class="container">
     <div class="reveal">
-      <span class="sec-tag">What You Get</span>
-      <h2 class="sec-title">THIS IS NOT A COMMUNITY.<br>IT IS A PRIVATE CIRCLE.</h2>
+      <span class="sec-tag">Who This Is For</span>
+      <h2 class="who-title">FOUNDERS JUST LIKE YOU ARE ALREADY HERE</h2>
     </div>
-    <div class="cards">
-      <div class="card reveal d1">
-        <div class="card-title">MATCHED VCs AND <span>MENTORS</span></div>
-        <p class="card-desc">We connect you with investors and operators aligned with your industry, stage, and ambition.</p>
+    <div class="who-grid">
+      <div class="who-card reveal d1">
+        <div class="who-card-title">YOUNG <span>FOUNDERS</span></div>
+        <p class="who-card-desc">Under 30. Real revenue or real momentum. You built something from scratch and you are ready for what comes next.</p>
+        <a href="club.html#apply" class="btn btn-fire">Apply to Built Young Founders Club</a>
       </div>
-      <div class="card reveal d2">
-        <div class="card-title">PRIVATE FOUNDER <span>WORKSHOPS</span></div>
-        <p class="card-desc">Practical sessions on hiring, scaling, and leading. Built for founders who are already in motion.</p>
-      </div>
-      <div class="card reveal d3">
-        <div class="card-title">A PEER CIRCLE THAT <span>GETS IT</span></div>
-        <p class="card-desc">Founders your age, at your level, solving the same problems. No posturing. Just real builders.</p>
+      <div class="who-card reveal d2">
+        <div class="who-card-title">MENTORS AND <span>OPERATORS</span></div>
+        <p class="who-card-desc">Experienced builders, executives, and operators who want to support the next generation through mentorship, workshops, or introductions.</p>
+        <a href="https://formspree.io/f/mykondaw" target="_blank" class="btn btn-ghost">Connect as Mentor</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOST -->
-<section class="host">
+<!-- ═══ 4. STORIES ═══ -->
+<section class="stories">
   <div class="container">
-    <div class="host-grid reveal">
-      <img src="natalie.jpg" alt="Natalie Chu" class="host-photo" loading="lazy">
-      <div>
-        <span class="host-tag">Your Host</span>
-        <h2 class="host-name">NATALIE CHU</h2>
-        <p class="host-bio">Former C-level headhunter. Built Young founder. Natalie spent years evaluating executive talent for publicly listed companies. Now she applies that same lens to young founders: finding the signal before it becomes obvious.</p>
-        <a href="about.html" class="host-link">Read More &rarr;</a>
+    <div class="reveal">
+      <span class="sec-tag">Founder Stories</span>
+      <h2 class="stories-title">REAL FOUNDERS. REAL REVENUE. REAL LESSONS.</h2>
+    </div>
+    <div class="stories-grid">
+      <div class="story-card reveal d1">
+        <div class="story-card-body">
+          <div class="story-card-name">EPISODE 01</div>
+          <div class="story-card-co">Coming Soon</div>
+          <p class="story-card-hook">"The first episode is in production. A real founder. A real story. Stay tuned."</p>
+          <span class="story-card-btn">Coming Soon</span>
+        </div>
+      </div>
+      <div class="story-card reveal d2">
+        <div class="story-card-body">
+          <div class="story-card-name">EPISODE 02</div>
+          <div class="story-card-co">Coming Soon</div>
+          <p class="story-card-hook">"New episodes dropping soon. Real revenue. Real lessons. No filter."</p>
+          <span class="story-card-btn">Coming Soon</span>
+        </div>
+      </div>
+      <div class="story-card reveal d3">
+        <div class="story-card-body">
+          <div class="story-card-name">EPISODE 03</div>
+          <div class="story-card-co">Coming Soon</div>
+          <p class="story-card-hook">"Every founder we feature built something from nothing before 25."</p>
+          <span class="story-card-btn">Coming Soon</span>
+        </div>
+      </div>
+      <div class="story-card invite reveal d4">
+        <div class="story-card-body">
+          <div class="story-card-name">YOUR STORY COULD BE <span style="color:var(--gold)">NEXT</span></div>
+          <p class="story-card-hook">Under 30 with real traction? We want to hear what you built.</p>
+          <a href="apply-potential.html" class="story-card-btn">Apply to Be Featured &rarr;</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══ 5. FINAL CTA ═══ -->
+<section class="final">
+  <div class="container reveal">
+    <h2 class="final-title">READY TO START?</h2>
+    <p class="final-sub">Whether you are building or mentoring, there is a place for you here.</p>
+    <div class="final-btns">
+      <a href="club.html" class="btn btn-fire">Apply as Founder</a>
+      <a href="https://formspree.io/f/mykondaw" target="_blank" class="btn btn-ghost">Join as Mentor</a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
-    <div class="ft-grid">
+    <div class="ft-row">
       <div>
         <div class="ft-logo"><span class="b">BUILT</span><span class="y">Young</span></div>
-        <p class="ft-tag">Under 25. Over $1M. Their story starts where yours can too.</p>
-        <p class="ft-motto">Either you learn or you win. Either way, you move.</p>
+        <p class="ft-tag">Their story starts where yours can too.</p>
       </div>
-      <div>
-        <p class="ft-col-title">Connect</p>
-        <div class="ft-links"><a href="https://www.youtube.com/@BuiltYoungClub" target="_blank">YouTube</a><a href="https://www.instagram.com/builtyoungclub/" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a><a href="mailto:hello@built-young.com">hello@built-young.com</a></div>
+      <div class="ft-social">
+        <a href="https://www.youtube.com/@BuiltYoungClub" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/builtyoungclub/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@built-young.com">Email</a>
       </div>
     </div>
-    <div class="ft-bottom"><p class="ft-copy">&copy; 2025 Built Young &middot; built-young.com</p><div class="ft-social"><a href="https://www.youtube.com/@BuiltYoungClub" target="_blank">YouTube</a><a href="https://www.instagram.com/builtyoungclub/" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/nataliechu0414/" target="_blank">LinkedIn</a></div></div>
+    <p class="ft-copy">&copy; 2025 Built Young &middot; built-young.com</p>
   </div>
 </footer>
 
-<div class="sticky-cta" id="stickyCta"><a href="club.html" class="sticky-cta-btn">Apply to the Club</a></div>
+<div class="sticky-cta" id="stickyCta"><a href="club.html" class="sticky-cta-btn">Apply as Founder</a></div>
 
 <script>
 document.getElementById('ham')?.addEventListener('click',()=>document.getElementById('mobMenu').classList.add('open'));
@@ -311,9 +355,7 @@ document.getElementById('mobClose')?.addEventListener('click',()=>document.getEl
 document.querySelectorAll('.mob-menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobMenu').classList.remove('open')));
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-// Mobile B reposition
 if(window.innerWidth<=900){const bg=document.querySelector('.b-group');if(bg)bg.setAttribute('transform','translate(780,200) scale(0.8)');}
-// Sticky CTA
 const sc=document.getElementById('stickyCta');if(sc)window.addEventListener('scroll',()=>{sc.classList.toggle('show',scrollY>500)},{passive:true});
 </script>
 </body>
