@@ -158,5 +158,14 @@ document.querySelectorAll('.mob-menu a').forEach(a=>a.addEventListener('click',(
 document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1}).observe(el));
 const sc=document.getElementById('stickyCta');if(sc)window.addEventListener('scroll',()=>{sc.classList.toggle('show',scrollY>400)},{passive:true});
 </script>
+
+<script>
+(function(){
+  var s=document.createElement("script");
+  s.src="content.js?v="+Date.now();
+  s.onload=function(){ if(window.BY&&BY.inject) BY.inject("about"); };
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>

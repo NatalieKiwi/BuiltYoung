@@ -226,5 +226,14 @@ const rf=document.getElementById('resForm');
 rf?.addEventListener('submit',function(e){e.preventDefault();const d=new FormData(rf);fetch(rf.action,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(r=>{if(r.ok){rf.style.display='none';document.getElementById('resSuccess').classList.add('show')}});});
 const sc=document.getElementById('stickyCta');if(sc)window.addEventListener('scroll',()=>{sc.classList.toggle('show',scrollY>400)},{passive:true});
 </script>
+
+<script>
+(function(){
+  var s=document.createElement("script");
+  s.src="content.js?v="+Date.now();
+  s.onload=function(){ if(window.BY&&BY.inject) BY.inject("workshops"); };
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>

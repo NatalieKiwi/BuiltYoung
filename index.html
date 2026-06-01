@@ -358,5 +358,14 @@ document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 if(window.innerWidth<=900){const bg=document.querySelector('.b-group');if(bg)bg.setAttribute('transform','translate(780,200) scale(0.8)');}
 const sc=document.getElementById('stickyCta');if(sc)window.addEventListener('scroll',()=>{sc.classList.toggle('show',scrollY>500)},{passive:true});
 </script>
+
+<script>
+(function(){
+  var s=document.createElement("script");
+  s.src="content.js?v="+Date.now();
+  s.onload=function(){ if(window.BY&&BY.inject) BY.inject("index"); };
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>

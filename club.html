@@ -231,5 +231,14 @@ const sc=document.getElementById('stickyCta');if(sc)window.addEventListener('scr
 const af=document.getElementById('applyForm');
 af?.addEventListener('submit',function(e){e.preventDefault();const d=new FormData(af);fetch(af.action,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(r=>{if(r.ok){af.style.display='none';document.getElementById('formSuccess').classList.add('show')}});});
 </script>
+
+<script>
+(function(){
+  var s=document.createElement("script");
+  s.src="content.js?v="+Date.now();
+  s.onload=function(){ if(window.BY&&BY.inject) BY.inject("club"); };
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>
