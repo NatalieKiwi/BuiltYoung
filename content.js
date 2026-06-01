@@ -24,7 +24,7 @@ const BY = {
   index: {
     hero: {
       eyebrow:  "We tell founder stories. Then we build the bridge.",
-      desc:     "Built Young tells the stories of young founders and builds the bridge that helps them grow.",
+      desc:     "Built Young tells young founder stories that teach you how to move and connect you with what helps you grow.",
       floatTop: "UNDER 25",
       floatBot: "OVER $1M",
       cta1:     "Listen Stories",
